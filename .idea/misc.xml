@@ -3,7 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_about_me_en.xml" value="0.259375" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_about_me_ukr.xml" value="0.2453125" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_add_word_en.xml" value="0.259375" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_add_word_ukr.xml" value="0.259375" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_home_en.xml" value="0.259375" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_irregular_words_ukr.xml" value="0.259375" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_learn_words_en.xml" value="0.259375" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_learn_words_ukr.xml" value="0.259375" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_my_words_en.xml" value="0.259375" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_my_words_ukr.xml" value="0.259375" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_new_words_en.xml" value="0.259375" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_new_words_ukr.xml" value="0.259375" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_settings_en.xml" value="0.259375" />
+        <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_settings_ukr.xml" value="0.259375" />
       </map>
     </option>
   </component>

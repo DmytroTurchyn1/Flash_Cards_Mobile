@@ -10,6 +10,48 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlashCards">
         <activity
+            android:name=".Learn_Words_ukr"
+            android:exported="false" />
+        <activity
+            android:name=".Learn_Words_en"
+            android:exported="false" />
+        <activity
+            android:name=".Add_word_ukr"
+            android:exported="false" />
+        <activity
+            android:name=".Add_word_en"
+            android:exported="false" />
+        <activity
+            android:name=".About_me_ukr"
+            android:exported="false" />
+        <activity
+            android:name=".About_me_en"
+            android:exported="false" />
+        <activity
+            android:name=".Settings_ukr"
+            android:exported="false" />
+        <activity
+            android:name=".Settings_en"
+            android:exported="false" />
+        <activity
+            android:name=".My_words_en"
+            android:exported="false" />
+        <activity
+            android:name=".My_words_ukr"
+            android:exported="false" />
+        <activity
+            android:name=".Home_en"
+            android:exported="false" />
+        <activity
+            android:name=".Irregular_words_ukr"
+            android:exported="false" />
+        <activity
+            android:name=".new_words_en"
+            android:exported="false" />
+        <activity
+            android:name=".new_words_ukr"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

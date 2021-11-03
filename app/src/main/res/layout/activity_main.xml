@@ -10,26 +10,39 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="254dp"
-        android:layout_height="304dp"
-        app:srcCompat="@mipmap/logo_of_program_foreground"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="86dp" />
+        android:layout_height="0dp"
+        android:layout_marginBottom="31dp"
+        android:layout_marginTop="86dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/logo_of_program_foreground" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="332dp"
-        android:layout_height="28dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="381dp"
         android:text="Ця програма створена для  того, щоб вам"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="381dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="288dp"
+        android:layout_marginStart="26dp"
         android:text=" допомогти вивчити англійську мову "
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="65dp"
-        tools:layout_editor_absoluteY="421dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

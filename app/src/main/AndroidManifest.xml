@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlashCards">
         <activity
+            android:name=".Menu_ukr"
+            android:exported="false" />
+        <activity
+            android:name=".Menu_en"
+            android:exported="false" />
+        <activity
             android:name=".Learn_Words_ukr"
             android:exported="false" />
         <activity

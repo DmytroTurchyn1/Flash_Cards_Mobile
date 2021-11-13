@@ -16,17 +16,18 @@ class Add_word_ukr : AppCompatActivity() {
         setContentView(R.layout.activity_add_word_ukr)
         Realm.init(this)
         val config = RealmConfiguration.Builder()
+            .allowWritesOnUiThread(true)
             .name("words.realm").build()
+
+
         Realm.setDefaultConfiguration(config)
-        var ukr_word = findViewById(R.id.ukr_word) as EditText
-        var en_word = findViewById(R.id.en_word) as EditText
-        InsertDatatoDB(ukr_word.text.toString(),en_word.text.toString())
+
     }
 
     private fun InsertDatatoDB(ukr_word:String,en_word:String ) {
         realm.executeTransaction{
 
-            val word: Word = realm.createObject(Word::class.java)
+            val word: Word = realm.createObject(Word::class.java, 1)
             word.ukr_word = ukr_word
             word.en_word = en_word
         }
@@ -35,5 +36,12 @@ class Add_word_ukr : AppCompatActivity() {
     fun menu(view: android.view.View) {
         val menu = Intent(this, Menu_ukr::class.java)
         startActivity(menu);
+    }
+
+    fun save(view: android.view.View) {
+        var ukr_word = findViewById(R.id.ukr_word) as EditText
+        var en_word = findViewById(R.id.en_word) as EditText
+
+        InsertDatatoDB(ukr_word.text.toString(),en_word.text.toString())
     }
 }

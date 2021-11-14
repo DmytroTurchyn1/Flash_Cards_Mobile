@@ -33,7 +33,7 @@ class new_words_en : AppCompatActivity() {
         ukr_word.text = ""
         enWord.add("time ");
         enWord.add("information");
-        enWord.add("people");
+        enWord.add("  people");
         enWord.add("thing");
         enWord.add("man");
         enWord.add("woman");

@@ -8,12 +8,12 @@
     tools:context=".new_words_en">
 
     <Button
-        android:id="@+id/en_Word"
+        android:id="@+id/ukr_word"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="132dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:onClick="ShowUkrWord"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -62,11 +62,11 @@
         app:layout_constraintTop_toBottomOf="@+id/text" />
 
     <TextView
-        android:id="@+id/ukr_Word"
+        android:id="@+id/en_word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="187dp"
-        android:layout_marginTop="423dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="404dp"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,11 +88,11 @@
         android:id="@+id/texten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="134dp"
-        android:layout_marginTop="51dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="356dp"
         android:text="English word:"
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/en_Word" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

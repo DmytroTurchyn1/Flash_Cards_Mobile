@@ -8,7 +8,7 @@
     tools:context=".Irregular_words_ukr">
 
     <TextView
-        android:id="@+id/en_word"
+        android:id="@+id/ukr_word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"

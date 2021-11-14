@@ -73,7 +73,7 @@
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/en_word"
+        android:id="@+id/ukr_word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -97,5 +97,5 @@
         android:text="Зберегти"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/en_word" />
+        app:layout_constraintTop_toBottomOf="@+id/ukr_word" />
 </androidx.constraintlayout.widget.ConstraintLayout>

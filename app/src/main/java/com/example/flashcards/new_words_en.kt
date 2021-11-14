@@ -12,20 +12,23 @@ class new_words_en : AppCompatActivity() {
         setContentView(R.layout.activity_new_words_en)
     }
     fun menu(view: android.view.View) {
-        val menu = Intent(this, Menu_ukr::class.java)
+        val menu = Intent(this, Menu_en::class.java)
         startActivity(menu);
     }
     var next = 0
     fun ShowUkrWord(view: android.view.View) {
-        var en_Word = findViewById<TextView>(R.id.enWord)
+        var en_Word = findViewById<TextView>(R.id.en_word)
         en_Word.text = ""
 
-        en_Word.text = ukrWord[next]
+        en_Word.text = enWord[next]
     }
     open  val ukrWord = ArrayList<String>()
     open  val enWord = ArrayList<String>()
     fun next(view: android.view.View) {
-        var ukr_word = findViewById<TextView>(R.id.enWord)
+        next ++
+        var ukr_word = findViewById<TextView>(R.id.ukr_word)
+        var en_Word = findViewById<TextView>(R.id.en_word)
+        en_Word.text = ""
         ukr_word.setVisibility(View.VISIBLE)
         ukr_word.text = ""
         enWord.add("time ");
@@ -79,7 +82,7 @@ class new_words_en : AppCompatActivity() {
         enWord.add("issue");
 
         ukrWord.add("час");
-        ukrWord.add("   інформація");
+        ukrWord.add("інформація");
         ukrWord.add("люди");
         ukrWord.add("річ");
         ukrWord.add(" чоловік");
@@ -130,6 +133,6 @@ class new_words_en : AppCompatActivity() {
 
 
         ukr_word.text = ukrWord[next]
-        next ++
+
     }
 }

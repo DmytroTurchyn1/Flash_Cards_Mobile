@@ -8,45 +8,46 @@
     tools:context=".Add_word_en">
 
     <Button
-        android:id="@+id/button26"
+        android:id="@+id/add"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="224dp"
         android:layout_marginEnd="60dp"
+        android:layout_marginBottom="224dp"
         android:accessibilityLiveRegion="none"
+        android:onClick="add"
         android:text="Add"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintEnd_toEndOf="@+id/enWord"
+        app:layout_constraintTop_toBottomOf="@+id/enWord" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/enWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="49dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/button26"
+        app:layout_constraintBottom_toTopOf="@+id/add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView35"
+        app:layout_constraintTop_toBottomOf="@+id/texten"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/ukrWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView35"
+        app:layout_constraintBottom_toTopOf="@+id/texten"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView34"
+        app:layout_constraintTop_toBottomOf="@+id/textukr"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -57,17 +58,17 @@
         android:layout_marginStart="10dp"
         android:background="#00FFFFFF"
         android:onClick="menu"
-        android:tint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView33"
+        app:layout_constraintEnd_toStartOf="@+id/text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024"
-        app:srcCompat="@mipmap/menu_btn_foreground" />
+        app:srcCompat="@mipmap/menu_btn_foreground"
+        app:tint="@color/black" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="104dp"
@@ -76,26 +77,26 @@
         android:text="Add a word"
         android:textColor="#000000"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView34"
+        app:layout_constraintBottom_toTopOf="@+id/textukr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton4"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView34"
+        android:id="@+id/textukr"
         android:layout_width="172dp"
         android:layout_height="27dp"
         android:layout_marginBottom="22dp"
         android:text="Ukrainian word"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName4"
+        app:layout_constraintBottom_toTopOf="@+id/ukrWord"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+        app:layout_constraintTop_toBottomOf="@+id/text" />
 
     <TextView
-        android:id="@+id/textView35"
+        android:id="@+id/texten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
@@ -103,8 +104,8 @@
         android:text="English word"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintBottom_toTopOf="@+id/enWord"
+        app:layout_constraintEnd_toEndOf="@+id/enWord"
+        app:layout_constraintTop_toBottomOf="@+id/ukrWord" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

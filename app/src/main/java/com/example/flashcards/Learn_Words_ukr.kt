@@ -24,18 +24,14 @@ class Learn_Words_ukr : AppCompatActivity() {
 
     fun menu(view: android.view.View) {
         val menu = Intent(this, Menu_ukr::class.java)
-        startActivity(menu);
+        startActivity(menu)
     }
-
+    open var id:Int =0;
     fun next(view: android.view.View) {
-        var en_word = findViewById(R.id.enWord) as TextView
+        id =+1;
+        var en_word = findViewById<TextView>(R.id.enWord)
 
-        realm.executeTransaction{
 
-            val word: Word = realm.createObject(Word::class.java, 1)
-            word.ukr_word = "ukr_word"
-            word.en_word = "en_word"
-        }
     val words = realm.where(Word::class.java).findAll()
         words.forEach{word ->
             en_word.text = word.en_word
@@ -43,7 +39,7 @@ class Learn_Words_ukr : AppCompatActivity() {
         }
     }
     fun ShowUkrWord(view: android.view.View) {
-        var ukr_word = findViewById(R.id.ukrWord) as TextView
+        var ukr_word = findViewById<TextView>(R.id.ukrWord)
         val words = realm.where(Word::class.java).findAll()
         words.forEach{word ->
             ukr_word.text = word.ukr_word

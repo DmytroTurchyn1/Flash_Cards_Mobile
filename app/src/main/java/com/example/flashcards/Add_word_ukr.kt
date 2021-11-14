@@ -24,24 +24,25 @@ class Add_word_ukr : AppCompatActivity() {
 
     }
 
-    private fun InsertDatatoDB(ukr_word:String,en_word:String ) {
-        realm.executeTransaction{
 
-            val word: Word = realm.createObject(Word::class.java, 1)
-            word.ukr_word = ukr_word
-            word.en_word = en_word
-        }
-    }
 
     fun menu(view: android.view.View) {
         val menu = Intent(this, Menu_ukr::class.java)
         startActivity(menu);
     }
-
+    open var primarykey = 5
     fun save(view: android.view.View) {
-        var ukr_word = findViewById(R.id.ukr_word) as EditText
-        var en_word = findViewById(R.id.en_word) as EditText
+        primarykey++
+        var ukr_word = findViewById<EditText>(R.id.ukr_word)
+        var en_word = findViewById<EditText>(R.id.en_word)
+        realm.executeTransaction{
 
-        InsertDatatoDB(ukr_word.text.toString(),en_word.text.toString())
+            val word: Word = realm.createObject(Word::class.java, primarykey)
+            word.ukr_word = ukr_word.text.toString()
+            word.en_word =
+
+                en_word.text.toString()
+        }
+
     }
 }

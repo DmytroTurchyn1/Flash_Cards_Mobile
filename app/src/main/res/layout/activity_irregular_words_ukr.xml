@@ -8,40 +8,44 @@
     tools:context=".Irregular_words_ukr">
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/en_word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="204dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="244dp"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/ukr_word"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
         android:layout_marginTop="45dp"
+        android:onClick="see_en_forms"
         android:textColor="#000000"
         android:textSize="24sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/textukr"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:visibility="visible" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/next"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
         android:layout_marginTop="52dp"
+        android:onClick="next"
         android:text="Далі"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        app:layout_constraintTop_toBottomOf="@+id/ukr_word" />
 
     <ImageButton
         android:id="@+id/imageButton7"
@@ -58,7 +62,7 @@
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textukr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
@@ -67,10 +71,10 @@
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/texten" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/texten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
@@ -82,7 +86,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"

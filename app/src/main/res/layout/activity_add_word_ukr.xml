@@ -12,25 +12,24 @@
         android:id="@+id/textenword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="106dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="332dp"
         android:text="Англійське слово"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ukr_word" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton5"
         android:layout_width="90dp"
         android:layout_height="88dp"
-        android:layout_marginEnd="312dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
         android:background="#00FFFFFF"
         android:onClick="menu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024"
         app:srcCompat="@mipmap/menu_btn_foreground"
         app:tint="@color/black"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
@@ -52,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="106dp"
-        android:layout_marginTop="142dp"
+        android:layout_marginTop="130dp"
         android:text="Українське слово"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -64,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -73,16 +72,16 @@
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/ukr_word"
+        android:id="@+id/en_word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="388dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textenword"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <Button
@@ -90,12 +89,12 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="76dp"
         android:accessibilityLiveRegion="none"
         android:onClick="save"
         android:text="Зберегти"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ukr_word" />
+        app:layout_constraintTop_toBottomOf="@+id/en_word" />
 </androidx.constraintlayout.widget.ConstraintLayout>

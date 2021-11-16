@@ -8,7 +8,7 @@
     tools:context=".new_words_en">
 
     <Button
-        android:id="@+id/ukr_word"
+        android:id="@+id/en_word"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -8,7 +8,7 @@
     tools:context=".Irregular_words_ukr">
 
     <TextView
-        android:id="@+id/ukr_word"
+        android:id="@+id/en_word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/ukr_word"
+        android:id="@+id/en_word"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
         android:text="Далі"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ukr_word" />
+        app:layout_constraintTop_toBottomOf="@+id/en_word" />
 
     <ImageButton
         android:id="@+id/imageButton7"

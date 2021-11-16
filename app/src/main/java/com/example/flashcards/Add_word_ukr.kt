@@ -35,15 +35,15 @@ class Add_word_ukr : AppCompatActivity() {
     }
 
     fun save(view: android.view.View) {
-        var ukr_word = findViewById<EditText>(R.id.ukr_word)
-        var en_word = findViewById<EditText>(R.id.ukr_word)
+        var ukr_word = findViewById<EditText>(R.id.en_word)
+        var en_word = findViewById<EditText>(R.id.en_word)
         if (ukr_word.text.toString() != ""  && en_word.text.toString() != "") {
             try {
                 primarykey1.primarykey++
 
 
-                var ukr_word = findViewById<EditText>(R.id.ukr_word)
-                var en_word = findViewById<EditText>(R.id.ukr_word)
+                var ukr_word = findViewById<EditText>(R.id.en_word)
+                var en_word = findViewById<EditText>(R.id.en_word)
 
                 realm.executeTransaction {
 

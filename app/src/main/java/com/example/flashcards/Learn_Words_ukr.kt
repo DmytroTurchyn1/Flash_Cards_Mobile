@@ -36,7 +36,7 @@ class Learn_Words_ukr : AppCompatActivity() {
         var en_word = findViewById<TextView>(R.id.enWord)
         en_word.setVisibility(View.VISIBLE)
 
-    val words = realm.where(Word::class.java).findAll()
+    val words = realm.where(Word::class.java).greaterThanOrEqualTo("id",1).findAll()
         words.forEach{word ->
             en_word.text = word.en_word
 

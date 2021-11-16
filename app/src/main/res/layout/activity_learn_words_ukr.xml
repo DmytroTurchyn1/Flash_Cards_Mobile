@@ -12,37 +12,39 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="73dp"
         android:onClick="next"
         android:text="Далі"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textukr" />
+        app:layout_constraintStart_toStartOf="@+id/ukrWord"
+        app:layout_constraintTop_toBottomOf="@+id/ukrWord" />
 
     <Button
         android:id="@+id/enWord"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="33dp"
         android:onClick="ShowUkrWord"
         android:textColor="#000000"
         android:textSize="24sp"
         android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/texten"
         app:layout_constraintTop_toBottomOf="@+id/texten"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButton9"
-        android:layout_width="90dp"
+        android:layout_width="0dp"
         android:layout_height="88dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="49dp"
         android:background="#00FFFFFF"
         android:onClick="menu"
+        app:layout_constraintEnd_toStartOf="@+id/textLearnMyWords"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/menu_btn_foreground"
@@ -53,34 +55,35 @@
         android:id="@+id/ukrWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="412dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="27dp"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/textukr"
+        app:layout_constraintTop_toBottomOf="@+id/textukr" />
 
     <TextView
         android:id="@+id/texten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="135dp"
+        android:layout_marginTop="196dp"
         android:text="Англійське слово:"
         android:textColor="#090909"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLearnMyWords" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textLearnMyWords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="49dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="65dp"
         android:text="Вчити слова"
         android:textColor="#000000"
         android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton9"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -88,11 +91,11 @@
         android:id="@+id/textukr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="103dp"
         android:layout_marginTop="40dp"
         android:text="Українське слово:"
         android:textColor="#090909"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enWord" />
 </androidx.constraintlayout.widget.ConstraintLayout>

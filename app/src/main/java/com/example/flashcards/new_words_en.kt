@@ -26,7 +26,7 @@ class new_words_en : AppCompatActivity() {
     open  val enWord = ArrayList<String>()
     fun next(view: android.view.View) {
         next ++
-        var ukr_word = findViewById<TextView>(R.id.ukr_word)
+        var ukr_word = findViewById<TextView>(R.id.en_word)
         var en_Word = findViewById<TextView>(R.id.en_word)
         en_Word.text = ""
         ukr_word.setVisibility(View.VISIBLE)

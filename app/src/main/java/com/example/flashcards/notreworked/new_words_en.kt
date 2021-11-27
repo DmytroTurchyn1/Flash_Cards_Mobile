@@ -1,43 +1,40 @@
-package com.example.flashcards
+package com.example.flashcards.notreworked
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import com.example.flashcards.R
 
-class new_words_ukr : AppCompatActivity() {
+class new_words_en : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_words_ukr)
-
+        setContentView(R.layout.activity_new_words_en)
     }
-
-
     fun menu(view: android.view.View) {
-        val menu = Intent(this, Menu_ukr::class.java)
+        val menu = Intent(this, Menu_en::class.java)
         startActivity(menu);
-
     }
     var next = 0
-    fun ShowuUkrWord(view: android.view.View) {
-        var ukr_word = findViewById<TextView>(R.id.ukrWord)
+    fun ShowUkrWord(view: android.view.View) {
+        var en_Word = findViewById<TextView>(R.id.en_word)
+        en_Word.text = ""
 
-
-        ukr_word.text = ukrWord[next]
+        en_Word.text = enWord[next]
     }
     open  val ukrWord = ArrayList<String>()
     open  val enWord = ArrayList<String>()
-    fun next(view: View) {
+    fun next(view: android.view.View) {
         next ++
-        var en_word = findViewById<TextView>(R.id.enWord)
-        var ukr_word = findViewById<TextView>(R.id.ukrWord)
-        en_word.setVisibility(View.VISIBLE)
-        ukr_word.text =""
-        en_word.text = ""
+        var ukr_word = findViewById<TextView>(R.id.en_word)
+        var en_Word = findViewById<TextView>(R.id.en_word)
+        en_Word.text = ""
+        ukr_word.setVisibility(View.VISIBLE)
+        ukr_word.text = ""
         enWord.add("time ");
         enWord.add("information");
-        enWord.add("people");
+        enWord.add("  people");
         enWord.add("thing");
         enWord.add("man");
         enWord.add("woman");
@@ -86,7 +83,7 @@ class new_words_ukr : AppCompatActivity() {
         enWord.add("issue");
 
         ukrWord.add("час");
-        ukrWord.add("   інформація");
+        ukrWord.add("інформація");
         ukrWord.add("люди");
         ukrWord.add("річ");
         ukrWord.add(" чоловік");
@@ -136,7 +133,7 @@ class new_words_ukr : AppCompatActivity() {
         ukrWord.add("випуск");
 
 
-        en_word.text = enWord[next]
+        ukr_word.text = ukrWord[next]
 
     }
 }

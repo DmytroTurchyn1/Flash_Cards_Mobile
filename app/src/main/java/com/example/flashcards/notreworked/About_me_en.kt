@@ -1,9 +1,10 @@
-package com.example.flashcards
+package com.example.flashcards.notreworked
 
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.flashcards.R
 
 class About_me_en : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

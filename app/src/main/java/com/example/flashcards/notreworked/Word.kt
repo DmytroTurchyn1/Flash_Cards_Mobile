@@ -1,4 +1,4 @@
-package com.example.flashcards
+package com.example.flashcards.notreworked
 
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey

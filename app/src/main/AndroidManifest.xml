@@ -10,55 +10,55 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlashCards">
         <activity
-            android:name=".Menu_ukr"
+            android:name=".feature.menu.MenuActivity"
             android:exported="false" />
         <activity
             android:name=".Menu_en"
             android:exported="false" />
         <activity
-            android:name=".Learn_Words_ukr"
+            android:name=".notreworked.Learn_Words_ukr"
             android:exported="false" />
         <activity
-            android:name=".Learn_Words_en"
+            android:name=".notreworked.Learn_Words_en"
             android:exported="false" />
         <activity
-            android:name=".Add_word_ukr"
+            android:name=".notreworked.Add_word_ukr"
             android:exported="false" />
         <activity
-            android:name=".Add_word_en"
+            android:name=".notreworked.Add_word_en"
             android:exported="false" />
         <activity
-            android:name=".About_me_ukr"
+            android:name=".notreworked.About_me_ukr"
             android:exported="false" />
         <activity
-            android:name=".About_me_en"
+            android:name=".notreworked.About_me_en"
             android:exported="false" />
         <activity
-            android:name=".Settings_ukr"
+            android:name=".notreworked.Settings_ukr"
             android:exported="false" />
         <activity
-            android:name=".Settings_en"
+            android:name=".notreworked.Settings_en"
             android:exported="false" />
         <activity
-            android:name=".My_words_en"
+            android:name=".notreworked.My_words_en"
             android:exported="false" />
         <activity
-            android:name=".My_words_ukr"
+            android:name=".notreworked.My_words_ukr"
             android:exported="false" />
         <activity
-            android:name=".Home_en"
+            android:name=".notreworked.Home_en"
             android:exported="false" />
         <activity
-            android:name=".Irregular_words_ukr"
+            android:name=".notreworked.Irregular_words_ukr"
             android:exported="false" />
         <activity
-            android:name=".new_words_en"
+            android:name=".notreworked.new_words_en"
             android:exported="false" />
         <activity
-            android:name=".new_words_ukr"
+            android:name=".notreworked.new_words_ukr"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".feature.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,8 +1,9 @@
-package com.example.flashcards
+package com.example.flashcards.notreworked
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.flashcards.R
 
 class My_words_en : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/program_color"
-    tools:context=".My_words_ukr"
+    tools:context=".notreworked.My_words_ukr"
     tools:layout_editor_absoluteX="-4dp"
     tools:layout_editor_absoluteY="43dp">
 

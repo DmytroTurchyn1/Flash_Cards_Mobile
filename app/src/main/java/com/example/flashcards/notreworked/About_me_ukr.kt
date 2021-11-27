@@ -1,9 +1,11 @@
-package com.example.flashcards
+package com.example.flashcards.notreworked
 
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.flashcards.R
+import com.example.flashcards.feature.menu.MenuActivity
 
 class About_me_ukr : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,7 +13,7 @@ class About_me_ukr : AppCompatActivity() {
         setContentView(R.layout.activity_about_me_ukr)
     }
     fun menu_btn(view: android.view.View) {
-        val menu = Intent(this, Menu_ukr::class.java)
+        val menu = Intent(this, MenuActivity::class.java)
         startActivity(menu);
     }
     fun telegram(view: android.view.View) {

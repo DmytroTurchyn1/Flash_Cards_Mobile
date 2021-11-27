@@ -1,13 +1,13 @@
-package com.example.flashcards
+package com.example.flashcards.notreworked
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.view.isVisible
+import com.example.flashcards.R
+import com.example.flashcards.feature.menu.MenuActivity
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
@@ -26,7 +26,7 @@ class Learn_Words_ukr : AppCompatActivity() {
     }
 
     fun menu(view: android.view.View) {
-        val menu = Intent(this, Menu_ukr::class.java)
+        val menu = Intent(this, MenuActivity::class.java)
         startActivity(menu)
     }
     open var id:Int =0;

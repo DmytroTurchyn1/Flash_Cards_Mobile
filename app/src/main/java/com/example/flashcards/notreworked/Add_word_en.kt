@@ -1,10 +1,11 @@
-package com.example.flashcards
+package com.example.flashcards.notreworked
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
+import com.example.flashcards.R
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
@@ -40,7 +41,10 @@ class Add_word_en : AppCompatActivity() {
 
             realm.executeTransaction {
 
-                val word: Word = realm.createObject(Word::class.java, Add_word_ukr.primarykey1.primarykey)
+                val word: Word = realm.createObject(
+                    Word::class.java,
+                    Add_word_ukr.primarykey1.primarykey
+                )
                 word.ukr_word = ukr_word.text.toString()
                 word.en_word = en_word.text.toString()
             }

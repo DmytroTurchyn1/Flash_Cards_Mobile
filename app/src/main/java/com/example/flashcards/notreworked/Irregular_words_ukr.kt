@@ -1,10 +1,12 @@
-package com.example.flashcards
+package com.example.flashcards.notreworked
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import com.example.flashcards.R
+import com.example.flashcards.feature.menu.MenuActivity
 
 class Irregular_words_ukr : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,7 +15,7 @@ class Irregular_words_ukr : AppCompatActivity() {
     }
 
     fun menu(view: android.view.View) {
-        val menu = Intent(this, Menu_ukr::class.java)
+        val menu = Intent(this, MenuActivity::class.java)
         startActivity(menu);
     }
     var next = 0

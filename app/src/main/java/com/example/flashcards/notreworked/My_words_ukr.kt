@@ -1,8 +1,10 @@
-package com.example.flashcards
+package com.example.flashcards.notreworked
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.flashcards.R
+import com.example.flashcards.feature.menu.MenuActivity
 
 class My_words_ukr : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,7 +13,7 @@ class My_words_ukr : AppCompatActivity() {
     }
 
     fun menu(view: android.view.View) {
-        val menu = Intent(this, Menu_ukr::class.java)
+        val menu = Intent(this, MenuActivity::class.java)
         startActivity(menu);
     }
 

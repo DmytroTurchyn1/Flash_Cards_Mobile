@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/program_color"
-    tools:context=".new_words_ukr">
+    tools:context=".notreworked.new_words_ukr">
 
     <Button
         android:id="@+id/enWord"

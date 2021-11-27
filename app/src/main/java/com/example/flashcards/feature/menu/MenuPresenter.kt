@@ -8,9 +8,9 @@ class MenuPresenter(view: MenuView) {
         get() = viewReference.get()
 
     fun onMainPageButtonClicked() = view?.navigateToMainActivity()
-    fun onNewWordsPageButtonClicked() = view?.navigateToMainActivity()
-    fun onIrregularWordsPageButtonClicked() = view?.navigateToMainActivity()
-    fun onMyWordsPageButtonClicked() = view?.navigateToMainActivity()
-    fun onSettingsPageButtonClicked() = view?.navigateToMainActivity()
-    fun onAboutProgramPageButtonClicked() = view?.navigateToMainActivity()
+    fun onNewWordsPageButtonClicked() = view?.navigateToNewWords()
+    fun onIrregularWordsPageButtonClicked() = view?.navigateToIrregularWords()
+    fun onMyWordsPageButtonClicked() = view?.navigateToMyWords()
+    fun onSettingsPageButtonClicked() = view?.navigateToSettings()
+    fun onAboutProgramPageButtonClicked() = view?.navigateToAboutProgram()
 }

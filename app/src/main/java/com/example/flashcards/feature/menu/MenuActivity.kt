@@ -2,9 +2,10 @@ package com.example.flashcards.feature.menu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.flashcards.*
 import com.example.flashcards.util.Launcher
-import kotlinx.android.synthetic.main.activity_menu.*
+
 
 class MenuActivity : AppCompatActivity(), MenuView {
     private lateinit var presenter: MenuPresenter
@@ -13,12 +14,33 @@ class MenuActivity : AppCompatActivity(), MenuView {
         setContentView(R.layout.activity_menu)
 
         presenter = MenuPresenter(this)
-
+        val btnMainPage = findViewById<View>(R.id.btnMenu)
         btnMainPage.setOnClickListener { presenter.onMainPageButtonClicked() }
+        val btnNewWords = findViewById<View>(R.id.btnNewWords)
+        btnNewWords.setOnClickListener { presenter.onNewWordsPageButtonClicked() }
+        val btnIrregularWords = findViewById<View>(R.id.btnIrregularWords)
+        btnIrregularWords.setOnClickListener { presenter.onIrregularWordsPageButtonClicked() }
+        val btnMyWords = findViewById<View>(R.id.btnMyWords)
+        btnMyWords.setOnClickListener { presenter.onMyWordsPageButtonClicked() }
+        val btnSettings = findViewById<View>(R.id.btnSettings)
+        btnSettings.setOnClickListener { presenter.onSettingsPageButtonClicked() }
+        val btnAboutProgram = findViewById<View>(R.id.btnAboutProgram)
+        btnAboutProgram.setOnClickListener { presenter.onAboutProgramPageButtonClicked() }
     }
 
     override fun navigateToMainActivity() {
-        Launcher.startMenuActivity(this)
+        Launcher.startMainActivity(this)
+    }
+    override fun navigateToNewWords() {
+        Launcher.startNewWordsUkr(this)
+    }override fun navigateToIrregularWords() {
+        Launcher.startIrregularWordsActivity(this)
+    }override fun navigateToMyWords() {
+        Launcher.startMyWordsActivity(this)
+    }override fun navigateToSettings() {
+        Launcher.startSettingsActivity(this)
+    }override fun navigateToAboutProgram() {
+        Launcher.startAboutProgramActivity(this)
     }
 
     //    fun home_ukr(view: android.view.View) {

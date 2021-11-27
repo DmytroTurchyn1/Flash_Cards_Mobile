@@ -38,7 +38,7 @@
         />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnNewWords"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,34 +51,19 @@
         />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnIrregularWords"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="108dp"
-        android:onClick="settings"
-        android:text="@string/settings_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
-        />
-
-    <Button
-        android:id="@+id/button6"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="146dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="124dp"
+        android:layout_marginStart="104dp"
         android:layout_marginTop="16dp"
-        android:onClick="about_program"
-        android:text="@string/about_program_text"
+        android:onClick="irregular_words"
+        android:text="@string/irregular_words_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/btnNewWords" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnMyWords"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,20 +72,33 @@
         android:onClick="my_words"
         android:text="@string/my_words_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/btnIrregularWords" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnSettings"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="117dp"
-        android:layout_marginTop="12dp"
-        android:onClick="irregular_words"
-        android:text="@string/irregular_words_text"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="108dp"
+        android:onClick="settings"
+        android:text="@string/settings_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/btnMyWords"
+        />
+
+    <Button
+        android:id="@+id/btnAboutProgram"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="146dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="16dp"
+        android:onClick="about_program"
+        android:text="@string/about_program_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSettings"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

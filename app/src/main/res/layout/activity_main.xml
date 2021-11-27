@@ -19,11 +19,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/menu_btn_foreground"
         app:tint="#0B0B0B"
-        tools:ignore="ContentDescription"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:srcCompat="@mipmap/menu_btn_foreground"
-        />
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+        tools:srcCompat="@mipmap/menu_btn_foreground" />
 
     <ImageView
         android:id="@+id/imageView"

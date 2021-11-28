@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.flashcards.R
+import com.example.flashcards.feature.addword.AddWordActivity
 import com.example.flashcards.feature.menu.MenuActivity
 
 class My_words_ukr : AppCompatActivity() {
@@ -22,7 +23,7 @@ class My_words_ukr : AppCompatActivity() {
         startActivity(menu);
     }
     fun addWord(view: android.view.View) {
-        val menu = Intent(this, Add_word_ukr::class.java)
+        val menu = Intent(this, AddWordActivity::class.java)
         startActivity(menu);
     }
 }

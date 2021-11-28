@@ -1,4 +1,4 @@
-package com.example.flashcards.notreworked
+package com.example.flashcards.feature.addword
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,14 +7,16 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.flashcards.R
 import com.example.flashcards.feature.menu.MenuActivity
+import com.example.flashcards.notreworked.Word
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
-class Add_word_ukr : AppCompatActivity() {
+class AddWordActivity : AppCompatActivity() {
+    // TODO move realm to repository
     val realm by lazy{ Realm.getDefaultInstance()}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_word_ukr)
+        setContentView(R.layout.activity_add_word)
         Realm.init(this)
         val config = RealmConfiguration.Builder()
             .allowWritesOnUiThread(true)

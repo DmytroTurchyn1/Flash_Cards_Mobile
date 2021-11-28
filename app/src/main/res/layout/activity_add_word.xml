@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/program_color"
-    tools:context=".notreworked.Add_word_ukr">
+    tools:context=".feature.addword.AddWordActivity">
 
     <TextView
         android:id="@+id/textenword"

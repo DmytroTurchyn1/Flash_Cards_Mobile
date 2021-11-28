@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
 import com.example.flashcards.R
+import com.example.flashcards.feature.addword.AddWordActivity
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
@@ -43,7 +44,7 @@ class Add_word_en : AppCompatActivity() {
 
                 val word: Word = realm.createObject(
                     Word::class.java,
-                    Add_word_ukr.primarykey1.primarykey
+                    AddWordActivity.primarykey1.primarykey
                 )
                 word.ukr_word = ukr_word.text.toString()
                 word.en_word = en_word.text.toString()

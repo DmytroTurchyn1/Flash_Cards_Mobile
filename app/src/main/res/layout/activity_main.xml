@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/menu_btn_foreground"
         app:tint="#0B0B0B"
-        tools:ignore="ContentDescription,SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+        tools:ignore="ContentDescription"
         tools:srcCompat="@mipmap/menu_btn_foreground" />
 
     <ImageView
@@ -32,6 +32,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnMenu"
         app:srcCompat="@mipmap/logo_of_program_foreground"
+        tools:ignore="ContentDescription"
         />
 
     <TextView

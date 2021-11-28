@@ -11,6 +11,7 @@
         android:theme="@style/Theme.FlashCards">
         <activity
             android:name=".feature.menu.MenuActivity"
+            android:screenOrientation="fullSensor"
             android:exported="false" />
         <activity
             android:name=".Menu_en"
@@ -22,7 +23,7 @@
             android:name=".notreworked.Learn_Words_en"
             android:exported="false" />
         <activity
-            android:name=".notreworked.Add_word_ukr"
+            android:name=".feature.addword.AddWordActivity"
             android:exported="false" />
         <activity
             android:name=".notreworked.Add_word_en"

@@ -1,16 +1,21 @@
 package com.example.flashcards.feature.menu
 
-import java.lang.ref.SoftReference
+import java.lang.ref.WeakReference
 
 class MenuPresenter(view: MenuView) {
-    private val viewReference = SoftReference(view)
+    private val viewReference = WeakReference(view)
     private val view
         get() = viewReference.get()
 
     fun onMainPageButtonClicked() = view?.navigateToMainActivity()
-    fun onNewWordsPageButtonClicked() = view?.navigateToNewWords()
-    fun onIrregularWordsPageButtonClicked() = view?.navigateToIrregularWords()
-    fun onMyWordsPageButtonClicked() = view?.navigateToMyWords()
-    fun onSettingsPageButtonClicked() = view?.navigateToSettings()
-    fun onAboutProgramPageButtonClicked() = view?.navigateToAboutProgram()
+
+    fun onNewWordsPageButtonClicked() = view?.navigateToNewWordsActivity()
+
+    fun onIrregularWordsPageButtonClicked() = view?.navigateToIrregularWordsActivity()
+
+    fun onMyWordsPageButtonClicked() = view?.navigateToMyWordsActivity()
+
+    fun onSettingsPageButtonClicked() = view?.navigateToSettingsActivity()
+
+    fun onAboutProgramPageButtonClicked() = view?.navigateToAboutProgramActivity()
 }

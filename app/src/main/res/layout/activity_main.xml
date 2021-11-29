@@ -17,7 +17,7 @@
         app:srcCompat="@mipmap/menu_btn_foreground"
         app:tint="#0B0B0B"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp"
         tools:srcCompat="@mipmap/menu_btn_foreground" />
 

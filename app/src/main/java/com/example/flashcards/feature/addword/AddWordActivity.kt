@@ -33,7 +33,7 @@ class AddWordActivity : AppCompatActivity() {
         val menu = Intent(this, MenuActivity::class.java)
         startActivity(menu);
     }
-    object primarykey1{
+    public object primarykey1{
         var primarykey = 5
 
     }

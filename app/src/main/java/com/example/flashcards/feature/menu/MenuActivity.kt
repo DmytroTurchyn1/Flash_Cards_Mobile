@@ -25,8 +25,7 @@ class MenuActivity : AppCompatActivity(), MenuView {
 
         btnSettings.setOnClickListener { presenter.onSettingsPageButtonClicked() }
 
-        btnAboutProgram.setOnClickListener { presenter.onAboutProgramPageButtonClicked()
-        println()}
+        btnAboutProgram.setOnClickListener { presenter.onAboutProgramPageButtonClicked() }
     }
 
     override fun navigateToMainActivity() = Launcher.startMainActivity(this)

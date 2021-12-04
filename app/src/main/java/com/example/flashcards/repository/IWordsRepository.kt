@@ -1,6 +1,8 @@
 package com.example.flashcards.repository
 
+import com.example.flashcards.model.local.Word
+
 interface IWordsRepository {
-    fun saveWord(nativeWord: String, englishWord: String)
-    fun getWords(): Map<String, String>
+    fun saveWord(word: Word)
+    fun getWords(): List<Word>
 }

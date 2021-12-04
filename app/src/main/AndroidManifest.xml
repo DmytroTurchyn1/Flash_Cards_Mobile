@@ -3,6 +3,7 @@
     package="com.example.flashcards">
 
     <application
+        android:name="com.example.flashcards.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,11 +12,8 @@
         android:theme="@style/Theme.FlashCards">
         <activity
             android:name=".feature.menu.MenuActivity"
-            android:screenOrientation="fullSensor"
-            android:exported="false" />
-        <activity
-            android:name=".Menu_en"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".notreworked.Learn_Words_ukr"
             android:exported="false" />

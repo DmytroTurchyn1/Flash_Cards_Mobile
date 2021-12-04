@@ -1,16 +1,13 @@
-package com.example.flashcards.notreworked
+package com.example.flashcards.model.data
 
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 import io.realm.annotations.RealmClass
 
 @RealmClass
-open class Word: RealmObject() {
+open class WordRealm : RealmObject() {
     @PrimaryKey
     var id = 0
-    var ukr_word =""
-    var en_word =""
-
-
-
+    var nativeWord = ""
+    var englishWord = ""
 }

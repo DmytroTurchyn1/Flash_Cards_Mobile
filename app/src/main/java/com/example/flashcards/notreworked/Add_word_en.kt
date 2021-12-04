@@ -13,7 +13,7 @@ import io.realm.RealmConfiguration
 import java.lang.Exception
 
 class Add_word_en : AppCompatActivity() {
-    val realm by lazy{ Realm.getDefaultInstance()}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_word_en)
@@ -26,8 +26,8 @@ class Add_word_en : AppCompatActivity() {
         Realm.setDefaultConfiguration(config)
     }
     fun menu(view: android.view.View) {
-        val menu = Intent(this, Menu_en::class.java)
-        startActivity(menu);
+//        val menu = Intent(this, Menu_en::class.java)
+//        startActivity(menu);
     }
 
     fun add(view: android.view.View) {
@@ -40,15 +40,15 @@ class Add_word_en : AppCompatActivity() {
             var ukr_word = findViewById<EditText>(R.id.en_word)
             var en_word = findViewById<EditText>(R.id.en_word)
 
-            realm.executeTransaction {
-
-                val word: Word = realm.createObject(
-                    Word::class.java,
-                    AddWordActivity.primarykey1.primarykey
-                )
-                word.ukr_word = ukr_word.text.toString()
-                word.en_word = en_word.text.toString()
-            }
+//            realm.executeTransaction {
+//
+//                val word: Word = realm.createObject(
+//                    Word::class.java,
+//                    AddWordActivity.primarykey1.primarykey
+//                )
+//                word.nativeWord = ukr_word.text.toString()
+//                word.englishWord = en_word.text.toString()
+//            }
 
             val success = Toast.makeText(applicationContext, "Word added!", Toast.LENGTH_SHORT)
             success.show()

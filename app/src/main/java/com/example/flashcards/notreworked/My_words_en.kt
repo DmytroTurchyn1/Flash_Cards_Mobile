@@ -11,8 +11,8 @@ class My_words_en : AppCompatActivity() {
         setContentView(R.layout.activity_my_words_en)
     }
     fun menu_btn(view: android.view.View) {
-        val menu = Intent(this, Menu_en::class.java)
-        startActivity(menu);
+//        val menu = Intent(this, Menu_en::class.java)
+//        startActivity(menu);
     }
     fun learnWords(view: android.view.View) {
         val menu = Intent(this, Learn_Words_en::class.java)

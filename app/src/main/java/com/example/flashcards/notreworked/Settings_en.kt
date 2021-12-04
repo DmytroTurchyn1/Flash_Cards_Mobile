@@ -17,7 +17,7 @@ class Settings_en : AppCompatActivity() {
         startActivity(English_vercion);
     }
     fun menu_btn(view: android.view.View) {
-        val menu = Intent(this, Menu_en::class.java)
-        startActivity(menu);
+//        val menu = Intent(this, Menu_en::class.java)
+//        startActivity(menu);
     }
 }

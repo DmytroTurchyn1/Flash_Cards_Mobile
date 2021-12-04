@@ -1,33 +1,23 @@
 package com.example.flashcards.repository;
 
 import androidx.annotation.NonNull;
-
-import com.example.flashcards.feature.addword.AddWordActivity;
-import com.example.flashcards.notreworked.Word;
-
-import java.util.Map;
-
+import com.example.flashcards.model.data.WordMapper;
+import com.example.flashcards.model.data.WordRealm;
+import com.example.flashcards.model.local.Word;
+import java.util.List;
 import io.realm.Realm;
-import io.realm.RealmCollection;
-import io.realm.RealmConfiguration;
+import io.realm.RealmResults;
 
 public class WordsRepository implements IWordsRepository {
     private static IWordsRepository repository;
     private static Realm realm;
+    private int primaryKey = 14;
+
     private WordsRepository() {
         realm = Realm.getDefaultInstance();
-
-        Realm.init(this);
-            RealmConfiguration config = new RealmConfiguration.Builder();
-                .allowWritesOnUiThread(true)
-                .name("words.realm").build();
-
-
-        Realm.setDefaultConfiguration(config);
     }
 
     public static IWordsRepository getInstance() {
-
         if (repository == null) {
             repository = new WordsRepository();
         }
@@ -35,25 +25,21 @@ public class WordsRepository implements IWordsRepository {
     }
 
     @Override
-    public void saveWord(@NonNull String nativeWord, @NonNull String englishWord) {
-        realm.executeTransaction {
-
-            Word word  = realm.createObject(Word::class.java, AddWordActivity.primarykey1.primarykey)
-            word.ukr_word = nativeWord;
-            word.en_word = englishWord;
-
-
-
-        }
+    public void saveWord(@NonNull Word word) {
+        realm.executeTransaction(
+                o -> {
+                    WordRealm wordRealm = realm.createObject(WordRealm.class, primaryKey++);
+                    wordRealm.setNativeWord(word.nativeWord);
+                    wordRealm.setEnglishWord(word.englishWord);
+                }
+        );
     }
 
     @NonNull
     @Override
-    public Map<String, String> getWords()
-    {
-        Realm words = realm.where(Word::class.java).findAll();
-
-
-
+    public List<Word> getWords() {
+        RealmResults<WordRealm> words = realm.where(WordRealm.class).findAll();
+        WordMapper wordMapper = new WordMapper();
+        return wordMapper.mapRealm(words);
     }
 }

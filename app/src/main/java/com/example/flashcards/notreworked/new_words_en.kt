@@ -13,8 +13,8 @@ class new_words_en : AppCompatActivity() {
         setContentView(R.layout.activity_new_words_en)
     }
     fun menu(view: android.view.View) {
-        val menu = Intent(this, Menu_en::class.java)
-        startActivity(menu);
+//        val menu = Intent(this, Menu_en::class.java)
+//        startActivity(menu);
     }
     var next = 0
     fun ShowUkrWord(view: android.view.View) {

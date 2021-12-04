@@ -7,24 +7,13 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.flashcards.R
 import com.example.flashcards.feature.menu.MenuActivity
-import com.example.flashcards.notreworked.Word
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
 class AddWordActivity : AppCompatActivity() {
-    // TODO move realm to repository
-    val realm by lazy{ Realm.getDefaultInstance()}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_word)
-        Realm.init(this)
-        val config = RealmConfiguration.Builder()
-            .allowWritesOnUiThread(true)
-            .name("words.realm").build()
-
-
-        Realm.setDefaultConfiguration(config)
-
     }
 
 
@@ -49,14 +38,14 @@ class AddWordActivity : AppCompatActivity() {
                 var ukr_word = findViewById<EditText>(R.id.en_word)
                 var en_word = findViewById<EditText>(R.id.en_word)
 
-                realm.executeTransaction {
-
-                    val word: Word = realm.createObject(Word::class.java, primarykey1.primarykey)
-                    word.ukr_word = ukr_word.text.toString()
-                    word.en_word =
-
-                        en_word.text.toString()
-                }
+//                realm.executeTransaction {
+//
+//                    val word: Word = realm.createObject(Word::class.java, primarykey1.primarykey)
+//                    word.nativeWord = ukr_word.text.toString()
+//                    word.englishWord =
+//
+//                        en_word.text.toString()
+//                }
 
                 val success = Toast.makeText(applicationContext, "Слово додано!", Toast.LENGTH_SHORT)
                 success.show()

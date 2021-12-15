@@ -19,20 +19,17 @@ class AddWordActivity : AppCompatActivity() {
 
 
     fun menu(view: android.view.View) {
-        val menu = Intent(this, MenuActivity::class.java)
-        startActivity(menu);
+       // val menu = Intent(this, MenuActivity::class.java)
+        //startActivity(menu);
     }
-    public object primarykey1{
-        var primarykey = 5
 
-    }
 
     fun save(view: android.view.View) {
         var ukr_word = findViewById<EditText>(R.id.en_word)
         var en_word = findViewById<EditText>(R.id.en_word)
         if (ukr_word.text.toString() != ""  && en_word.text.toString() != "") {
             try {
-                primarykey1.primarykey++
+
 
 
                 var ukr_word = findViewById<EditText>(R.id.en_word)
@@ -42,11 +39,11 @@ class AddWordActivity : AppCompatActivity() {
 //
 //                    val word: Word = realm.createObject(Word::class.java, primarykey1.primarykey)
 //                    word.nativeWord = ukr_word.text.toString()
-//                    word.englishWord =
+//                     word.englishWord =
 //
 //                        en_word.text.toString()
 //                }
-
+                 //override fun   onSaveBtnClicked() {}
                 val success = Toast.makeText(applicationContext, "Слово додано!", Toast.LENGTH_SHORT)
                 success.show()
             } catch (e: Exception) {

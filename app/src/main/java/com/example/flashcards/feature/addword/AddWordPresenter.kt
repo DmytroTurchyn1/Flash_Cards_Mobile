@@ -6,7 +6,8 @@ import com.example.flashcards.repository.WordsRepository
 class AddWordPresenter {
     private val repository = WordsRepository.getInstance()
 
-    fun onSaveBtmClicked(nativeWord: String, englishWord: String) {
+    fun onSaveBtnClicked(nativeWord: String, englishWord: String) {
         repository.saveWord(Word(nativeWord, englishWord))
     }
+
 }

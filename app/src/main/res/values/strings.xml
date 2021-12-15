@@ -8,4 +8,6 @@
     <string name="about_program_text">Про Програму</string>
     <string name="my_words_text">Мої слова</string>
     <string name="irregular_words_text">Неправильні дієслова</string>
+    <string name="next">Далі</string>
+    <string name="learn_words_title">Вчити слова</string>
 </resources>

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.flashcards.R
+import com.example.flashcards.feature.learnwords.LearnWordsActivity
 
 class My_words_en : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +16,7 @@ class My_words_en : AppCompatActivity() {
 //        startActivity(menu);
     }
     fun learnWords(view: android.view.View) {
-        val menu = Intent(this, Learn_Words_en::class.java)
+        val menu = Intent(this, LearnWordsActivity::class.java)
         startActivity(menu);
     }
     fun addWord(view: android.view.View) {

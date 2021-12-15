@@ -1,35 +1,33 @@
-package com.example.flashcards.notreworked
+package com.example.flashcards.feature.learnwords
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
-import android.widget.Toast
 import com.example.flashcards.R
 import io.realm.Realm
 import io.realm.RealmConfiguration
+import kotlinx.android.synthetic.main.activity_learn_words.*
 
-class Learn_Words_en : AppCompatActivity() {
-    val realm by lazy { Realm.getDefaultInstance() }
+class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
+
+    private val presenter = LearnWordsPresenter(this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_learn_words_en)
-        Realm.init(this)
-        val config = RealmConfiguration.Builder()
-            .allowWritesOnUiThread(true)
-            .name("words.realm").build()
+        setContentView(R.layout.activity_learn_words)
 
+        presenter.onActivityCreated()
 
-        Realm.setDefaultConfiguration(config)
-
-
+        ibMenu.setOnClickListener { presenter.onMenuBtnClicked() }
+        btnShowEnglishWord.setOnClickListener { presenter.onShowEnlishWordClicked }
+        btnNext.setOnClickListener { presenter.onNextButtonClicked() }
     }
 
-    fun menu(view: android.view.View) {
-//        val menu = Intent(this, Menu_en::class.java)
-//        startActivity(menu);
+    override fun onStart() {
+        super.onStart()
+        presenter.onActivityStarted()
     }
+
+
 
     open var id: Int = +1
     fun next(view: android.view.View) {

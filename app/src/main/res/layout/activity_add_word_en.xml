@@ -19,11 +19,11 @@
         android:text="Add"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/enWord"
-        app:layout_constraintTop_toBottomOf="@+id/enWord" />
+        app:layout_constraintEnd_toEndOf="@+id/tvEnglishWord"
+        app:layout_constraintTop_toBottomOf="@+id/tvEnglishWord" />
 
     <EditText
-        android:id="@+id/enWord"
+        android:id="@+id/tvEnglishWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="49dp"
@@ -33,21 +33,21 @@
         app:layout_constraintBottom_toTopOf="@+id/add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texten"
+        app:layout_constraintTop_toBottomOf="@+id/tvEnglishWordTitle"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/ukrWord"
+        android:id="@+id/btnShowEnglishWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/texten"
+        app:layout_constraintBottom_toTopOf="@+id/tvEnglishWordTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textukr"
+        app:layout_constraintTop_toBottomOf="@+id/tvNativeWordTitle"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -60,7 +60,7 @@
         android:onClick="menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/text"
+        app:layout_constraintEnd_toStartOf="@+id/tvTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024"
@@ -68,7 +68,7 @@
         app:tint="@color/black" />
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="104dp"
@@ -77,26 +77,26 @@
         android:text="Add a word"
         android:textColor="#000000"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/textukr"
+        app:layout_constraintBottom_toTopOf="@+id/tvNativeWordTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton4"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textukr"
+        android:id="@+id/tvNativeWordTitle"
         android:layout_width="172dp"
         android:layout_height="27dp"
         android:layout_marginBottom="22dp"
         android:text="Ukrainian word"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/ukrWord"
+        app:layout_constraintBottom_toTopOf="@+id/btnShowEnglishWord"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
     <TextView
-        android:id="@+id/texten"
+        android:id="@+id/tvEnglishWordTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
@@ -104,8 +104,8 @@
         android:text="English word"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/enWord"
-        app:layout_constraintEnd_toEndOf="@+id/enWord"
-        app:layout_constraintTop_toBottomOf="@+id/ukrWord" />
+        app:layout_constraintBottom_toTopOf="@+id/tvEnglishWord"
+        app:layout_constraintEnd_toEndOf="@+id/tvEnglishWord"
+        app:layout_constraintTop_toBottomOf="@+id/btnShowEnglishWord" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

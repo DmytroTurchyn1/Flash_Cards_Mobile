@@ -8,7 +8,7 @@
     tools:context=".notreworked.new_words_ukr">
 
     <Button
-        android:id="@+id/enWord"
+        android:id="@+id/tvEnglishWord"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
         android:textSize="24sp"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texten"
+        app:layout_constraintTop_toBottomOf="@+id/tvEnglishWordTitle"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
@@ -33,7 +33,7 @@
         android:text="Далі"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textukr" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNativeWordTitle" />
 
     <ImageButton
         android:id="@+id/imageButton13"
@@ -51,7 +51,7 @@
         tools:srcCompat="@mipmap/menu_btn_foreground" />
 
     <TextView
-        android:id="@+id/texten"
+        android:id="@+id/tvEnglishWordTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
@@ -60,10 +60,10 @@
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
     <TextView
-        android:id="@+id/textukr"
+        android:id="@+id/tvNativeWordTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -72,10 +72,10 @@
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enWord" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEnglishWord" />
 
     <TextView
-        android:id="@+id/ukrWord"
+        android:id="@+id/btnShowEnglishWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="144dp"
@@ -86,7 +86,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"

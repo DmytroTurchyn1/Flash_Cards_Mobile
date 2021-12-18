@@ -7,5 +7,5 @@ class MainPresenter(view: MainView) {
     private val view
         get() = viewReference.get()
 
-    fun onMenuBtnClicked() = view?.navigateToAddWordActivity()
+    fun onMenuBtnClicked() = view?.navigateToMenuActivity()
 }

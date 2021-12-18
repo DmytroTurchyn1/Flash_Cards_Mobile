@@ -75,7 +75,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvEnglishWord" />
 
     <TextView
-        android:id="@+id/btnShowEnglishWord"
+        android:id="@+id/btnShowNativeWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="144dp"

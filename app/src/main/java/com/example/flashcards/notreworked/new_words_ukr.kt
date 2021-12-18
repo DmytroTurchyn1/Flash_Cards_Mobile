@@ -23,7 +23,7 @@ class new_words_ukr : AppCompatActivity() {
     }
     var next = 0
     fun ShowuUkrWord(view: android.view.View) {
-        var ukr_word = findViewById<TextView>(R.id.btnShowEnglishWord)
+        var ukr_word = findViewById<TextView>(R.id.btnShowNativeWord)
 
 
         ukr_word.text = ukrWord[next]
@@ -33,7 +33,7 @@ class new_words_ukr : AppCompatActivity() {
     fun next(view: View) {
         next ++
         var en_word = findViewById<TextView>(R.id.tvEnglishWord)
-        var ukr_word = findViewById<TextView>(R.id.btnShowEnglishWord)
+        var ukr_word = findViewById<TextView>(R.id.btnShowNativeWord)
         en_word.setVisibility(View.VISIBLE)
         ukr_word.text =""
         en_word.text = ""

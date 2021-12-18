@@ -37,7 +37,7 @@
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/btnShowEnglishWord"
+        android:id="@+id/btnShowNativeWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
@@ -90,7 +90,7 @@
         android:text="Ukrainian word"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnShowEnglishWord"
+        app:layout_constraintBottom_toTopOf="@+id/btnShowNativeWord"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
@@ -106,6 +106,6 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/tvEnglishWord"
         app:layout_constraintEnd_toEndOf="@+id/tvEnglishWord"
-        app:layout_constraintTop_toBottomOf="@+id/btnShowEnglishWord" />
+        app:layout_constraintTop_toBottomOf="@+id/btnShowNativeWord" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

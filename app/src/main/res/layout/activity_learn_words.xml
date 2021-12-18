@@ -16,12 +16,11 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
         android:background="#00FFFFFF"
-        android:onClick="menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/menu_btn_foreground"
         app:tint="@color/black"
-        />
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tvTitle"
@@ -50,19 +49,17 @@
         />
 
     <Button
-        android:id="@+id/btnShowEnglishWord"
+        android:id="@+id/btnShowNativeWord"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"
         android:layout_marginTop="20dp"
-        android:onClick="see_en_form"
         android:textColor="#000000"
         android:textSize="24sp"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNativeWordTitle"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tvNativeWordTitle" />
 
     <TextView
         android:id="@+id/tvEnglishWordTitle"
@@ -74,7 +71,7 @@
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnShowEnglishWord"
+        app:layout_constraintTop_toBottomOf="@+id/btnShowNativeWord"
         />
 
     <TextView
@@ -96,11 +93,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="163dp"
         android:layout_marginTop="47dp"
-        android:onClick="next"
         android:text="@string/next"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEnglishWord"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tvEnglishWord" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

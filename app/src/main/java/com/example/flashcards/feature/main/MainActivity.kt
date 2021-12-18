@@ -16,5 +16,5 @@ class MainActivity : AppCompatActivity(), MainView {
         btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
     }
 
-    override fun navigateToAddWordActivity() = Launcher.startMenuActivity(this)
+    override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
 }

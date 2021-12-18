@@ -39,14 +39,13 @@
         android:id="@+id/tvNativeWordTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="149dp"
-        android:text="Ukrainian word:"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="148dp"
+        android:text="@string/learn_words_native_word"
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
     <Button
         android:id="@+id/btnShowNativeWord"
@@ -65,14 +64,13 @@
         android:id="@+id/tvEnglishWordTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="27dp"
-        android:text="English word:"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/learn_words_english_word"
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnShowNativeWord"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/btnShowNativeWord" />
 
     <TextView
         android:id="@+id/tvEnglishWord"

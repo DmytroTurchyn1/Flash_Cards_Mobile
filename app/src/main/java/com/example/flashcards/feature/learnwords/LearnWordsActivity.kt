@@ -17,7 +17,7 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
         presenter.onActivityCreated()
 
         ibMenu.setOnClickListener { presenter.onMenuBtnClicked() }
-        btnShowNativeWord.setOnClickListener { presenter.onShowEnlishWordClicked() }
+        btnShowNativeWord.setOnClickListener { presenter.onShowEnglishWordClicked() }
         btnNext.setOnClickListener { presenter.onNextButtonClicked() }
     }
 

@@ -17,19 +17,11 @@ class LearnWordsPresenter(view: LearnWordsView) {
         words = wordsRepository.getWords()
     }
 
-    fun onActivityStarted() {
-        //show first word on screen
-        view?.showNativeWord(words[id].nativeWord)
-    }
+    fun onActivityStarted() = view?.showNativeWord(words[id].nativeWord)
 
-    fun onShowEnlishWordClicked() {
-        //show first word on screen
-        view?.showEnglishWord(words[id].englishWord)
-    }
-    fun onNextButtonClicked() {
-        //show first word on screen
-        view?.showNativeWord(words[id].nativeWord)
-    }
+    fun onShowEnglishWordClicked() = view?.showEnglishWord(words[id].englishWord)
+
+    fun onNextButtonClicked() = view?.showNativeWord(words[id].nativeWord)
 
     fun onMenuBtnClicked() = view?.navigateToMenuActivity()
 }

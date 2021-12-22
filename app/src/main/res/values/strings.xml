@@ -10,4 +10,6 @@
     <string name="irregular_words_text">Неправильні дієслова</string>
     <string name="next">Далі</string>
     <string name="learn_words_title">Вчити слова</string>
+    <string name="learn_words_native_word">Українське слово:</string>
+    <string name="learn_words_english_word">Англійське слово:</string>
 </resources>

@@ -17,8 +17,8 @@
         android:onClick="next"
         android:text="Далі"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/btnShowEnglishWord"
-        app:layout_constraintTop_toBottomOf="@+id/btnShowEnglishWord" />
+        app:layout_constraintStart_toStartOf="@+id/btnShowNativeWord"
+        app:layout_constraintTop_toBottomOf="@+id/btnShowNativeWord" />
 
     <Button
         android:id="@+id/tvEnglishWord"
@@ -52,7 +52,7 @@
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/btnShowEnglishWord"
+        android:id="@+id/btnShowNativeWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"

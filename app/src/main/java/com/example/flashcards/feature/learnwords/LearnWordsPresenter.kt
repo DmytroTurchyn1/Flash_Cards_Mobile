@@ -11,16 +11,17 @@ class LearnWordsPresenter(view: LearnWordsView) {
 
     private val wordsRepository = WordsRepository.getInstance()
     private var words = listOf<Word>()
+    private var id: Int = 1
 
     fun onActivityCreated() {
         words = wordsRepository.getWords()
     }
 
-    fun onActivityStarted() {
-        //show first word on screen
-        view?.showNativeWord(words[0].nativeWord)
-    }
+    fun onActivityStarted() = view?.showNativeWord(words[id].nativeWord)
+
+    fun onShowEnglishWordClicked() = view?.showEnglishWord(words[id].englishWord)
+
+    fun onNextButtonClicked() = view?.showNativeWord(words[id].nativeWord)
 
     fun onMenuBtnClicked() = view?.navigateToMenuActivity()
-
 }

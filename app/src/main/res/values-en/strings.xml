@@ -10,4 +10,6 @@
     <string name="irregular_words_text">Irregular Verbs</string>
     <string name="next">Next</string>
     <string name="learn_words_title">Learn words</string>
+    <string name="learn_words_native_word">Ukrainian word:</string>
+    <string name="learn_words_english_word">English word:</string>
 </resources>

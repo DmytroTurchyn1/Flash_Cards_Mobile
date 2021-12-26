@@ -3,6 +3,8 @@ package com.example.flashcards.feature.learnwords
 import com.example.flashcards.model.local.Word
 import com.example.flashcards.repository.WordsRepository
 import java.lang.ref.WeakReference
+import kotlin.random.Random
+import io.realm.annotations.PrimaryKey
 
 class LearnWordsPresenter(view: LearnWordsView) {
     private val viewReference = WeakReference(view)
@@ -17,11 +19,11 @@ class LearnWordsPresenter(view: LearnWordsView) {
         words = wordsRepository.getWords()
     }
 
-    fun onActivityStarted() = view?.showNativeWord(words[id].nativeWord)
+    fun onActivityStarted() = view?.showNativeWord(words[Random.nextInt(0, words.size)].nativeWord)
 
-    fun onShowEnglishWordClicked() = view?.showEnglishWord(words[id].englishWord)
+    fun onShowEnglishWordClicked() = view?.showEnglishWord(words[Random.nextInt(0, words.size)].englishWord)
 
-    fun onNextButtonClicked() = view?.showNativeWord(words[id].nativeWord)
+    fun onNextButtonClicked() = view?.showNativeWord(words[Random.nextInt(0, words.size)].nativeWord)
 
     fun onMenuBtnClicked() = view?.navigateToMenuActivity()
 }

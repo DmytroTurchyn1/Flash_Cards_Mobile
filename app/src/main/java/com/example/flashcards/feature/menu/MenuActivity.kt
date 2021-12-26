@@ -30,7 +30,7 @@ class MenuActivity : AppCompatActivity(), MenuView {
 
     override fun navigateToMainActivity() = Launcher.startMainActivity(this)
 
-    override fun navigateToNewWordsActivity() = Launcher.startNewWordsUkr(this)
+    override fun navigateToNewWordsActivity() = Launcher.startNewWords(this)
 
     override fun navigateToIrregularWordsActivity() = Launcher.startIrregularWordsActivity(this)
 

@@ -1,0 +1,34 @@
+package com.example.flashcards.feature.mywords
+
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.flashcards.R
+import com.example.flashcards.feature.learnwords.LearnWordsActivity
+import com.example.flashcards.feature.menu.MenuPresenter
+import com.example.flashcards.notreworked.Add_word_en
+import com.example.flashcards.util.Launcher
+import kotlinx.android.synthetic.main.activity_menu.*
+import kotlinx.android.synthetic.main.activity_menu.btnIrregularWords
+import kotlinx.android.synthetic.main.activity_my_words_en.*
+
+class MyWordsActivity : AppCompatActivity(), MyWordsView {
+    private lateinit var presenter: MyWordsPresenter
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_my_words_en)
+
+        presenter = MyWordsPresenter(this)
+
+        btnMainPage.setOnClickListener { presenter.onMainPageButtonClicked() }
+
+        btnAddWord.setOnClickListener { presenter.onAddWordsButtonClicked() }
+
+        btnLearnWords.setOnClickListener { presenter.onLearnWordsButtonClicked() }
+    }
+    override fun navigateToMainActivity() = Launcher.startMenuActivity(this)
+
+    override fun navigateToAddWordsActivity() = Launcher.startAddWordActivity(this)
+
+    override fun navigateToLearnWordsActivity() = Launcher.startLearnWordsActivity(this)
+}

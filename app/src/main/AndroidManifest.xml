@@ -42,7 +42,7 @@
             android:name=".notreworked.Settings_en"
             android:exported="false" />
         <activity
-            android:name=".notreworked.My_words_en"
+            android:name=".feature.mywords.MyWordsActivity"
             android:exported="false" />
         <activity
             android:name=".notreworked.My_words_ukr"

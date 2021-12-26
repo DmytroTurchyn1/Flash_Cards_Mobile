@@ -14,4 +14,6 @@
     <string name="learn_words_english_word">English word:</string>
     <string name="program_version_text">Program version: 1.0.0</string>
     <string name="program_developer_text">Developer: Dima Labs</string>
+    <string name="add_word_btn">Add a word</string>
+    <string name="learn_my_words_btn">Learn my words</string>
 </resources>

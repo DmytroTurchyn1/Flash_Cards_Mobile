@@ -7,13 +7,25 @@
     <string name="settings_text">Налаштування</string>
     <string name="about_program_text">Про Програму</string>
     <string name="my_words_text">Мої слова</string>
-    <string name="irregular_words_text">Неправильні дієслова</string>
+    <string name="irregular_words_text" translatable="false">Irregular Verbs</string>
     <string name="next">Далі</string>
     <string name="learn_words_title">Вчити слова</string>
     <string name="learn_words_native_word">Українське слово:</string>
     <string name="learn_words_english_word">Англійське слово:</string>
+    <string name="program_version_text">Версія програми: 1.0.0</string>
+    <string name="program_developer_text">Розробник програми: Dima Labs</string>
+    <string name="add_word_btn">Додати слово</string>
+    <string name="learn_my_words_btn">Вчити мої слова</string>
+    <string name="new_words_title">Нові Слова</string>
+    <string name="irregular_words_forms" translatable="false">форма1      форма2      форма3</string>
     <string name="add_word_native_word">Українське слово</string>
     <string name="add_word_english_word">Англійське слово</string>
     <string name="save_btn">Зберегти</string>
     <string name="add_word_title">Додати слово</string>
+    <string name="program_version_text">Версія програми: 1.0.0</string>
+    <string name="program_developer_text">Розробник програми: Dima Labs</string>
+    <string name="add_word_btn">Додати слово</string>
+    <string name="learn_my_words_btn">Вчити мої слова</string>
+    <string name="new_words_title">Нові Слова</string>
+    <string name="irregular_words_forms" translatable="false">форма1      форма2      форма3</string>
 </resources>

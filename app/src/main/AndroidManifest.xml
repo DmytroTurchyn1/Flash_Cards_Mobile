@@ -18,7 +18,7 @@
             android:name=".Menu_en"
             android:exported="false" />
         <activity
-            android:name=".notreworked.Learn_Words_ukr"
+            android:name=".trash.Learn_Words_ukr"
             android:exported="false" />
         <activity
             android:name=".feature.learnwords.LearnWordsActivity"
@@ -27,37 +27,37 @@
             android:name=".feature.addword.AddWordActivity"
             android:exported="false" />
         <activity
-            android:name=".notreworked.Add_word_en"
+            android:name=".trash.Add_word_en"
             android:exported="false" />
         <activity
-            android:name=".notreworked.About_me_ukr"
+            android:name=".feature.aboutme.AboutMeActivity"
             android:exported="false" />
         <activity
-            android:name=".notreworked.About_me_en"
+            android:name=".trash.About_me_en"
             android:exported="false" />
         <activity
-            android:name=".notreworked.Settings_ukr"
+            android:name=".trash.Settings_ukr"
             android:exported="false" />
         <activity
-            android:name=".notreworked.Settings_en"
+            android:name=".trash.Settings_en"
             android:exported="false" />
         <activity
-            android:name=".notreworked.My_words_en"
+            android:name=".feature.mywords.MyWordsActivity"
             android:exported="false" />
         <activity
-            android:name=".notreworked.My_words_ukr"
+            android:name=".trash.My_words_ukr"
             android:exported="false" />
         <activity
-            android:name=".notreworked.Home_en"
+            android:name=".trash.Home_en"
             android:exported="false" />
         <activity
-            android:name=".notreworked.Irregular_words_ukr"
+            android:name=".feature.irregularwords.IrregularWordsActivity"
             android:exported="false" />
         <activity
-            android:name=".notreworked.new_words_en"
+            android:name=".trash.new_words_en"
             android:exported="false" />
         <activity
-            android:name=".notreworked.new_words_ukr"
+            android:name=".feature.newwords.NewWords"
             android:exported="false" />
         <activity
             android:name=".feature.main.MainActivity"

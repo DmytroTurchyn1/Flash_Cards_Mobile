@@ -1,4 +1,4 @@
-package com.example.flashcards.notreworked
+package com.example.flashcards.trash
 
 import android.content.Intent
 import android.net.Uri

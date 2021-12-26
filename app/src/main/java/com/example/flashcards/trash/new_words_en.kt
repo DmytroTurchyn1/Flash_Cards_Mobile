@@ -1,4 +1,4 @@
-package com.example.flashcards.notreworked
+package com.example.flashcards.trash
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

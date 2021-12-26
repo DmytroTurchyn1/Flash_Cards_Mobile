@@ -1,23 +1,26 @@
-package com.example.flashcards.notreworked
+package com.example.flashcards.feature.irregularwords
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import com.example.flashcards.R
-import com.example.flashcards.feature.menu.MenuActivity
+import com.example.flashcards.util.Launcher
+import kotlinx.android.synthetic.main.activity_main.*
 
-class Irregular_words_ukr : AppCompatActivity() {
+class IrregularWordsActivity : AppCompatActivity(), IrregularWordsView {
+    private lateinit var presenter: IrregularWordsPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_irregular_words_ukr)
+        presenter = IrregularWordsPresenter(this)
+
+        btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
     }
 
-    fun menu(view: android.view.View) {
-        val menu = Intent(this, MenuActivity::class.java)
-        startActivity(menu);
-    }
+    override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
+
+
     var next = 0
 
     fun see_en_forms(view: android.view.View) {

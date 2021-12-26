@@ -1,11 +1,8 @@
-package com.example.flashcards.notreworked
+package com.example.flashcards.trash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
-import android.widget.Toast
 import com.example.flashcards.R
 import com.example.flashcards.feature.menu.MenuActivity
 import io.realm.Realm

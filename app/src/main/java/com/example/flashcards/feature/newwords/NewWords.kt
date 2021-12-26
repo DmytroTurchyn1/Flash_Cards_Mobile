@@ -1,4 +1,4 @@
-package com.example.flashcards.notreworked
+package com.example.flashcards.feature.newwords
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,21 +6,25 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import com.example.flashcards.R
+import com.example.flashcards.feature.main.MainPresenter
 import com.example.flashcards.feature.menu.MenuActivity
+import com.example.flashcards.util.Launcher
+import kotlinx.android.synthetic.main.activity_main.*
 
-class new_words_ukr : AppCompatActivity() {
+class NewWords : AppCompatActivity(), NewWordsView {
+    private lateinit var presenter: NewWordsPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_words_ukr)
 
-    }
+        presenter = NewWordsPresenter(this)
 
-
-    fun menu(view: android.view.View) {
-        val menu = Intent(this, MenuActivity::class.java)
-        startActivity(menu);
+        btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
 
     }
+    override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
+
+
     var next = 0
     fun ShowuUkrWord(view: android.view.View) {
         var ukr_word = findViewById<TextView>(R.id.btnShowNativeWord)

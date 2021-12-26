@@ -33,6 +33,6 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
     }
 
     override fun showEnglishWord(englishWord: String) {
-        tvEnglishWord.text = englishWord
+        tvEnglishWord.text = englishWordf
     }
 }

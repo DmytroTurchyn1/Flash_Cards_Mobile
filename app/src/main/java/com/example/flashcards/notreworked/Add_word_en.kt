@@ -1,12 +1,10 @@
 package com.example.flashcards.notreworked
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
 import com.example.flashcards.R
-import com.example.flashcards.feature.addword.AddWordActivity
 import io.realm.Realm
 import io.realm.RealmConfiguration
 
@@ -31,14 +29,14 @@ class Add_word_en : AppCompatActivity() {
     }
 
     fun add(view: android.view.View) {
-        var ukr_word = findViewById<EditText>(R.id.en_word)
-        var en_word = findViewById<EditText>(R.id.en_word)
+        var ukr_word = findViewById<EditText>(R.id.ukr_word)
+        var en_word = findViewById<EditText>(R.id.ukr_word)
         if (ukr_word.text.toString() != ""  && en_word.text.toString() != "") {
         try {
 
 
-            var ukr_word = findViewById<EditText>(R.id.en_word)
-            var en_word = findViewById<EditText>(R.id.en_word)
+            var ukr_word = findViewById<EditText>(R.id.ukr_word)
+            var en_word = findViewById<EditText>(R.id.ukr_word)
 
 //            realm.executeTransaction {
 //

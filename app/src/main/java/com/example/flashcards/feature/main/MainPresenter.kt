@@ -8,4 +8,5 @@ class MainPresenter(view: MainView) {
         get() = viewReference.get()
 
     fun onMenuBtnClicked() = view?.navigateToMenuActivity()
+
 }

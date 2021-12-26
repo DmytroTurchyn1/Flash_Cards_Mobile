@@ -1,6 +1,5 @@
 package com.example.flashcards.notreworked
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -18,7 +17,7 @@ class new_words_en : AppCompatActivity() {
     }
     var next = 0
     fun ShowUkrWord(view: android.view.View) {
-        var en_Word = findViewById<TextView>(R.id.en_word)
+        var en_Word = findViewById<TextView>(R.id.ukr_word)
         en_Word.text = ""
 
         en_Word.text = enWord[next]
@@ -27,8 +26,8 @@ class new_words_en : AppCompatActivity() {
     open  val enWord = ArrayList<String>()
     fun next(view: android.view.View) {
         next ++
-        var ukr_word = findViewById<TextView>(R.id.en_word)
-        var en_Word = findViewById<TextView>(R.id.en_word)
+        var ukr_word = findViewById<TextView>(R.id.ukr_word)
+        var en_Word = findViewById<TextView>(R.id.ukr_word)
         en_Word.text = ""
         ukr_word.setVisibility(View.VISIBLE)
         ukr_word.text = ""

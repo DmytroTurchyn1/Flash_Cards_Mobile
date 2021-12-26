@@ -12,4 +12,6 @@
     <string name="learn_words_title">Вчити слова</string>
     <string name="learn_words_native_word">Українське слово:</string>
     <string name="learn_words_english_word">Англійське слово:</string>
+    <string name="program_version_text">Версія програми: 1.0.0</string>
+    <string name="program_developer_text">Розробник програми: Dima Labs</string>
 </resources>

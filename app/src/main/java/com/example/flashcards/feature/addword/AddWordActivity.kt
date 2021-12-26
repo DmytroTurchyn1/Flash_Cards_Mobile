@@ -1,14 +1,10 @@
 package com.example.flashcards.feature.addword
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
 import com.example.flashcards.R
-import com.example.flashcards.feature.menu.MenuActivity
-import io.realm.Realm
-import io.realm.RealmConfiguration
 
 class AddWordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,15 +21,15 @@ class AddWordActivity : AppCompatActivity() {
 
 
     fun save(view: android.view.View) {
-        var ukr_word = findViewById<EditText>(R.id.en_word)
-        var en_word = findViewById<EditText>(R.id.en_word)
+        var ukr_word = findViewById<EditText>(R.id.ukr_word)
+        var en_word = findViewById<EditText>(R.id.ukr_word)
         if (ukr_word.text.toString() != ""  && en_word.text.toString() != "") {
             try {
 
 
 
-                var ukr_word = findViewById<EditText>(R.id.en_word)
-                var en_word = findViewById<EditText>(R.id.en_word)
+                var ukr_word = findViewById<EditText>(R.id.ukr_word)
+                var en_word = findViewById<EditText>(R.id.ukr_word)
 
 //                realm.executeTransaction {
 //

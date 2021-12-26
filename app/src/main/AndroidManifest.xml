@@ -30,7 +30,7 @@
             android:name=".notreworked.Add_word_en"
             android:exported="false" />
         <activity
-            android:name=".notreworked.About_me_ukr"
+            android:name=".feature.aboutme.AboutMeActivity"
             android:exported="false" />
         <activity
             android:name=".notreworked.About_me_en"

@@ -57,7 +57,7 @@
             android:name=".notreworked.new_words_en"
             android:exported="false" />
         <activity
-            android:name=".notreworked.new_words_ukr"
+            android:name=".feature.newwords.NewWords"
             android:exported="false" />
         <activity
             android:name=".feature.main.MainActivity"

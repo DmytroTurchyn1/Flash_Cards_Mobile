@@ -3,12 +3,12 @@ package com.example.flashcards.util
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import androidx.core.content.ContextCompat.startActivity
 import com.example.flashcards.feature.main.MainActivity
 import com.example.flashcards.feature.menu.MenuActivity
 import com.example.flashcards.feature.aboutme.AboutMeActivity
 import com.example.flashcards.feature.addword.AddWordActivity
 import com.example.flashcards.feature.learnwords.LearnWordsActivity
+import com.example.flashcards.feature.newwords.NewWords
 import com.example.flashcards.notreworked.Irregular_words_ukr
 import com.example.flashcards.notreworked.My_words_ukr
 import com.example.flashcards.notreworked.Settings_ukr
@@ -50,7 +50,7 @@ object Launcher {
     }
 
     fun startNewWords(activity: Activity) {
-        val intent = Intent(activity, com.example.flashcards.notreworked.new_words_ukr::class.java)
+        val intent = Intent(activity, NewWords::class.java)
         activity.startActivity(intent)
     }
 

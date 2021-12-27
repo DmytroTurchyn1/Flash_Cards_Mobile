@@ -16,4 +16,5 @@
     <string name="program_developer_text">Developer: Dima Labs</string>
     <string name="add_word_btn">Add a word</string>
     <string name="learn_my_words_btn">Learn my words</string>
+    <string name="new_words_title">New words</string>
 </resources>

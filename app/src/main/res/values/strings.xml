@@ -16,4 +16,5 @@
     <string name="program_developer_text">Розробник програми: Dima Labs</string>
     <string name="add_word_btn">Додати слово</string>
     <string name="learn_my_words_btn">Вчити мої слова</string>
+    <string name="new_words_title">Нові Слова</string>
 </resources>

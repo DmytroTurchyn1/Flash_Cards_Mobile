@@ -20,7 +20,7 @@ class MyWordsActivity : AppCompatActivity(), MyWordsView {
 
         presenter = MyWordsPresenter(this)
 
-        btnMainPage.setOnClickListener { presenter.onMainPageButtonClicked() }
+        btnMenu.setOnClickListener { presenter.onMainPageButtonClicked() }
 
         btnAddWord.setOnClickListener { presenter.onAddWordsButtonClicked() }
 

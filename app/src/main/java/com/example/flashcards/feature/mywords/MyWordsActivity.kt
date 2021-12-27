@@ -1,15 +1,9 @@
 package com.example.flashcards.feature.mywords
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.flashcards.R
-import com.example.flashcards.feature.learnwords.LearnWordsActivity
-import com.example.flashcards.feature.menu.MenuPresenter
-import com.example.flashcards.notreworked.Add_word_en
 import com.example.flashcards.util.Launcher
-import kotlinx.android.synthetic.main.activity_menu.*
-import kotlinx.android.synthetic.main.activity_menu.btnIrregularWords
 import kotlinx.android.synthetic.main.activity_my_words_en.*
 
 class MyWordsActivity : AppCompatActivity(), MyWordsView {

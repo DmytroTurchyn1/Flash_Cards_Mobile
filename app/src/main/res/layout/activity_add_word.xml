@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <EditText
-        android:id="@+id/ukr_word"
+        android:id="@+id/btnNativeWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -72,7 +72,7 @@
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/ukr_word"
+        android:id="@+id/btnNativeWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
@@ -96,5 +96,5 @@
         android:text="Зберегти"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ukr_word" />
+        app:layout_constraintTop_toBottomOf="@+id/btnNativeWord" />
 </androidx.constraintlayout.widget.ConstraintLayout>

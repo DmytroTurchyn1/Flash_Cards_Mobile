@@ -1,27 +1,30 @@
-package com.example.flashcards.notreworked
+package com.example.flashcards.feature.irregularwords
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import com.example.flashcards.R
-import com.example.flashcards.feature.menu.MenuActivity
+import com.example.flashcards.util.Launcher
+import kotlinx.android.synthetic.main.activity_main.*
 
-class Irregular_words_ukr : AppCompatActivity() {
+class IrregularWordsActivity : AppCompatActivity(), IrregularWordsView {
+    private lateinit var presenter: IrregularWordsPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_irregular_words_ukr)
+        presenter = IrregularWordsPresenter(this)
+
+        btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
     }
 
-    fun menu(view: android.view.View) {
-        val menu = Intent(this, MenuActivity::class.java)
-        startActivity(menu);
-    }
+    override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
+
+
     var next = 0
 
     fun see_en_forms(view: android.view.View) {
-        var en_Word = findViewById<TextView>(R.id.ukr_word)
+        var en_Word = findViewById<TextView>(R.id.btnNativeWord)
         en_Word.text = enWord[next]
 
     }
@@ -29,8 +32,8 @@ class Irregular_words_ukr : AppCompatActivity() {
     open  val enWord = ArrayList<String>()
     fun next(view: View) {
         next ++
-        var en_word = findViewById<TextView>(R.id.ukr_word)
-        var ukr_word = findViewById<TextView>(R.id.ukr_word)
+        var en_word = findViewById<TextView>(R.id.btnNativeWord)
+        var ukr_word = findViewById<TextView>(R.id.btnNativeWord)
         ukr_word.setVisibility(View.VISIBLE)
         ukr_word.text =""
         en_word.text = ""

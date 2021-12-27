@@ -21,15 +21,15 @@ class AddWordActivity : AppCompatActivity() {
 
 
     fun save(view: android.view.View) {
-        var ukr_word = findViewById<EditText>(R.id.ukr_word)
-        var en_word = findViewById<EditText>(R.id.ukr_word)
+        var ukr_word = findViewById<EditText>(R.id.btnNativeWord)
+        var en_word = findViewById<EditText>(R.id.btnNativeWord)
         if (ukr_word.text.toString() != ""  && en_word.text.toString() != "") {
             try {
 
 
 
-                var ukr_word = findViewById<EditText>(R.id.ukr_word)
-                var en_word = findViewById<EditText>(R.id.ukr_word)
+                var ukr_word = findViewById<EditText>(R.id.btnNativeWord)
+                var en_word = findViewById<EditText>(R.id.btnNativeWord)
 
 //                realm.executeTransaction {
 //

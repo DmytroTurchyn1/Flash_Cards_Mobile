@@ -1,7 +1,6 @@
 package com.example.flashcards.feature.addword
 
-interface AddWordView {
+interface  AddWordView {
     fun navigateToMenuActivity()
-
 }
 

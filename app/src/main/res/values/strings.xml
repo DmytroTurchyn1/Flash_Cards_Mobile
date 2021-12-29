@@ -12,4 +12,8 @@
     <string name="learn_words_title">Вчити слова</string>
     <string name="learn_words_native_word">Українське слово:</string>
     <string name="learn_words_english_word">Англійське слово:</string>
+    <string name="add_word_native_word">Українське слово</string>
+    <string name="add_word_english_word">Англійське слово</string>
+    <string name="save_btn">Зберегти</string>
+    <string name="add_word_title">Додати слово</string>
 </resources>

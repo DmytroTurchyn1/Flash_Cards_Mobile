@@ -12,4 +12,8 @@
     <string name="learn_words_title">Learn words</string>
     <string name="learn_words_native_word">Ukrainian word:</string>
     <string name="learn_words_english_word">English word:</string>
+    <string name="add_word_native_word">Ukranian word</string>
+    <string name="add_word_english_word">English word</string>
+    <string name="save_btn">Save</string>
+    <string name="add_word_title">Add word</string>
 </resources>

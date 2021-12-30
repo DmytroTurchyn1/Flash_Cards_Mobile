@@ -13,17 +13,28 @@ class LearnWordsPresenter(view: LearnWordsView) {
 
     private val wordsRepository = WordsRepository.getInstance()
     private var words = listOf<Word>()
-    private var id: Int = 1
+    private var id: Int = getRandomId()
 
     fun onActivityCreated() {
         words = wordsRepository.getWords()
     }
 
-    fun onActivityStarted() = view?.showNativeWord(words[Random.nextInt(0, words.size)].nativeWord)
+    fun onActivityStarted() = showNativeWord()
 
-    fun onShowEnglishWordClicked() = view?.showEnglishWord(words[Random.nextInt(0, words.size)].englishWord)
+    private fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
 
-    fun onNextButtonClicked() = view?.showNativeWord(words[Random.nextInt(0, words.size)].nativeWord)
+    fun onShowEnglishWordClicked() = view?.showEnglishWord(words[id].englishWord)
+
+    fun onNextButtonClicked() {
+        updateWordId()
+        showNativeWord()
+    }
+
+    private fun updateWordId() {
+        id = getRandomId()
+    }
 
     fun onMenuBtnClicked() = view?.navigateToMenuActivity()
+
+    private fun getRandomId() = Random.nextInt(0, words.size)
 }

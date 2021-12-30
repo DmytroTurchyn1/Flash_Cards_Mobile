@@ -1,13 +1,17 @@
 package com.example.flashcards.feature.addword
 
+
 import com.example.flashcards.model.local.Word
 import com.example.flashcards.repository.WordsRepository
+import java.lang.ref.WeakReference
 
-class AddWordPresenter {
+class AddWordPresenter (view: AddWordView){
     private val repository = WordsRepository.getInstance()
-
+    private val viewReference = WeakReference(view)
+    private val view
+        get() = viewReference.get()
     fun onSaveBtnClicked(nativeWord: String, englishWord: String) {
         repository.saveWord(Word(nativeWord, englishWord))
     }
-
+    fun onMenuBtnClicked() = view?.navigateToMenuActivity()
 }

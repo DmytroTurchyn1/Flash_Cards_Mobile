@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/program_color"
-    tools:context=".notreworked.new_words_ukr">
+    tools:context=".feature.newwords.NewWords">
 
     <Button
         android:id="@+id/tvEnglishWord"
@@ -30,19 +30,18 @@
         android:layout_marginStart="162dp"
         android:layout_marginTop="96dp"
         android:onClick="next"
-        android:text="Далі"
+        android:text="@string/next"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNativeWordTitle" />
 
     <ImageButton
-        android:id="@+id/imageButton13"
+        android:id="@+id/btnMenu"
         android:layout_width="90dp"
         android:layout_height="88dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
         android:background="#00FFFFFF"
-        android:onClick="menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/menu_btn_foreground"
@@ -56,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
         android:layout_marginTop="142dp"
-        android:text="Англійське слово:"
+        android:text="@string/learn_words_english_word"
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="33dp"
-        android:text="Українське слово:"
+        android:text="@string/learn_words_native_word"
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,10 +90,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:layout_marginTop="30dp"
-        android:text="Нові Слова"
+        android:text="@string/new_words_title"
         android:textColor="#000000"
         android:textSize="34sp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton13"
+        app:layout_constraintStart_toEndOf="@+id/btnMenu"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

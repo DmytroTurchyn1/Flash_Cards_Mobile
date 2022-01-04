@@ -19,5 +19,4 @@ class AddWordActivity : AppCompatActivity(), AddWordView {
     }
 
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
-
 }

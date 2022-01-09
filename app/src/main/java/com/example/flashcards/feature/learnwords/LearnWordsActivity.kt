@@ -2,6 +2,7 @@ package com.example.flashcards.feature.learnwords
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.flashcards.R
 import com.example.flashcards.util.Launcher
 import kotlinx.android.synthetic.main.activity_learn_words.*
@@ -35,4 +36,9 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
     override fun showEnglishWord(englishWord: String) {
         tvEnglishWord.text = englishWord
     }
+
+    override fun showNoWordsError() =
+        Toast.makeText(this, getString(R.string.no_user_word_error), Toast.LENGTH_SHORT).show()
+
+    override fun close() = finish()
 }

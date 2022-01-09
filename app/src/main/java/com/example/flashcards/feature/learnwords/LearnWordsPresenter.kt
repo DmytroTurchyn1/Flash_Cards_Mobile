@@ -13,10 +13,11 @@ class LearnWordsPresenter(view: LearnWordsView) {
 
     private val wordsRepository = WordsRepository.getInstance()
     private var words = listOf<Word>()
-    private var id: Int = getRandomId()
+    private var id: Int = 0
 
     fun onActivityCreated() {
         words = wordsRepository.getWords()
+        updateWordId()
     }
 
     fun onActivityStarted() = showNativeWord()
@@ -27,8 +28,11 @@ class LearnWordsPresenter(view: LearnWordsView) {
 
     fun onNextButtonClicked() {
         updateWordId()
+        clearEnglishWord()
         showNativeWord()
     }
+
+    private fun clearEnglishWord() = view?.showEnglishWord(EMPTY_STRING)
 
     private fun updateWordId() {
         id = getRandomId()
@@ -37,4 +41,8 @@ class LearnWordsPresenter(view: LearnWordsView) {
     fun onMenuBtnClicked() = view?.navigateToMenuActivity()
 
     private fun getRandomId() = Random.nextInt(0, words.size)
+
+    companion object {
+        private const val EMPTY_STRING = ""
+    }
 }

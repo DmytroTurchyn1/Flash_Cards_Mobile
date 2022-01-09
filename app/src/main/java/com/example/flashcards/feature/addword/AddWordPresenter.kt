@@ -10,8 +10,11 @@ class AddWordPresenter (view: AddWordView){
     private val viewReference = WeakReference(view)
     private val view
         get() = viewReference.get()
+
     fun onSaveBtnClicked(nativeWord: String, englishWord: String) {
         repository.saveWord(Word(nativeWord, englishWord))
+        view?.close()
     }
+
     fun onMenuBtnClicked() = view?.navigateToMenuActivity()
 }

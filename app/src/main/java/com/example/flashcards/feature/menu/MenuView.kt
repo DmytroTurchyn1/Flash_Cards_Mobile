@@ -5,6 +5,5 @@ interface MenuView {
     fun navigateToNewWordsActivity()
     fun navigateToIrregularWordsActivity()
     fun navigateToMyWordsActivity()
-    fun navigateToSettingsActivity()
     fun navigateToAboutProgramActivity()
 }

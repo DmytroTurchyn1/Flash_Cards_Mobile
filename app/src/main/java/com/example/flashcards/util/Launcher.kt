@@ -10,8 +10,7 @@ import com.example.flashcards.feature.addword.AddWordActivity
 import com.example.flashcards.feature.learnwords.LearnWordsActivity
 import com.example.flashcards.feature.newwords.NewWords
 import com.example.flashcards.feature.irregularwords.IrregularWordsActivity
-import com.example.flashcards.trash.My_words_ukr
-import com.example.flashcards.trash.Settings_ukr
+import com.example.flashcards.feature.mywords.MyWordsActivity
 
 object Launcher {
     fun startMainActivity(activity: Activity) {
@@ -22,11 +21,6 @@ object Launcher {
     fun startMenuActivity(activity: Activity) {
         val intent = Intent(activity, MenuActivity::class.java)
         activity.startActivity(intent)
-    }
-
-    fun startSettingsActivity(activity: Activity) {
-        val settings = Intent(activity, Settings_ukr::class.java)
-        activity.startActivity(settings)
     }
 
     fun startAboutProgramActivity(activity: Activity) {
@@ -55,17 +49,20 @@ object Launcher {
     }
 
     fun startMyWordsActivity(activity: Activity) {
-        val intent = Intent(activity, My_words_ukr::class.java)
+        val intent = Intent(activity, MyWordsActivity::class.java)
         activity.startActivity(intent)
     }
+
     fun startTelegram(activity: Activity) {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/dima8093556548"))
         activity.startActivity(intent)
     }
+
     fun startGmail(activity: Activity) {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:dim4ukt@gmail.com"))
         activity.startActivity(intent)
     }
+
     fun startYoutube(activity: Activity) {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UC-nn4RFP16LjaWk8SRs15Pg"))
         activity.startActivity(intent)

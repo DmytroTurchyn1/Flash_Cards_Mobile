@@ -15,8 +15,12 @@ class AddWordActivity : AppCompatActivity(), AddWordView {
         presenter = AddWordPresenter(this)
 
         btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
-        btnSave.setOnClickListener { presenter.onSaveBtnClicked(ptNativeWord.text.toString(),ptEnglishWord.text.toString() )}
+        btnSave.setOnClickListener {
+            presenter.onSaveBtnClicked(ptNativeWord.text.toString(), ptEnglishWord.text.toString())
+        }
     }
 
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
+
+    override fun close() = finish()
 }

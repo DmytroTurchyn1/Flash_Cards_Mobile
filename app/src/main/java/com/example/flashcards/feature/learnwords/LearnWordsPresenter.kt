@@ -17,12 +17,14 @@ class LearnWordsPresenter(view: LearnWordsView) {
 
     fun onActivityCreated() {
         words = wordsRepository.getWords()
-        updateWordId()
+        if(words.isEmpty()) {
+            showErrorAndCloseActivity()
+        } else {
+            updateWordId()
+        }
     }
 
     fun onActivityStarted() = showNativeWord()
-
-    private fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
 
     fun onShowEnglishWordClicked() = view?.showEnglishWord(words[id].englishWord)
 
@@ -32,13 +34,20 @@ class LearnWordsPresenter(view: LearnWordsView) {
         showNativeWord()
     }
 
+    fun onMenuBtnClicked() = view?.navigateToMenuActivity()
+
+    private fun showErrorAndCloseActivity() {
+        view?.showNoWordsError()
+        view?.close()
+    }
+
+    private fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
+
     private fun clearEnglishWord() = view?.showEnglishWord(EMPTY_STRING)
 
     private fun updateWordId() {
         id = getRandomId()
     }
-
-    fun onMenuBtnClicked() = view?.navigateToMenuActivity()
 
     private fun getRandomId() = Random.nextInt(0, words.size)
 

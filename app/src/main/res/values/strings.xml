@@ -22,4 +22,5 @@
     <string name="add_word_english_word">Англійське слово</string>
     <string name="save_btn">Зберегти</string>
     <string name="add_word_title">Додати слово</string>
+    <string name="no_user_word_error">У вас поки що  немає доданих слів</string>
 </resources>

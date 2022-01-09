@@ -20,4 +20,5 @@
     <string name="add_word_english_word">English word</string>
     <string name="save_btn">Save</string>
     <string name="add_word_title">Add word</string>
+    <string name="no_user_word_error">You haven\'t added any words yet</string>
 </resources>

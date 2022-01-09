@@ -23,8 +23,6 @@ class MenuActivity : AppCompatActivity(), MenuView {
 
         btnMyWords.setOnClickListener { presenter.onMyWordsPageButtonClicked() }
 
-        btnSettings.setOnClickListener { presenter.onSettingsPageButtonClicked() }
-
         btnAboutProgram.setOnClickListener { presenter.onAboutProgramPageButtonClicked() }
     }
 
@@ -35,8 +33,6 @@ class MenuActivity : AppCompatActivity(), MenuView {
     override fun navigateToIrregularWordsActivity() = Launcher.startIrregularWordsActivity(this)
 
     override fun navigateToMyWordsActivity() = Launcher.startMyWordsActivity(this)
-
-    override fun navigateToSettingsActivity() = Launcher.startSettingsActivity(this)
 
     override fun navigateToAboutProgramActivity() = Launcher.startAboutProgramActivity(this)
 }

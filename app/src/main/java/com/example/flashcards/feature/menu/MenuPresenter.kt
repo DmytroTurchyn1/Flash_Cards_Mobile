@@ -15,7 +15,5 @@ class MenuPresenter(view: MenuView) {
 
     fun onMyWordsPageButtonClicked() = view?.navigateToMyWordsActivity()
 
-    fun onSettingsPageButtonClicked() = view?.navigateToSettingsActivity()
-
     fun onAboutProgramPageButtonClicked() = view?.navigateToAboutProgramActivity()
 }

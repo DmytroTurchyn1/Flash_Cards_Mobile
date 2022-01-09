@@ -1,7 +1,5 @@
 package com.example.flashcards.model.local
 
-import android.view.Gravity
-
 sealed class Words
 
 data class NewWords(
@@ -17,4 +15,3 @@ data class IrregularWords(
 ) : Words()
 
 object None : Words()
-

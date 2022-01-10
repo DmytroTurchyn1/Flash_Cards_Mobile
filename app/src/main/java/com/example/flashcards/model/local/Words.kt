@@ -14,4 +14,4 @@ data class IrregularWords(
     val native: String
 ) : Words()
 
-object None : Words()
+

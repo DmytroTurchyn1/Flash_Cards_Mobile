@@ -10,11 +10,9 @@ data class NewWords(
 ) : Words()
 
 data class IrregularWords(
-    val frstform: String,
-    val secondform : String,
-    val thirdform: String,
-    val native: String
+    val native: String,
+    val firstForm: String,
+    val secondForm : String,
+    val thirdForm: String
 ) : Words()
-
-object None : Words()
 

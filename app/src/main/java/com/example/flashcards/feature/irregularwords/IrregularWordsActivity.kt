@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import com.example.flashcards.R
 import com.example.flashcards.util.Launcher
+import kotlinx.android.synthetic.main.activity_irregular_words_ukr.*
+import kotlinx.android.synthetic.main.activity_learn_words.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.btnMenu
 
 class IrregularWordsActivity : AppCompatActivity(), IrregularWordsView {
     private lateinit var presenter: IrregularWordsPresenter
@@ -16,19 +20,26 @@ class IrregularWordsActivity : AppCompatActivity(), IrregularWordsView {
         presenter = IrregularWordsPresenter(this)
 
         btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
+        ptEnglishWord.setOnClickListener { presenter.onShowForms() }
+        btnNext.setOnClickListener { presenter.onNextButtonClicked() }
     }
 
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
 
-
-    var next = 0
-
-    fun see_en_forms(view: android.view.View) {
-        var en_Word = findViewById<TextView>(R.id.ptEnglishWord)
-        en_Word.text = enWord[next]
-
+    override fun onStart() {
+        super.onStart()
+        presenter.onActivityStarted()
     }
-    open  val ukrWord = ArrayList<String>()
+
+    override fun showNativeWord(nativeWord: String) {
+        ptEnglishWord.text = nativeWord
+    }
+
+    override fun showEnglishWord(englishWord: String) {
+        tvEnglishWord.text = englishWord
+    }
+
+   /* open  val ukrWord = ArrayList<String>()
     open  val enWord = ArrayList<String>()
     fun next(view: View) {
         next ++
@@ -268,5 +279,8 @@ class IrregularWordsActivity : AppCompatActivity(), IrregularWordsView {
         ukrWord.add("плакати");
         ukrWord.add("писати");
         ukr_word.text = ukrWord[next]
+
+
     }
+*/
 }

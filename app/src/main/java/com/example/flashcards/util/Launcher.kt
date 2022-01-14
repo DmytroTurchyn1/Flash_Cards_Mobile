@@ -8,7 +8,7 @@ import com.example.flashcards.feature.menu.MenuActivity
 import com.example.flashcards.feature.aboutme.AboutMeActivity
 import com.example.flashcards.feature.addword.AddWordActivity
 import com.example.flashcards.feature.learnwords.LearnWordsActivity
-import com.example.flashcards.feature.newwords.NewWords
+import com.example.flashcards.feature.newwords.NewWordsActivity
 import com.example.flashcards.feature.irregularwords.IrregularWordsActivity
 import com.example.flashcards.feature.mywords.MyWordsActivity
 
@@ -44,7 +44,7 @@ object Launcher {
     }
 
     fun startNewWords(activity: Activity) {
-        val intent = Intent(activity, NewWords::class.java)
+        val intent = Intent(activity, NewWordsActivity::class.java)
         activity.startActivity(intent)
     }
 

@@ -2,10 +2,17 @@ package com.example.flashcards.model.local
 
 import io.realm.Realm
 
-object IrregularVerbsRealm : Realm {
-    fun prymarykey(){}
-    fun Native(){}
-    fun FirstForm(){}
-    fun SecondForm(){}
-    fun ThirdForm(){}
-}
+sealed class Words
+
+data class NewWords(
+    val native: String,
+    val english: String
+) : Words()
+
+data class IrregularWords(
+    val native: String,
+    val firstForm: String,
+    val secondForm : String,
+    val thirdForm: String
+) : Words()
+

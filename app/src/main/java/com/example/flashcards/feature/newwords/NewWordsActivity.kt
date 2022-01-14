@@ -11,7 +11,7 @@ import com.example.flashcards.feature.menu.MenuActivity
 import com.example.flashcards.util.Launcher
 import kotlinx.android.synthetic.main.activity_main.*
 
-class NewWords : AppCompatActivity(), NewWordsView {
+class NewWordsActivity : AppCompatActivity(), NewWordsView {
     private lateinit var presenter: NewWordsPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

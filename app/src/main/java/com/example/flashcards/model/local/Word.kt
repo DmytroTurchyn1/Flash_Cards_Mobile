@@ -20,3 +20,11 @@ data class IrregularVerb(
     @JvmField
     val thirdForm: String
 ) : Word()
+
+data class newwords(
+    @JvmField
+    val nativeWord: String,
+    @JvmField
+    val englishWord: String,
+
+) : Word()

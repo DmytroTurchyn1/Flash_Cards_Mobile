@@ -21,7 +21,7 @@ data class IrregularVerb(
     val thirdForm: String
 ) : Word()
 
-data class newwords(
+data class newWords(
     @JvmField
     val nativeWord: String,
     @JvmField

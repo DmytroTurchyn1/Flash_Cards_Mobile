@@ -6,9 +6,9 @@ import com.example.flashcards.model.data.NewWordsRealm;
 import com.example.flashcards.model.data.WordMapper;
 import com.example.flashcards.model.data.SimpleWordRealm;
 import com.example.flashcards.model.local.IrregularVerb;
-import com.example.flashcards.model.local.NewWords;
 import com.example.flashcards.model.local.SimpleWord;
 import com.example.flashcards.model.local.Word;
+import com.example.flashcards.model.local.newWords;
 import com.example.flashcards.util.RandomIdGenerator;
 import java.util.List;
 import io.realm.Realm;
@@ -39,8 +39,8 @@ public class WordsRepository implements IWordsRepository {
             saveSimpleWord((SimpleWord) word);
         } else if (word instanceof IrregularVerb) {
             saveIrregularVerb((IrregularVerb) word);
-       } else if (word instanceof NewWords) {
-            saveNewWords((NewWords) word);
+       } else if (word instanceof newWords) {
+            saveNewWords((newWords) word);
 //        else (word instanceof UserWord) {
 //            saveUserWord();
         }
@@ -55,7 +55,7 @@ public class WordsRepository implements IWordsRepository {
         );
     }
 
-    private void saveNewWords(NewWords word) {
+    private void saveNewWords(newWords word) {
         realm.executeTransaction(
                 realm -> {
                     NewWordsRealm wordRealm = new NewWordsRealm(idGenerator.getId(), word.nativeWord, word.englishWord);
@@ -89,7 +89,7 @@ public class WordsRepository implements IWordsRepository {
 
     @NonNull
     @Override
-    public List<NewWords> getNewWords() {
+    public List<newWords> getNewWords() {
         RealmResults<NewWordsRealm> words = realm.where(NewWordsRealm.class).findAll();
         return wordMapper.mapNewWordsRealm(words);
     }

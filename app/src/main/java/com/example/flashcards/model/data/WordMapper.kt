@@ -3,6 +3,7 @@ package com.example.flashcards.model.data
 import com.example.flashcards.model.local.IrregularVerb
 import com.example.flashcards.model.local.NewWords
 import com.example.flashcards.model.local.SimpleWord
+import com.example.flashcards.model.local.newWords
 import io.realm.RealmResults
 
 class WordMapper {
@@ -14,9 +15,9 @@ class WordMapper {
             IrregularVerb(irregularVerb.nativeWord, irregularVerb.firstForm, irregularVerb.secondForm, irregularVerb.thirdForm)
         }
     }
-    fun mapNewWordsRealm(words: RealmResults<NewWordsRealm>): List<NewWords> {
-        return words.map { newWords ->
-          NewWords(newWords.nativeWord, newWords.englishWord)
+    fun mapNewWordsRealm(words: RealmResults<NewWordsRealm>): List<newWords> {
+        return words.map { newwords ->
+            newWords(newwords.nativeWord, newwords.englishWord)
         }
     }
 }

@@ -58,7 +58,7 @@ public class WordsRepository implements IWordsRepository {
     private void saveNewWords(NewWords word) {
         realm.executeTransaction(
                 realm -> {
-                    NewWordsRealm wordRealm = new IrregularVerbRealm(idGenerator.getId(), word.n);
+                    NewWordsRealm wordRealm = new NewWordsRealm(idGenerator.getId(), word.nativeWord, word.englishWord);
                     realm.insert(wordRealm);
                 }
         );

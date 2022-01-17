@@ -23,7 +23,7 @@ public class WordsRepository implements IWordsRepository {
     private WordsRepository() {
         realm = Realm.getDefaultInstance();
         saveIrregularVerb(new IrregularVerb("Бути", "Be", "Was/Were", "Been"));
-        saveNewWords(new SimpleWord("Бути","Be"));
+        saveSimpleWords(new SimpleWord("Бути","Be"));
     }
 
     public static IWordsRepository getInstance() {
@@ -36,11 +36,11 @@ public class WordsRepository implements IWordsRepository {
     @Override
     public void saveWord(@NonNull Word word) {
         if (word instanceof UserWord) {
-            saveSimpleWord((UserWord) word);
+            saveUserWords((UserWord) word);
         } else if (word instanceof IrregularVerb) {
             saveIrregularVerb((IrregularVerb) word);
        } else if (word instanceof SimpleWord) {
-            saveNewWords((SimpleWord) word);
+            saveSimpleWords((SimpleWord) word);
 //        else (word instanceof UserWord) {
 //            saveUserWord();
         }
@@ -55,7 +55,7 @@ public class WordsRepository implements IWordsRepository {
         );
     }
 
-    private void saveNewWords(SimpleWord word) {
+    private void saveSimpleWords(SimpleWord word) {
         realm.executeTransaction(
                 realm -> {
                     SimpleWordsRealm wordRealm = new SimpleWordsRealm(idGenerator.getId(), word.nativeWord, word.englishWord);
@@ -64,7 +64,7 @@ public class WordsRepository implements IWordsRepository {
         );
     }
 
-    private void saveSimpleWord(UserWord word) {
+    private void saveUserWords(UserWord word) {
         realm.executeTransaction(
                 realm -> {
                     UserWordRealm wordRealm = new UserWordRealm(idGenerator.getId(), word.nativeWord, word.englishWord);
@@ -77,7 +77,7 @@ public class WordsRepository implements IWordsRepository {
     @Override
     public List<UserWord> getWords() {
         RealmResults<UserWordRealm> words = realm.where(UserWordRealm.class).findAll();
-        return wordMapper.mapSimpleWordsRealm(words);
+        return wordMapper.mapUserWordsRealm(words);
     }
 
     @NonNull
@@ -91,6 +91,6 @@ public class WordsRepository implements IWordsRepository {
     @Override
     public List<SimpleWord> getNewWords() {
         RealmResults<SimpleWordsRealm> words = realm.where(SimpleWordsRealm.class).findAll();
-        return wordMapper.mapNewWordsRealm(words);
+        return wordMapper.mapSimpleWordsRealm(words);
     }
 }

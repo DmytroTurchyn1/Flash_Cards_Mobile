@@ -6,7 +6,7 @@ import com.example.flashcards.model.local.SimpleWord
 import io.realm.RealmResults
 
 class WordMapper {
-    fun mapNewWordsRealm(words: RealmResults<UserWordRealm>) =
+    fun mapUserWordsRealm(words: RealmResults<UserWordRealm>) =
         words.map { simpleWord -> UserWord(nativeWord = simpleWord.nativeWord, englishWord = simpleWord.englishWord) }
 
     fun mapIrregularVerbsRealm(words: RealmResults<IrregularVerbRealm>): List<IrregularVerb> {

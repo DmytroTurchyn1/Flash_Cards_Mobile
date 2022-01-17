@@ -23,7 +23,7 @@ public class WordsRepository implements IWordsRepository {
     private WordsRepository() {
         realm = Realm.getDefaultInstance();
         saveIrregularVerb(new IrregularVerb("Бути", "Be", "Was/Were", "Been"));
-
+        saveNewWords(new SimpleWord("Бути","Be"));
     }
 
     public static IWordsRepository getInstance() {

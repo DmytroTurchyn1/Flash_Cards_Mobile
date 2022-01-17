@@ -2,14 +2,10 @@ package com.example.flashcards.feature.irregularwords
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
-import android.widget.Toast
 import com.example.flashcards.R
 import com.example.flashcards.util.Launcher
 import kotlinx.android.synthetic.main.activity_irregular_words_ukr.*
 import kotlinx.android.synthetic.main.activity_learn_words.*
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.btnMenu
 
 class IrregularWordsActivity : AppCompatActivity(), IrregularWordsView {
@@ -20,7 +16,7 @@ class IrregularWordsActivity : AppCompatActivity(), IrregularWordsView {
         presenter = IrregularWordsPresenter(this)
 
         btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
-        ptEnglishWord.setOnClickListener { presenter.onShowForms() }
+        tvFirstForm.setOnClickListener { presenter.onShowForms() }
         btnNext.setOnClickListener { presenter.onNextButtonClicked() }
     }
 
@@ -31,12 +27,14 @@ class IrregularWordsActivity : AppCompatActivity(), IrregularWordsView {
         presenter.onActivityStarted()
     }
 
-    override fun showNativeWord(nativeWord: String) {
-        ptEnglishWord.text = nativeWord
+    override fun showForms(englishWord: String) {
+        tvFirstForm.text = englishWord
+        tvSecondForm.text = englishWord
+        tvThirdForm.text = englishWord
     }
 
-    override fun showEnglishWord(englishWord: String) {
-        tvEnglishWord.text = englishWord
+    override fun showNativeWord (nativeWord: String) {
+        tvEnglishWord.text = nativeWord
     }
 
    /* open  val ukrWord = ArrayList<String>()
@@ -93,6 +91,9 @@ class IrregularWordsActivity : AppCompatActivity(), IrregularWordsView {
         enWord.add("hide	          hid	       hidden");
         enWord.add("hit	          hit	       hit");
         enWord.add("hold	          held	       held");
+
+
+
         enWord.add("hurt	          hurt	       hurt");
         enWord.add("keep	          kept	       kept");
         enWord.add("kneel	      knelt	       knelt");

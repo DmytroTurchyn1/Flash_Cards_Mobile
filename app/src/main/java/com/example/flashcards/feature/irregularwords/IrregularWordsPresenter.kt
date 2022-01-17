@@ -33,9 +33,9 @@ class IrregularWordsPresenter(view: IrregularWordsView) {
 
     private fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
 
-    fun onShowForms() = view?.showEnglishWord(words[id].englishWord)
+    fun onShowForms() = view?.showForms(words[id].englishWord)
 
-    private fun clearEnglishWord() = view?.showEnglishWord(EMPTY_STRING)
+    private fun clearEnglishWord() = view?.showForms(EMPTY_STRING)
 
     private fun updateWordId() {
         id = getRandomId()

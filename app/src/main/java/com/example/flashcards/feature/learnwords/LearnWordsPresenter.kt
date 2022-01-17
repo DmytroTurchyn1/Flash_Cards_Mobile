@@ -50,6 +50,10 @@ class LearnWordsPresenter(view: LearnWordsView) {
     }
 
     private fun getRandomId() = Random.nextInt(0, words.size)
+    fun onDeleteButtonClicked() {
+        realm.remove(words[id])
+
+    }
 
     companion object {
         private const val EMPTY_STRING = ""

@@ -19,23 +19,23 @@ class NewWordsPresenter(view: NewWordsView) {
 
     }
 
-    fun onActivityStarted() = showNativeWord()
+    fun onActivityStarted() = showEnglishWord()
 
     fun onMenuBtnClicked() = view?.navigateToMenuActivity()
 
     fun onNextButtonClicked() {
         updateWordId()
         clearEnglishWord()
-        showNativeWord()
+        showEnglishWord()
     }
 
 
 
-    private fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
+    private fun onShowNativeWord() = view?.showNativeWord(words[id].nativeWord)
 
-    fun onShowForms() = view?.showForms(words[id].englishWord)
+    fun showEnglishWord() = view?.showEnglishWord(words[id].englishWord)
 
-    private fun clearEnglishWord() = view?.showForms(EMPTY_STRING)
+    private fun clearEnglishWord() = view?.showEnglishWord(EMPTY_STRING)
 
     private fun updateWordId() {
         id = getRandomId()

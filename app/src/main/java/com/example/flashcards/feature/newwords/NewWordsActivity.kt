@@ -32,13 +32,11 @@ class NewWordsActivity : AppCompatActivity(), NewWordsView {
         presenter.onActivityStarted()
     }
 
-    override fun showForms(englishWord: String) {
+    override fun showNativeWord(englishWord: String) {
         tvFirstForm.text = englishWord
-        tvSecondForm.text = englishWord
-        tvThirdForm.text = englishWord
     }
 
-    override fun showNativeWord (nativeWord: String) {
+    override fun showEnglishWord (nativeWord: String) {
         tvEnglishWord.text = nativeWord
     }
 

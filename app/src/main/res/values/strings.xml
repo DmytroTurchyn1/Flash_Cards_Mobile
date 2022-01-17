@@ -23,5 +23,5 @@
     <string name="save_btn">Зберегти</string>
     <string name="add_word_title">Додати слово</string>
     <string name="no_user_word_error">У вас поки що  немає доданих слів</string>
-    <string name="delete_btn">Видалити</string>
+    <string name="btn_delete">Видалити</string>
 </resources>

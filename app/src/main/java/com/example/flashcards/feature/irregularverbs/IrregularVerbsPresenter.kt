@@ -1,25 +1,24 @@
-package com.example.flashcards.feature.irregularwords
+package com.example.flashcards.feature.irregularverbs
 
-
-import com.example.flashcards.model.local.Word
+import com.example.flashcards.model.local.IrregularVerb
 import com.example.flashcards.repository.WordsRepository
 import java.lang.ref.WeakReference
 import kotlin.random.Random
 
-class IrregularWordsPresenter(view: IrregularWordsView) {
+class IrregularVerbsPresenter(view: IrregularVerbsView) {
     private val viewReference = WeakReference(view)
     private val view
         get() = viewReference.get()
     private val wordsRepository = WordsRepository.getInstance()
-    private var words = listOf<Word>()
+    private var words = listOf<IrregularVerb>()
     private var id: Int = 0
 
     fun onActivityCreated() {
-        words = wordsRepository.getWords()
-
+        words = wordsRepository.getIrregularVerbs()
+        updateWordId()
     }
 
-    fun onActivityStarted() = showNativeWord()
+    fun onActivityStarted() = onShowForms()
 
     fun onMenuBtnClicked() = view?.navigateToMenuActivity()
 
@@ -29,13 +28,11 @@ class IrregularWordsPresenter(view: IrregularWordsView) {
         showNativeWord()
     }
 
-
-
     private fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
 
-    fun onShowForms() = view?.showForms(words[id].englishWord)
+    fun onShowForms() = view?.showVerbForms(words[id].firstForm, words[id].secondForm, words[id].thirdForm)
 
-    private fun clearEnglishWord() = view?.showForms(EMPTY_STRING)
+    private fun clearEnglishWord() = view?.showVerbForms(EMPTY_STRING, EMPTY_STRING, EMPTY_STRING)
 
     private fun updateWordId() {
         id = getRandomId()

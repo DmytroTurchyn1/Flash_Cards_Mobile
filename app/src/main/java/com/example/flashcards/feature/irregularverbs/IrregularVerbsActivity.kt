@@ -1,19 +1,19 @@
-package com.example.flashcards.feature.irregularwords
+package com.example.flashcards.feature.irregularverbs
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.flashcards.R
 import com.example.flashcards.util.Launcher
-import kotlinx.android.synthetic.main.activity_irregular_words_ukr.*
-import kotlinx.android.synthetic.main.activity_learn_words.*
-import kotlinx.android.synthetic.main.activity_main.btnMenu
+import kotlinx.android.synthetic.main.activity_irregular_words.*
 
-class IrregularWordsActivity : AppCompatActivity(), IrregularWordsView {
-    private lateinit var presenter: IrregularWordsPresenter
+class IrregularVerbsActivity : AppCompatActivity(), IrregularVerbsView {
+    private lateinit var presenter: IrregularVerbsPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_irregular_words_ukr)
-        presenter = IrregularWordsPresenter(this)
+        setContentView(R.layout.activity_irregular_words)
+
+        presenter = IrregularVerbsPresenter(this)
+        presenter.onActivityCreated()
 
         btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
         tvFirstForm.setOnClickListener { presenter.onShowForms() }
@@ -27,14 +27,14 @@ class IrregularWordsActivity : AppCompatActivity(), IrregularWordsView {
         presenter.onActivityStarted()
     }
 
-    override fun showForms(englishWord: String) {
-        tvFirstForm.text = englishWord
-        tvSecondForm.text = englishWord
-        tvThirdForm.text = englishWord
+    override fun showVerbForms(firsForm: String, secondForm: String, thirdForm: String) {
+        tvFirstForm.text = firsForm
+        tvSecondForm.text = secondForm
+        tvThirdForm.text = thirdForm
     }
 
     override fun showNativeWord (nativeWord: String) {
-        tvEnglishWord.text = nativeWord
+        btnNativeWord.text = nativeWord
     }
 
    /* open  val ukrWord = ArrayList<String>()

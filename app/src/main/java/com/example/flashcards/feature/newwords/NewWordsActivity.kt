@@ -1,30 +1,25 @@
 package com.example.flashcards.feature.newwords
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
 import com.example.flashcards.R
-import com.example.flashcards.feature.main.MainPresenter
-import com.example.flashcards.feature.menu.MenuActivity
 import com.example.flashcards.util.Launcher
-import kotlinx.android.synthetic.main.activity_irregular_words_ukr.*
-import kotlinx.android.synthetic.main.activity_learn_words.*
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.btnMenu
+import kotlinx.android.synthetic.main.activity_new_words.*
 
 class NewWordsActivity : AppCompatActivity(), NewWordsView {
     private lateinit var presenter: NewWordsPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_words_ukr)
+        setContentView(R.layout.activity_new_words)
 
         presenter = NewWordsPresenter(this)
+        presenter.onActivityCreated()
 
+        tvEnglishWord.setOnClickListener { presenter.onShowNativeWord() }
         btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
-
+        btnNext.setOnClickListener { presenter.onNextButtonClicked() }
     }
+
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
 
     override fun onStart() {
@@ -32,11 +27,11 @@ class NewWordsActivity : AppCompatActivity(), NewWordsView {
         presenter.onActivityStarted()
     }
 
-    override fun showNativeWord(englishWord: String) {
-        tvFirstForm.text = englishWord
+    override fun showEnglishWord(englishWord: String) {
+        tvEnglishWord.text = englishWord
     }
 
-    override fun showEnglishWord (nativeWord: String) {
+    override fun showNativeWord(nativeWord: String) {
         tvEnglishWord.text = nativeWord
     }
 

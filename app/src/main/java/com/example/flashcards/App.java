@@ -20,7 +20,8 @@ public class App extends Application {
 
         realmBuilder.name(REALM_DB_NAME)
                 .schemaVersion(REALM_DB_VERSION)
-                .assetFile("words.realm")
+                .deleteRealmIfMigrationNeeded()
+//                .assetFile("words.realm")
                 .allowWritesOnUiThread(true)
                 .allowQueriesOnUiThread(true);
 

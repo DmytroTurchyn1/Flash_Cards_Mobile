@@ -9,7 +9,7 @@ import com.example.flashcards.feature.aboutme.AboutMeActivity
 import com.example.flashcards.feature.addword.AddWordActivity
 import com.example.flashcards.feature.learnwords.LearnWordsActivity
 import com.example.flashcards.feature.newwords.NewWordsActivity
-import com.example.flashcards.feature.irregularwords.IrregularWordsActivity
+import com.example.flashcards.feature.irregularverbs.IrregularVerbsActivity
 import com.example.flashcards.feature.mywords.MyWordsActivity
 
 object Launcher {
@@ -29,7 +29,7 @@ object Launcher {
     }
 
     fun startIrregularWordsActivity(activity: Activity) {
-        val intent = Intent(activity, IrregularWordsActivity::class.java)
+        val intent = Intent(activity, IrregularVerbsActivity::class.java)
         activity.startActivity(intent)
     }
 

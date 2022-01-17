@@ -6,7 +6,7 @@ import io.realm.annotations.RealmClass
 import io.realm.annotations.Required
 import org.bson.types.ObjectId
 @RealmClass
-class SimpleWordsRealm (
+open class SimpleWordsRealm (
     @PrimaryKey
     var id: String = ObjectId().toHexString(),
     @Required

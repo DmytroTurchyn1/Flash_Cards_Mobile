@@ -16,7 +16,7 @@ class AddWordActivity : AppCompatActivity(), AddWordView {
 
         btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
         btnSave.setOnClickListener {
-            presenter.onSaveBtnClicked(ptNativeWord.text.toString(), ptEnglishWord.text.toString())
+            presenter.onSaveBtnClicked(ptNativeWord.text.toString(), tvFirstForm.text.toString())
         }
     }
 

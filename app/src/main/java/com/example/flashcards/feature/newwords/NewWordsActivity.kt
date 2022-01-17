@@ -1,31 +1,42 @@
 package com.example.flashcards.feature.newwords
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
 import com.example.flashcards.R
-import com.example.flashcards.feature.main.MainPresenter
-import com.example.flashcards.feature.menu.MenuActivity
 import com.example.flashcards.util.Launcher
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_new_words.*
 
-class NewWords : AppCompatActivity(), NewWordsView {
+class NewWordsActivity : AppCompatActivity(), NewWordsView {
     private lateinit var presenter: NewWordsPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_words_ukr)
+        setContentView(R.layout.activity_new_words)
 
         presenter = NewWordsPresenter(this)
+        presenter.onActivityCreated()
 
+        tvEnglishWord.setOnClickListener { presenter.onShowNativeWord() }
         btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
-
+        btnNext.setOnClickListener { presenter.onNextButtonClicked() }
     }
+
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
 
+    override fun onStart() {
+        super.onStart()
+        presenter.onActivityStarted()
+    }
 
-    var next = 0
+    override fun showEnglishWord(englishWord: String) {
+        tvEnglishWord.text = englishWord
+    }
+
+    override fun showNativeWord(nativeWord: String) {
+        tvEnglishWord.text = nativeWord
+    }
+
+
+   /* var next = 0
     fun ShowuUkrWord(view: android.view.View) {
         var ukr_word = findViewById<TextView>(R.id.btnShowNativeWord)
 
@@ -144,5 +155,5 @@ class NewWords : AppCompatActivity(), NewWordsView {
 
         en_word.text = enWord[next]
 
-    }
+    }*/
 }

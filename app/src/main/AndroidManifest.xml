@@ -51,13 +51,13 @@
             android:name=".trash.Home_en"
             android:exported="false" />
         <activity
-            android:name=".feature.irregularwords.IrregularWordsActivity"
+            android:name=".feature.irregularverbs.IrregularVerbsActivity"
             android:exported="false" />
         <activity
             android:name=".trash.new_words_en"
             android:exported="false" />
         <activity
-            android:name=".feature.newwords.NewWords"
+            android:name=".feature.newwords.NewWordsActivity"
             android:exported="false" />
         <activity
             android:name=".feature.main.MainActivity"

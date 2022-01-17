@@ -1,34 +1,43 @@
-package com.example.flashcards.feature.irregularwords
+package com.example.flashcards.feature.irregularverbs
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
 import com.example.flashcards.R
 import com.example.flashcards.util.Launcher
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_irregular_words.*
 
-class IrregularWordsActivity : AppCompatActivity(), IrregularWordsView {
-    private lateinit var presenter: IrregularWordsPresenter
+class IrregularVerbsActivity : AppCompatActivity(), IrregularVerbsView {
+    private lateinit var presenter: IrregularVerbsPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_irregular_words_ukr)
-        presenter = IrregularWordsPresenter(this)
+        setContentView(R.layout.activity_irregular_words)
+
+        presenter = IrregularVerbsPresenter(this)
+        presenter.onActivityCreated()
 
         btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
+        tvFirstForm.setOnClickListener { presenter.onShowForms() }
+        btnNext.setOnClickListener { presenter.onNextButtonClicked() }
     }
 
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
 
-
-    var next = 0
-
-    fun see_en_forms(view: android.view.View) {
-        var en_Word = findViewById<TextView>(R.id.ptEnglishWord)
-        en_Word.text = enWord[next]
-
+    override fun onStart() {
+        super.onStart()
+        presenter.onActivityStarted()
     }
-    open  val ukrWord = ArrayList<String>()
+
+    override fun showVerbForms(firsForm: String, secondForm: String, thirdForm: String) {
+        tvFirstForm.text = firsForm
+        tvSecondForm.text = secondForm
+        tvThirdForm.text = thirdForm
+    }
+
+    override fun showNativeWord (nativeWord: String) {
+        btnNativeWord.text = nativeWord
+    }
+
+   /* open  val ukrWord = ArrayList<String>()
     open  val enWord = ArrayList<String>()
     fun next(view: View) {
         next ++
@@ -82,6 +91,9 @@ class IrregularWordsActivity : AppCompatActivity(), IrregularWordsView {
         enWord.add("hide	          hid	       hidden");
         enWord.add("hit	          hit	       hit");
         enWord.add("hold	          held	       held");
+
+
+
         enWord.add("hurt	          hurt	       hurt");
         enWord.add("keep	          kept	       kept");
         enWord.add("kneel	      knelt	       knelt");
@@ -268,5 +280,8 @@ class IrregularWordsActivity : AppCompatActivity(), IrregularWordsView {
         ukrWord.add("плакати");
         ukrWord.add("писати");
         ukr_word.text = ukrWord[next]
+
+
     }
+*/
 }

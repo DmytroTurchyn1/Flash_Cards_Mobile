@@ -1,8 +1,11 @@
 package com.example.flashcards.repository;
 
 import androidx.annotation.NonNull;
+import com.example.flashcards.model.data.IrregularVerbRealm;
 import com.example.flashcards.model.data.WordMapper;
-import com.example.flashcards.model.data.WordRealm;
+import com.example.flashcards.model.data.SimpleWordRealm;
+import com.example.flashcards.model.local.IrregularVerb;
+import com.example.flashcards.model.local.SimpleWord;
 import com.example.flashcards.model.local.Word;
 import com.example.flashcards.util.RandomIdGenerator;
 import java.util.List;
@@ -13,9 +16,11 @@ public class WordsRepository implements IWordsRepository {
     private static IWordsRepository repository;
     private static Realm realm;
     private RandomIdGenerator idGenerator = new RandomIdGenerator();
+    private WordMapper wordMapper = new WordMapper();
 
     private WordsRepository() {
         realm = Realm.getDefaultInstance();
+        saveIrregularVerb(new IrregularVerb("Бути", "Be", "Was/Were", "Been"));
     }
 
     public static IWordsRepository getInstance() {
@@ -27,9 +32,28 @@ public class WordsRepository implements IWordsRepository {
 
     @Override
     public void saveWord(@NonNull Word word) {
+        if (word instanceof SimpleWord) {
+            saveSimpleWord((SimpleWord) word);
+        } else if (word instanceof IrregularVerb) {
+            saveIrregularVerb((IrregularVerb) word);
+//        } else (word instanceof UserWord) {
+//            saveUserWord();
+        }
+    }
+
+    private void saveIrregularVerb(IrregularVerb word) {
         realm.executeTransaction(
                 realm -> {
-                    WordRealm wordRealm = new WordRealm(idGenerator.getId(), word.nativeWord, word.englishWord);
+                    IrregularVerbRealm wordRealm = new IrregularVerbRealm(idGenerator.getId(), word.nativeWord, word.firstForm, word.secondForm, word.thirdForm);
+                    realm.insert(wordRealm);
+                }
+        );
+    }
+
+    private void saveSimpleWord(SimpleWord word) {
+        realm.executeTransaction(
+                realm -> {
+                    SimpleWordRealm wordRealm = new SimpleWordRealm(idGenerator.getId(), word.nativeWord, word.englishWord);
                     realm.insert(wordRealm);
                 }
         );
@@ -37,9 +61,15 @@ public class WordsRepository implements IWordsRepository {
 
     @NonNull
     @Override
-    public List<Word> getWords() {
-        RealmResults<WordRealm> words = realm.where(WordRealm.class).findAll();
-        WordMapper wordMapper = new WordMapper();
-        return wordMapper.mapRealm(words);
+    public List<SimpleWord> getWords() {
+        RealmResults<SimpleWordRealm> words = realm.where(SimpleWordRealm.class).findAll();
+        return wordMapper.mapSimpleWordsRealm(words);
+    }
+
+    @NonNull
+    @Override
+    public List<IrregularVerb> getIrregularVerbs() {
+        RealmResults<IrregularVerbRealm> words = realm.where(IrregularVerbRealm.class).findAll();
+        return wordMapper.mapIrregularVerbsRealm(words);
     }
 }

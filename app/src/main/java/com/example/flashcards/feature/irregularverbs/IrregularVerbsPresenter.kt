@@ -1,31 +1,26 @@
-package com.example.flashcards.feature.learnwords
+package com.example.flashcards.feature.irregularverbs
 
-import com.example.flashcards.model.local.SimpleWord
+import com.example.flashcards.model.local.IrregularVerb
 import com.example.flashcards.repository.WordsRepository
 import java.lang.ref.WeakReference
 import kotlin.random.Random
 
-class LearnWordsPresenter(view: LearnWordsView) {
+class IrregularVerbsPresenter(view: IrregularVerbsView) {
     private val viewReference = WeakReference(view)
     private val view
         get() = viewReference.get()
-
     private val wordsRepository = WordsRepository.getInstance()
-    private var words = listOf<SimpleWord>()
+    private var words = listOf<IrregularVerb>()
     private var id: Int = 0
 
     fun onActivityCreated() {
-        words = wordsRepository.getWords()
-        if(words.isEmpty()) {
-            showErrorAndCloseActivity()
-        } else {
-            updateWordId()
-        }
+        words = wordsRepository.getIrregularVerbs()
+        updateWordId()
     }
 
-    fun onActivityStarted() = showNativeWord()
+    fun onActivityStarted() = onShowForms()
 
-    fun onShowEnglishWordClicked() = view?.showEnglishWord(words[id].englishWord)
+    fun onMenuBtnClicked() = view?.navigateToMenuActivity()
 
     fun onNextButtonClicked() {
         updateWordId()
@@ -33,16 +28,11 @@ class LearnWordsPresenter(view: LearnWordsView) {
         showNativeWord()
     }
 
-    fun onMenuBtnClicked() = view?.navigateToMenuActivity()
-
-    private fun showErrorAndCloseActivity() {
-        view?.showNoWordsError()
-        view?.close()
-    }
-
     private fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
 
-    private fun clearEnglishWord() = view?.showEnglishWord(EMPTY_STRING)
+    fun onShowForms() = view?.showVerbForms(words[id].firstForm, words[id].secondForm, words[id].thirdForm)
+
+    private fun clearEnglishWord() = view?.showVerbForms(EMPTY_STRING, EMPTY_STRING, EMPTY_STRING)
 
     private fun updateWordId() {
         id = getRandomId()

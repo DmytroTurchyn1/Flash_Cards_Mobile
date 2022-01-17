@@ -2,13 +2,13 @@ package com.example.flashcards.repository;
 
 import androidx.annotation.NonNull;
 import com.example.flashcards.model.data.IrregularVerbRealm;
-import com.example.flashcards.model.data.NewWordsRealm;
+import com.example.flashcards.model.data.SimpleWordsRealm;
 import com.example.flashcards.model.data.WordMapper;
-import com.example.flashcards.model.data.SimpleWordRealm;
+import com.example.flashcards.model.data.UserWordRealm;
 import com.example.flashcards.model.local.IrregularVerb;
-import com.example.flashcards.model.local.SimpleWord;
+import com.example.flashcards.model.local.UserWord;
 import com.example.flashcards.model.local.Word;
-import com.example.flashcards.model.local.newWords;
+import com.example.flashcards.model.local.SimpleWord;
 import com.example.flashcards.util.RandomIdGenerator;
 import java.util.List;
 import io.realm.Realm;
@@ -35,12 +35,12 @@ public class WordsRepository implements IWordsRepository {
 
     @Override
     public void saveWord(@NonNull Word word) {
-        if (word instanceof SimpleWord) {
-            saveSimpleWord((SimpleWord) word);
+        if (word instanceof UserWord) {
+            saveSimpleWord((UserWord) word);
         } else if (word instanceof IrregularVerb) {
             saveIrregularVerb((IrregularVerb) word);
-       } else if (word instanceof newWords) {
-            saveNewWords((newWords) word);
+       } else if (word instanceof SimpleWord) {
+            saveNewWords((SimpleWord) word);
 //        else (word instanceof UserWord) {
 //            saveUserWord();
         }
@@ -55,19 +55,19 @@ public class WordsRepository implements IWordsRepository {
         );
     }
 
-    private void saveNewWords(newWords word) {
+    private void saveNewWords(SimpleWord word) {
         realm.executeTransaction(
                 realm -> {
-                    NewWordsRealm wordRealm = new NewWordsRealm(idGenerator.getId(), word.nativeWord, word.englishWord);
+                    SimpleWordsRealm wordRealm = new SimpleWordsRealm(idGenerator.getId(), word.nativeWord, word.englishWord);
                     realm.insert(wordRealm);
                 }
         );
     }
 
-    private void saveSimpleWord(SimpleWord word) {
+    private void saveSimpleWord(UserWord word) {
         realm.executeTransaction(
                 realm -> {
-                    SimpleWordRealm wordRealm = new SimpleWordRealm(idGenerator.getId(), word.nativeWord, word.englishWord);
+                    UserWordRealm wordRealm = new UserWordRealm(idGenerator.getId(), word.nativeWord, word.englishWord);
                     realm.insert(wordRealm);
                 }
         );
@@ -75,8 +75,8 @@ public class WordsRepository implements IWordsRepository {
 
     @NonNull
     @Override
-    public List<SimpleWord> getWords() {
-        RealmResults<SimpleWordRealm> words = realm.where(SimpleWordRealm.class).findAll();
+    public List<UserWord> getWords() {
+        RealmResults<UserWordRealm> words = realm.where(UserWordRealm.class).findAll();
         return wordMapper.mapSimpleWordsRealm(words);
     }
 
@@ -89,8 +89,8 @@ public class WordsRepository implements IWordsRepository {
 
     @NonNull
     @Override
-    public List<newWords> getNewWords() {
-        RealmResults<NewWordsRealm> words = realm.where(NewWordsRealm.class).findAll();
+    public List<SimpleWord> getNewWords() {
+        RealmResults<SimpleWordsRealm> words = realm.where(SimpleWordsRealm.class).findAll();
         return wordMapper.mapNewWordsRealm(words);
     }
 }

@@ -3,7 +3,7 @@ package com.example.flashcards.model.local
 
 sealed class Word
 
-data class SimpleWord(
+data class UserWord(
     @JvmField
     val nativeWord: String,
     @JvmField
@@ -21,10 +21,10 @@ data class IrregularVerb(
     val thirdForm: String
 ) : Word()
 
-data class newWords(
+data class SimpleWord(
     @JvmField
     val nativeWord: String,
     @JvmField
-    val englishWord: String,
+    val englishWord: String
 
 ) : Word()

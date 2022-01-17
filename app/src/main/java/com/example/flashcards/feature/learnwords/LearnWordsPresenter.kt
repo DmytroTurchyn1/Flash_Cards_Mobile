@@ -1,6 +1,6 @@
 package com.example.flashcards.feature.learnwords
 
-import com.example.flashcards.model.local.SimpleWord
+import com.example.flashcards.model.local.UserWord
 import com.example.flashcards.repository.WordsRepository
 import java.lang.ref.WeakReference
 import kotlin.random.Random
@@ -11,7 +11,7 @@ class LearnWordsPresenter(view: LearnWordsView) {
         get() = viewReference.get()
 
     private val wordsRepository = WordsRepository.getInstance()
-    private var words = listOf<SimpleWord>()
+    private var words = listOf<UserWord>()
     private var id: Int = 0
 
     fun onActivityCreated() {

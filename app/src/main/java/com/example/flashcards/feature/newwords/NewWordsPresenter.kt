@@ -1,7 +1,6 @@
 package com.example.flashcards.feature.newwords
 
 import com.example.flashcards.model.local.SimpleWord
-import com.example.flashcards.model.local.Word
 import com.example.flashcards.repository.WordsRepository
 import java.lang.ref.WeakReference
 import kotlin.random.Random
@@ -16,7 +15,7 @@ class NewWordsPresenter(view: NewWordsView) {
     private var id: Int = 0
 
     fun onActivityCreated() {
-        words = wordsRepository.getWords()
+        words = wordsRepository.getNewWords()
         updateWordId()
     }
 

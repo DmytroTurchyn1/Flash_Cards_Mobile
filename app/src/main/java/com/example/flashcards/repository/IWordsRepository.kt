@@ -4,7 +4,7 @@ import com.example.flashcards.model.local.*
 
 interface IWordsRepository {
     fun saveWord(word: Word)
-    fun getWords(): List<SimpleWord>
+    fun getWords(): List<UserWord>
     fun getIrregularVerbs(): List<IrregularVerb>
-    fun getNewWords(): MutableList<newWords>
+    fun getNewWords(): MutableList<SimpleWord>
 }

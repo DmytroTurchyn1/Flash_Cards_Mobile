@@ -86,11 +86,7 @@ public class WordsRepository implements IWordsRepository {
         RealmResults<IrregularVerbRealm> words = realm.where(IrregularVerbRealm.class).findAll();
         return wordMapper.mapIrregularVerbsRealm(words);
     }
+     public class deletewords(id String){
 
-    @NonNull
-    @Override
-    public List<SimpleWord> getNewWords() {
-        RealmResults<SimpleWordsRealm> words = realm.where(SimpleWordsRealm.class).findAll();
-        return wordMapper.mapSimpleWordsRealm(words);
-    }
+     }
 }

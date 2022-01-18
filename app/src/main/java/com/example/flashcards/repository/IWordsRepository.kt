@@ -1,11 +1,10 @@
 package com.example.flashcards.repository
 
-import com.example.flashcards.model.local.IrregularVerb
-import com.example.flashcards.model.local.SimpleWord
-import com.example.flashcards.model.local.Word
+import com.example.flashcards.model.local.*
 
 interface IWordsRepository {
     fun saveWord(word: Word)
-    fun getWords(): List<SimpleWord>
+    fun getWords(): List<UserWord>
     fun getIrregularVerbs(): List<IrregularVerb>
+    fun getNewWords(): MutableList<SimpleWord>
 }

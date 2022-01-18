@@ -1,7 +1,7 @@
 package com.example.flashcards.feature.addword
 
 
-import com.example.flashcards.model.local.SimpleWord
+import com.example.flashcards.model.local.UserWord
 import com.example.flashcards.repository.WordsRepository
 import java.lang.ref.WeakReference
 
@@ -12,7 +12,7 @@ class AddWordPresenter (view: AddWordView){
         get() = viewReference.get()
 
     fun onSaveBtnClicked(nativeWord: String, englishWord: String) {
-        repository.saveWord(SimpleWord(nativeWord, englishWord))
+        repository.saveWord(UserWord(nativeWord, englishWord))
         view?.close()
     }
 

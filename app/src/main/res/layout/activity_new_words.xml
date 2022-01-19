@@ -8,15 +8,15 @@
     tools:context=".feature.newwords.NewWordsActivity">
 
     <Button
-        android:id="@+id/tvEnglishWord"
+        android:id="@+id/btnShowNativeWord"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="28dp"
         android:textColor="#000000"
         android:textSize="24sp"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEnglishWordTitle"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -64,19 +64,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="119dp"
         android:text="@string/learn_words_native_word"
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEnglishWord" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEnglishWordTitle" />
 
     <TextView
-        android:id="@+id/btnShowNativeWord"
+        android:id="@+id/tvNativeWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="404dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="428dp"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"

@@ -49,9 +49,11 @@ class LearnWordsPresenter(view: LearnWordsView) {
         id = getRandomId()
     }
 
+     fun DeleteWord() = wordsRepository.DeleteWord(words[id].toString())
+
     private fun getRandomId() = Random.nextInt(0, words.size)
     fun onDeleteButtonClicked() {
-        realm.remove(words[id])
+
 
     }
 

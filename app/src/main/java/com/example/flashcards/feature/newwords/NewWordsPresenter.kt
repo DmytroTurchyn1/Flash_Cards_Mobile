@@ -15,7 +15,7 @@ class NewWordsPresenter(view: NewWordsView) {
     private var id: Int = 0
 
     fun onActivityCreated() {
-        words = wordsRepository.getNewWords()
+        words = wordsRepository.getSimpleWords()
         updateWordId()
     }
 
@@ -29,7 +29,7 @@ class NewWordsPresenter(view: NewWordsView) {
         showEnglishWord()
     }
 
-    fun onShowNativeWord() = view?.showNativeWord(words[id].nativeWord)
+    fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
 
     fun showEnglishWord() = view?.showEnglishWord(words[id].englishWord)
 

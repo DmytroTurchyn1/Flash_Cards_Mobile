@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
     <Button
-        android:id="@+id/btnShowNativeWord"
+        android:id="@+id/tvNativeWord"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,10 +70,10 @@
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnShowNativeWord" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNativeWord" />
 
     <TextView
-        android:id="@+id/tvEnglishWord"
+        android:id="@+id/btnShowNativeWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"
@@ -94,7 +94,7 @@
         android:text="@string/next"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEnglishWord" />
+        app:layout_constraintTop_toBottomOf="@+id/btnShowNativeWord" />
 
     <Button
         android:id="@+id/btnDelete"
@@ -103,7 +103,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="128dp"
         android:layout_marginTop="56dp"
-        android:text="@string/btn_delete"
+        android:text="@string/delete_btn"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNext" />

@@ -18,9 +18,9 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
         presenter.onActivityCreated()
 
         ibMenu.setOnClickListener { presenter.onMenuBtnClicked() }
-        btnShowNativeWord.setOnClickListener { presenter.onShowEnglishWordClicked() }
         btnNext.setOnClickListener { presenter.onNextButtonClicked() }
-        btnDelete.setOnClickListener{presenter.onDeleteButtonClicked()}
+        btnDelete.setOnClickListener{presenter.DeleteWord()}
+        tvNativeWord.setOnClickListener{presenter.onShowEnglishWordClicked()}
     }
 
     override fun onStart() {
@@ -31,11 +31,13 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
 
     override fun showNativeWord(nativeWord: String) {
-        btnShowNativeWord.text = nativeWord
+        tvNativeWord.text = nativeWord
     }
 
+
+
     override fun showEnglishWord(englishWord: String) {
-        tvEnglishWord.text = englishWord
+        btnShowNativeWord.text = englishWord
     }
 
     override fun showNoWordsError() =

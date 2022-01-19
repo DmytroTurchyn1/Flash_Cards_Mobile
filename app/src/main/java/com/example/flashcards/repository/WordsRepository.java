@@ -73,6 +73,8 @@ public class WordsRepository implements IWordsRepository {
         );
     }
 
+
+
     @NonNull
     @Override
     public List<UserWord> getWords() {
@@ -86,7 +88,21 @@ public class WordsRepository implements IWordsRepository {
         RealmResults<IrregularVerbRealm> words = realm.where(IrregularVerbRealm.class).findAll();
         return wordMapper.mapIrregularVerbsRealm(words);
     }
-     public class deletewords(id String){
 
-     }
+    @NonNull
+    @Override
+    public List<SimpleWord> getSimpleWords() {
+        RealmResults<SimpleWordsRealm> words = realm.where(SimpleWordsRealm.class).findAll();
+        return wordMapper.mapSimpleWordsRealm(words);
+    }
+
+
+    @Override
+    public void DeleteWord(String id) {
+        realm.executeTransaction(
+                realm1 -> {
+                    realm1.delete(UserWordRealm.class);
+                }
+        );
+    }
 }

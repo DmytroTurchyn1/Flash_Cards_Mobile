@@ -42,17 +42,17 @@
 
     <TextView
         android:id="@+id/tvNativeWordTitle"
-        android:layout_width="208dp"
-        android:layout_height="34dp"
+        android:layout_width="213dp"
+        android:layout_height="29dp"
         android:text="@string/learn_words_native_word"
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
+        app:layout_constraintVertical_bias="0.321" />
 
     <Button
         android:id="@+id/btnNativeWord"
@@ -74,89 +74,56 @@
 
     <TextView
         android:id="@+id/tvEnglishWordTitle"
-        android:layout_width="209dp"
-        android:layout_height="32dp"
+        android:layout_width="208dp"
+        android:layout_height="29dp"
         android:text="@string/learn_words_english_word"
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvEnglishWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginEnd="275dp"
+        android:layout_marginTop="20dp"
         android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.582" />
+        app:layout_constraintTop_toBottomOf="@id/tvEnglishWordTitle" />
 
     <Button
         android:id="@+id/btnNext"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="163dp"
+        android:layout_height="51dp"
         android:text="@string/next"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.724" />
+        app:layout_constraintVertical_bias="0.741" />
 
     <Button
         android:id="@+id/btnDelete"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="148dp"
-        android:layout_height="60dp"
+        android:layout_width="194dp"
+        android:layout_height="63dp"
         android:layout_marginStart="128dp"
         android:layout_marginEnd="125dp"
         android:text="@string/delete_btn"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.831" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="59dp"
-        android:layout_marginEnd="298dp"
-        android:layout_marginBottom="39dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/tvNativeWordTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ibMenu" />
-
-    <Button
-        android:id="@+id/btnDelete"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="148dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="56dp"
-        android:text="@string/btn_delete"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnNext" />
+        app:layout_constraintVertical_bias="0.857" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

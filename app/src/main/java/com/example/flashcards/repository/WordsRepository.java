@@ -102,10 +102,11 @@ public class WordsRepository implements IWordsRepository {
     public void deleteWord(String id) {
         realm.executeTransaction(
                 realm1 -> {
-                    //realm1.(UserWordRealm.class);
+                    RealmResults<UserWordRealm> result = realm1.where(UserWordRealm.class).equalTo("id",id).findAll();
+                    //realm1.delete(result);
 
-                    //RealmResults result = realm1.where(UserWordRealm.class).equalTo("id",id).findAll();
-                       // result.deleteFromRealm(Integer.parseInt(id));
+
+                        result.deleteFromRealm();
 
                 }
         );

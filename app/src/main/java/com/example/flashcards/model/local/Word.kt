@@ -5,12 +5,16 @@ sealed class Word
 
 data class UserWord(
     @JvmField
+    val id: String,
+    @JvmField
     val nativeWord: String,
     @JvmField
     val englishWord: String
 ) : Word()
 
 data class IrregularVerb(
+    @JvmField
+    val id: String,
     @JvmField
     val nativeWord: String,
     @JvmField
@@ -22,6 +26,8 @@ data class IrregularVerb(
 ) : Word()
 
 data class SimpleWord(
+    @JvmField
+    val id: String,
     @JvmField
     val nativeWord: String,
     @JvmField

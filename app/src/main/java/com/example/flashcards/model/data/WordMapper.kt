@@ -7,16 +7,16 @@ import io.realm.RealmResults
 
 class WordMapper {
     fun mapUserWordsRealm(words: RealmResults<UserWordRealm>) =
-        words.map { simpleWord -> UserWord(nativeWord = simpleWord.nativeWord, englishWord = simpleWord.englishWord) }
+        words.map { simpleWord -> UserWord(nativeWord = simpleWord.nativeWord, englishWord = simpleWord.englishWord, id = simpleWord.id) }
 
     fun mapIrregularVerbsRealm(words: RealmResults<IrregularVerbRealm>): List<IrregularVerb> {
         return words.map { irregularVerb ->
-            IrregularVerb(irregularVerb.nativeWord, irregularVerb.firstForm, irregularVerb.secondForm, irregularVerb.thirdForm)
+            IrregularVerb(id = irregularVerb.id,irregularVerb.nativeWord, irregularVerb.firstForm, irregularVerb.secondForm, irregularVerb.thirdForm )
         }
     }
     fun mapSimpleWordsRealm (words: RealmResults<SimpleWordsRealm>): List<SimpleWord> {
         return words.map { simplewords ->
-            SimpleWord(simplewords.nativeWord, simplewords.englishWord)
+            SimpleWord(id = simplewords.id, simplewords.nativeWord, simplewords.englishWord)
         }
     }
 }

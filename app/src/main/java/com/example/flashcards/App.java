@@ -2,7 +2,9 @@ package com.example.flashcards;
 
 import static com.example.flashcards.AppConstants.REALM_DB_NAME;
 import static com.example.flashcards.AppConstants.REALM_DB_VERSION;
+
 import android.app.Application;
+
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
@@ -20,8 +22,8 @@ public class App extends Application {
 
         realmBuilder.name(REALM_DB_NAME)
                 .schemaVersion(REALM_DB_VERSION)
-              .deleteRealmIfMigrationNeeded()
- //              .assetFile("words.realm")
+//              .deleteRealmIfMigrationNeeded()
+                .assetFile("words.realm")
                 .allowWritesOnUiThread(true)
                 .allowQueriesOnUiThread(true);
 

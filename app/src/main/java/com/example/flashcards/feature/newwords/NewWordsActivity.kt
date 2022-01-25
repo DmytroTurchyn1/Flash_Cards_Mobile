@@ -28,7 +28,6 @@ class NewWordsActivity : AppCompatActivity(), NewWordsView {
     }
 
     override fun showEnglishWord(englishWord: String) {
-
         tvEnglishWord.text = englishWord
     }
 

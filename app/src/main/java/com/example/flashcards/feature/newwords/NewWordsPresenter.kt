@@ -29,7 +29,8 @@ class NewWordsPresenter(view: NewWordsView) {
         showEnglishWord()
     }
 
-    fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
+    fun showNativeWord() =
+        view?.showNativeWord(words[id].nativeWord)
 
     fun showEnglishWord() = view?.showEnglishWord(words[id].englishWord)
 

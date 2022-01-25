@@ -1,6 +1,5 @@
 package com.example.flashcards.feature.learnwords
 
-import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -11,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_learn_words.*
 
 class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
 
-
+    private var dialog: AlertDialog? = null
     private val presenter = LearnWordsPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,12 +22,17 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
         ibMenu.setOnClickListener { presenter.onMenuBtnClicked() }
         btnNativeWord.setOnClickListener { presenter.onShowEnglishWordClicked() }
         btnNext.setOnClickListener { presenter.onNextButtonClicked() }
-        btnDelete.setOnClickListener{presenter.DeleteWord()}
+        btnDelete.setOnClickListener { presenter.onDeleteWordBtnClicked() }
     }
 
     override fun onStart() {
         super.onStart()
         presenter.onActivityStarted()
+    }
+
+    override fun onStop() {
+        dialog?.dismiss()
+        super.onStop()
     }
 
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
@@ -41,20 +45,21 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
         tvEnglishWord.text = englishWord
     }
 
-    override fun DeleteWord() {
-        val builder =  AlertDialog.Builder(this)
-        builder.setTitle(R.string.word_delete_question)
-            .setCancelable(false)
-            .setPositiveButton(R.string.yes){
-                    dialog, id -> presenter.DeleteWord()
-
+    override fun deleteWord() {
+        dialog = AlertDialog.Builder(this)
+            .apply {
+                setTitle(R.string.word_delete_question)
+                setCancelable(false)
+                setPositiveButton(R.string.yes) { dialog, _ ->
+                    presenter.onDeleteWordConfirmed()
+                    dialog.cancel()
+                }
+                setNegativeButton(R.string.no) { dialog, _ -> dialog.cancel() }
             }
-            .setNegativeButton(R.string.no){
-                    dialog, id -> dialog.cancel()
-
+            .create()
+            .also {
+                it.show()
             }
-        builder.create()
-        builder.show()
     }
 
     override fun showNoWordsError() =

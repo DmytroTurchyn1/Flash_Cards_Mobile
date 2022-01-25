@@ -7,5 +7,5 @@ interface IWordsRepository {
     fun getWords(): List<UserWord>
     fun getIrregularVerbs(): List<IrregularVerb>
     fun getSimpleWords(): MutableList<SimpleWord>
-    fun DeleteWord(id:String)
+    fun deleteWord(id:String)
 }

@@ -99,7 +99,7 @@ public class WordsRepository implements IWordsRepository {
 
 
     @Override
-    public void DeleteWord(String id) {
+    public void deleteWord(String id) {
         realm.executeTransaction(
                 realm1 -> {
                     //realm1.(UserWordRealm.class);

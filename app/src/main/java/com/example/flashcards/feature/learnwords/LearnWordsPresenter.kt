@@ -17,7 +17,7 @@ class LearnWordsPresenter(view: LearnWordsView) {
 
     fun onActivityCreated() {
         words = wordsRepository.getWords()
-        if(words.isEmpty()) {
+        if (words.isEmpty()) {
             showErrorAndCloseActivity()
         } else {
             updateWordId()
@@ -55,8 +55,9 @@ class LearnWordsPresenter(view: LearnWordsView) {
         private const val EMPTY_STRING = ""
     }
 
-    fun DeleteWord() {
-        view?.DeleteWord()
-        wordsRepository.DeleteWord(words[id].toString())
+    fun onDeleteWordBtnClicked() {
+        view?.deleteWord()
     }
+
+    fun onDeleteWordConfirmed() = wordsRepository.deleteWord(words[id].toString())
 }

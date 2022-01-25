@@ -49,13 +49,12 @@ class LearnWordsPresenter(view: LearnWordsView) {
         id = getRandomId()
     }
 
-     fun DeleteWord() = wordsRepository.DeleteWord(words[id].toString())
+     fun DeleteWord() {
+         view?.DeleteWord()
+         wordsRepository.DeleteWord(words[id].toString())
+     }
 
     private fun getRandomId() = Random.nextInt(0, words.size)
-    fun onDeleteButtonClicked() {
-
-
-    }
 
     companion object {
         private const val EMPTY_STRING = ""

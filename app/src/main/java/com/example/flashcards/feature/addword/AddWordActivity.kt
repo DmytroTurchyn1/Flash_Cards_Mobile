@@ -2,6 +2,7 @@ package com.example.flashcards.feature.addword
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.flashcards.R
 import com.example.flashcards.util.Launcher
 import kotlinx.android.synthetic.main.activity_add_word.*
@@ -21,6 +22,11 @@ class AddWordActivity : AppCompatActivity(), AddWordView {
     }
 
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
+
+    override fun wordAdded() {
+        Toast.makeText(this, getString(R.string.word_added), Toast.LENGTH_SHORT).show()
+
+    }
 
     override fun close() = finish()
 }

@@ -24,4 +24,6 @@
     <string name="add_word_title">Додати слово</string>
     <string name="no_user_word_error">У вас поки що  немає доданих слів</string>
     <string name="delete_btn">Видалити</string>
+    <string name="word_added">Слово додано!</string>
+    <string name="word_delete_question">Ви справді хочете видалити слово?</string>
 </resources>

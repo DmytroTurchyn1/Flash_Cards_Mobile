@@ -1,8 +1,10 @@
 package com.example.flashcards.feature.learnwords
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.flashcards.R
 import com.example.flashcards.util.Launcher
 import kotlinx.android.synthetic.main.activity_learn_words.*
@@ -19,8 +21,8 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
 
         ibMenu.setOnClickListener { presenter.onMenuBtnClicked() }
         btnNext.setOnClickListener { presenter.onNextButtonClicked() }
-        btnDelete.setOnClickListener{presenter.DeleteWord()}
-        tvNativeWord.setOnClickListener{presenter.onShowEnglishWordClicked()}
+        btnDelete.setOnClickListener{DeleteWordlog()}
+        btnNativeWord.setOnClickListener{presenter.onShowEnglishWordClicked()}
     }
 
     override fun onStart() {
@@ -31,13 +33,28 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
 
     override fun showNativeWord(nativeWord: String) {
-        tvNativeWord.text = nativeWord
+        btnNativeWord.text = nativeWord
     }
 
-
+    fun DeleteWordlog() {
+        val builder =  AlertDialog.Builder(this)
+        builder.setTitle(R.string.word_delete_question)
+            .setCancelable(true)
+            .setPositiveButton(R.string.word_delete_question){
+                 dialog, id -> presenter.DeleteWord()
+            }
+            .setNegativeButton(R.string.word_delete_question){
+                    dialog, id -> dialog.cancel()
+            }
+        builder.create()
+    }
 
     override fun showEnglishWord(englishWord: String) {
-        btnShowNativeWord.text = englishWord
+        tvEnglishWord.text = englishWord
+    }
+
+    override fun DeleteWord() {
+
     }
 
     override fun showNoWordsError() =

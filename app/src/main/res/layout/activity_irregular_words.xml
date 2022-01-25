@@ -11,10 +11,10 @@
         android:id="@+id/tvThirdForm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="248dp"
         android:layout_marginTop="244dp"
         android:textColor="#000000"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,6 +26,7 @@
         android:layout_marginTop="244dp"
         android:textColor="#000000"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvSecondForm"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,11 +35,13 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="163dp"
         android:textColor="#000000"
         android:textSize="24sp"
         android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNativeWordTitle"
         tools:ignore="SpeakableTextPresentCheck"
@@ -51,8 +54,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:layout_marginTop="48dp"
+        android:layout_marginEnd="163dp"
         android:text="@string/next"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNativeWord" />
 
@@ -62,13 +67,16 @@
         android:layout_height="88dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="72dp"
         android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tvEnglishWordTitle"
+        app:layout_constraintEnd_toStartOf="@+id/tvTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/menu_btn_foreground"
         app:tint="@color/black"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
-         />
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tvNativeWordTitle"
@@ -76,9 +84,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
         android:layout_marginTop="106dp"
+        android:layout_marginEnd="104dp"
         android:text="@string/learn_words_native_word"
         android:textColor="#090909"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEnglishWordTitle" />
 
@@ -87,10 +97,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="69dp"
         android:text="@string/irregular_words_forms"
         android:textColor="#090909"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvNativeWordTitle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnMenu" />
 
@@ -100,9 +113,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="28dp"
+        android:layout_marginBottom="103dp"
         android:text="@string/irregular_words_text"
         android:textColor="#000000"
         android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvEnglishWordTitle"
         app:layout_constraintStart_toEndOf="@+id/btnMenu"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -112,8 +127,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:layout_marginTop="244dp"
+        android:layout_marginEnd="160dp"
         android:textColor="#000000"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvThirdForm"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

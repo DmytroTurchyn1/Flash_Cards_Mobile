@@ -94,6 +94,7 @@ public class WordsRepository implements IWordsRepository {
     public List<SimpleWord> getSimpleWords() {
         RealmResults<SimpleWordsRealm> words = realm.where(SimpleWordsRealm.class).findAll();
         return wordMapper.mapSimpleWordsRealm(words);
+
     }
 
 
@@ -101,7 +102,11 @@ public class WordsRepository implements IWordsRepository {
     public void DeleteWord(String id) {
         realm.executeTransaction(
                 realm1 -> {
-                    realm1.delete(UserWordRealm.class);
+                    //realm1.(UserWordRealm.class);
+
+                    //RealmResults result = realm1.where(UserWordRealm.class).equalTo("id",id).findAll();
+                       // result.deleteFromRealm(Integer.parseInt(id));
+
                 }
         );
     }

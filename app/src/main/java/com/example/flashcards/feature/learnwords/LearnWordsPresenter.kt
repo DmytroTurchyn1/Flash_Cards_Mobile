@@ -26,12 +26,12 @@ class LearnWordsPresenter(view: LearnWordsView) {
 
     fun onActivityStarted() = showNativeWord()
 
-    fun showEnglishWord() = view?.showEnglishWord(words[id].englishWord)
+    fun onShowEnglishWordClicked() = view?.showEnglishWord(words[id].englishWord)
 
     fun onNextButtonClicked() {
         updateWordId()
         clearEnglishWord()
-        showEnglishWord()
+        showNativeWord()
     }
 
     fun onMenuBtnClicked() = view?.navigateToMenuActivity()
@@ -41,7 +41,7 @@ class LearnWordsPresenter(view: LearnWordsView) {
         view?.close()
     }
 
-     fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
+    private fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
 
     private fun clearEnglishWord() = view?.showEnglishWord(EMPTY_STRING)
 
@@ -49,14 +49,14 @@ class LearnWordsPresenter(view: LearnWordsView) {
         id = getRandomId()
     }
 
-     fun DeleteWord() {
-         view?.DeleteWord()
-         wordsRepository.DeleteWord(words[id].toString())
-     }
-
     private fun getRandomId() = Random.nextInt(0, words.size)
 
     companion object {
         private const val EMPTY_STRING = ""
+    }
+
+    fun DeleteWord() {
+        view?.DeleteWord()
+        wordsRepository.DeleteWord(words[id].toString())
     }
 }

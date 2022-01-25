@@ -21,9 +21,9 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
         presenter.onActivityCreated()
 
         ibMenu.setOnClickListener { presenter.onMenuBtnClicked() }
+        btnNativeWord.setOnClickListener { presenter.onShowEnglishWordClicked() }
         btnNext.setOnClickListener { presenter.onNextButtonClicked() }
         btnDelete.setOnClickListener{presenter.DeleteWord()}
-        btnNativeWord.setOnClickListener{presenter.showNativeWord()}
     }
 
     override fun onStart() {

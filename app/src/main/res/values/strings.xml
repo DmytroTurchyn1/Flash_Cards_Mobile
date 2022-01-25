@@ -28,4 +28,5 @@
     <string name="word_delete_question">Ви справді хочете видалити слово?</string>
     <string name="yes">Так</string>
     <string name="no">Ні</string>
+    <string name="word_deleted">Слово видалено!</string>
 </resources>

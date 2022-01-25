@@ -26,12 +26,12 @@ class LearnWordsPresenter(view: LearnWordsView) {
 
     fun onActivityStarted() = showNativeWord()
 
-    fun onShowEnglishWordClicked() = view?.showEnglishWord(words[id].englishWord)
+    fun showEnglishWord() = view?.showEnglishWord(words[id].englishWord)
 
     fun onNextButtonClicked() {
         updateWordId()
         clearEnglishWord()
-        showNativeWord()
+        showEnglishWord()
     }
 
     fun onMenuBtnClicked() = view?.navigateToMenuActivity()
@@ -41,7 +41,7 @@ class LearnWordsPresenter(view: LearnWordsView) {
         view?.close()
     }
 
-    private fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
+     fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
 
     private fun clearEnglishWord() = view?.showEnglishWord(EMPTY_STRING)
 

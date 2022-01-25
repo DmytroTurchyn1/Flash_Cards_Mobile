@@ -26,4 +26,5 @@
     <string name="word_delete_question">Delete this word?</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
+    <string name="word_deleted">Word Deleted!</string>
 </resources>

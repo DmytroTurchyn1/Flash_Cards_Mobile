@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_learn_words.*
 
 class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
 
+
     private val presenter = LearnWordsPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +23,7 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
         ibMenu.setOnClickListener { presenter.onMenuBtnClicked() }
         btnNext.setOnClickListener { presenter.onNextButtonClicked() }
         btnDelete.setOnClickListener{presenter.DeleteWord()}
-        btnNativeWord.setOnClickListener{presenter.onShowEnglishWordClicked()}
+        btnNativeWord.setOnClickListener{presenter.showNativeWord()}
     }
 
     override fun onStart() {
@@ -46,9 +47,11 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
             .setCancelable(false)
             .setPositiveButton(R.string.yes){
                     dialog, id -> presenter.DeleteWord()
+
             }
             .setNegativeButton(R.string.no){
                     dialog, id -> dialog.cancel()
+
             }
         builder.create()
         builder.show()

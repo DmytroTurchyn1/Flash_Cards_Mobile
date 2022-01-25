@@ -21,7 +21,7 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
 
         ibMenu.setOnClickListener { presenter.onMenuBtnClicked() }
         btnNext.setOnClickListener { presenter.onNextButtonClicked() }
-        btnDelete.setOnClickListener{DeleteWordlog()}
+        btnDelete.setOnClickListener{presenter.DeleteWord()}
         btnNativeWord.setOnClickListener{presenter.onShowEnglishWordClicked()}
     }
 
@@ -36,25 +36,22 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
         btnNativeWord.text = nativeWord
     }
 
-    fun DeleteWordlog() {
-        val builder =  AlertDialog.Builder(this)
-        builder.setTitle(R.string.word_delete_question)
-            .setCancelable(true)
-            .setPositiveButton(R.string.word_delete_question){
-                 dialog, id -> presenter.DeleteWord()
-            }
-            .setNegativeButton(R.string.word_delete_question){
-                    dialog, id -> dialog.cancel()
-            }
-        builder.create()
-    }
-
     override fun showEnglishWord(englishWord: String) {
         tvEnglishWord.text = englishWord
     }
 
     override fun DeleteWord() {
-
+        val builder =  AlertDialog.Builder(this)
+        builder.setTitle(R.string.word_delete_question)
+            .setCancelable(false)
+            .setPositiveButton(R.string.yes){
+                    dialog, id -> presenter.DeleteWord()
+            }
+            .setNegativeButton(R.string.no){
+                    dialog, id -> dialog.cancel()
+            }
+        builder.create()
+        builder.show()
     }
 
     override fun showNoWordsError() =

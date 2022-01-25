@@ -24,4 +24,6 @@
     <string name="delete_btn">Delete</string>
     <string name="word_added">Word added!</string>
     <string name="word_delete_question">Delete this word?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
 </resources>

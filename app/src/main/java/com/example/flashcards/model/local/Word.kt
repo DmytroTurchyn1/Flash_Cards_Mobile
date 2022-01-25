@@ -1,11 +1,13 @@
 package com.example.flashcards.model.local
 
+import java.util.*
+
 
 sealed class Word
 
 data class UserWord(
     @JvmField
-    val id: String,
+    val id: String = UUID.randomUUID().toString(),
     @JvmField
     val nativeWord: String,
     @JvmField

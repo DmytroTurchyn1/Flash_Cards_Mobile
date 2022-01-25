@@ -15,15 +15,16 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 
 public class WordsRepository implements IWordsRepository {
+    private static final String ID = "id";
     private static IWordsRepository repository;
     private static Realm realm;
-    private RandomIdGenerator idGenerator = new RandomIdGenerator();
-    private WordMapper wordMapper = new WordMapper();
+    private final RandomIdGenerator idGenerator = new RandomIdGenerator();
+    private final WordMapper wordMapper = new WordMapper();
 
     private WordsRepository() {
         realm = Realm.getDefaultInstance();
-        saveIrregularVerb(new IrregularVerb("Бути", "Be", "Was/Were", "Been"));
-        saveSimpleWords(new SimpleWord("Бути","Be"));
+        saveIrregularVerb(new IrregularVerb(idGenerator.getId(), "Бути", "Be", "Was/Were", "Been"));
+        saveSimpleWords(new SimpleWord(idGenerator.getId(), "Бути", "Be"));
     }
 
     public static IWordsRepository getInstance() {
@@ -39,7 +40,7 @@ public class WordsRepository implements IWordsRepository {
             saveUserWords((UserWord) word);
         } else if (word instanceof IrregularVerb) {
             saveIrregularVerb((IrregularVerb) word);
-       } else if (word instanceof SimpleWord) {
+        } else if (word instanceof SimpleWord) {
             saveSimpleWords((SimpleWord) word);
 //        else (word instanceof UserWord) {
 //            saveUserWord();
@@ -73,8 +74,6 @@ public class WordsRepository implements IWordsRepository {
         );
     }
 
-
-
     @NonNull
     @Override
     public List<UserWord> getWords() {
@@ -97,18 +96,21 @@ public class WordsRepository implements IWordsRepository {
 
     }
 
-
     @Override
-    public void deleteWord(String id) {
-        realm.executeTransaction(
-                realm1 -> {
-                    RealmResults<UserWordRealm> result = realm1.where(UserWordRealm.class).equalTo("id",id).findAll();
-                    //realm1.delete(result);
-
-
-                        result.deleteFromRealm();
-
-                }
-        );
+    public void deleteWord(@NonNull String id) {
+        try {
+            realm.executeTransaction(
+                    realm1 -> {
+                        realm1.where(UserWordRealm.class)
+                                .findAll()
+                                .where()
+                                .equalTo(ID, id)
+                                .findFirst()
+                                .deleteFromRealm();
+                    }
+            );
+        } catch (Throwable t) {
+            t.printStackTrace();
+        }
     }
 }

@@ -16,7 +16,6 @@ class IrregularVerbsPresenter(view: IrregularVerbsView) {
     fun onActivityCreated() {
         words = wordsRepository.getIrregularVerbs()
         updateWordId()
-
     }
 
     fun onActivityStarted() = showNativeWord()

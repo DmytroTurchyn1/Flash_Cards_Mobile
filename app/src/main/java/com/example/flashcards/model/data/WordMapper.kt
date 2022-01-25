@@ -7,7 +7,9 @@ import io.realm.RealmResults
 
 class WordMapper {
     fun mapUserWordsRealm(words: RealmResults<UserWordRealm>) =
-        words.map { simpleWord -> UserWord(nativeWord = simpleWord.nativeWord, englishWord = simpleWord.englishWord, id = simpleWord.id) }
+        words.map { simpleWord ->
+            UserWord(id = simpleWord.id, nativeWord = simpleWord.nativeWord, englishWord = simpleWord.englishWord)
+        }
 
     fun mapIrregularVerbsRealm(words: RealmResults<IrregularVerbRealm>): List<IrregularVerb> {
         return words.map { irregularVerb ->

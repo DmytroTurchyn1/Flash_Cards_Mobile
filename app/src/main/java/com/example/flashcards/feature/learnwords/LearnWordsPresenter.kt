@@ -13,7 +13,7 @@ class LearnWordsPresenter(view: LearnWordsView) {
 
     private val wordsRepository = WordsRepository.getInstance()
     private var words = listOf<UserWord>()
-    private var id: Int = 0
+    private var index: Int = 0
 
     fun onActivityCreated() {
         words = wordsRepository.getWords()
@@ -26,7 +26,7 @@ class LearnWordsPresenter(view: LearnWordsView) {
 
     fun onActivityStarted() = showNativeWord()
 
-    fun onShowEnglishWordClicked() = view?.showEnglishWord(words[id].englishWord)
+    fun onShowEnglishWordClicked() = view?.showEnglishWord(words[index].englishWord)
 
     fun onNextButtonClicked() {
         updateWordId()
@@ -41,27 +41,23 @@ class LearnWordsPresenter(view: LearnWordsView) {
         view?.close()
     }
 
-    private fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
+    private fun showNativeWord() = view?.showNativeWord(words[index].nativeWord)
 
     private fun clearEnglishWord() = view?.showEnglishWord(EMPTY_STRING)
 
     private fun updateWordId() {
-        id = getRandomId()
+        index = getRandomIndex()
     }
 
-    private fun getRandomId() = Random.nextInt(0, words.size)
-    fun onDeleteButtonClicked() {
-        //realm.remove(words[id])
-
-    }
-
-    companion object {
-        private const val EMPTY_STRING = ""
-    }
+    private fun getRandomIndex() = Random.nextInt(0, words.size)
 
     fun onDeleteWordBtnClicked() {
         view?.deleteWord()
     }
 
-    fun onDeleteWordConfirmed() = wordsRepository.deleteWord(words[id].toString())
+    fun onDeleteWordConfirmed() = wordsRepository.deleteWord(words[index].id)
+
+    companion object {
+        private const val EMPTY_STRING = ""
+    }
 }

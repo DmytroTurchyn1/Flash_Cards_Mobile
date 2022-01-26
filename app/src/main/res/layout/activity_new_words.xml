@@ -7,6 +7,35 @@
     android:background="@color/program_color"
     tools:context=".feature.newwords.NewWordsActivity">
 
+    <TextView
+        android:id="@+id/btnNativeWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNativeWordTitle" />
+
+    <TextView
+        android:id="@+id/tvNativeWordTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="119dp"
+        android:layout_marginEnd="112dp"
+        android:text="@string/learn_words_english_word"
+        android:textColor="#090909"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.201" />
+
     <Button
         android:id="@+id/tvEnglishWord"
         style="@style/Widget.AppCompat.Button.Borderless"
@@ -60,23 +89,6 @@
         tools:srcCompat="@mipmap/menu_btn_foreground" />
 
     <TextView
-        android:id="@+id/tvEnglishWordTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="142dp"
-        android:layout_marginEnd="105dp"
-        android:text="@string/learn_words_english_word"
-        android:textColor="#090909"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143" />
-
-    <TextView
         android:id="@+id/tvNativeWordTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -91,19 +103,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.434" />
-
-    <TextView
-        android:id="@+id/btnNativeWord"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvNativeWordTitle" />
+        app:layout_constraintVertical_bias="0.432" />
 
     <TextView
         android:id="@+id/tvTitle"

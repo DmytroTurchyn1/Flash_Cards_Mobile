@@ -28,9 +28,9 @@ class IrregularVerbsActivity : AppCompatActivity(), IrregularVerbsView {
     }
 
     override fun showVerbForms(firsForm: String, secondForm: String, thirdForm: String) {
-        tvFirstForm.text = firsForm
-        tvSecondForm.text = secondForm
-        tvThirdForm.text = thirdForm
+        tvFirstform.text = firsForm
+        tvSecondform.text = secondForm
+        tvThirdform.text = thirdForm
     }
 
     override fun showNativeWord (nativeWord: String) {

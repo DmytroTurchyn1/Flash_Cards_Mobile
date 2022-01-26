@@ -52,6 +52,7 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
                 setCancelable(false)
                 setPositiveButton(R.string.yes) { dialog, _ ->
                     presenter.onDeleteWordConfirmed()
+                    showinfo()
                     dialog.cancel()
                 }
                 setNegativeButton(R.string.no) { dialog, _ -> dialog.cancel() }
@@ -61,7 +62,10 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
                 it.show()
             }
     }
-
+    fun showinfo(){
+        Toast.makeText(this, getString(R.string.word_deleted), Toast.LENGTH_SHORT).show()
+        presenter.onMenuBtnClicked()
+    }
     override fun showNoWordsError() =
         Toast.makeText(this, getString(R.string.no_user_word_error), Toast.LENGTH_SHORT).show()
 

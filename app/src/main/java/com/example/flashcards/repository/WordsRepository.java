@@ -23,8 +23,8 @@ public class WordsRepository implements IWordsRepository {
 
     private WordsRepository() {
         realm = Realm.getDefaultInstance();
-        saveIrregularVerb(new IrregularVerb(idGenerator.getId(), "Бути", "Be", "Was/Were", "Been"));
-        saveSimpleWords(new SimpleWord(idGenerator.getId(), "Бути", "Be"));
+        //saveIrregularVerb(new IrregularVerb(idGenerator.getId(), "Бути", "Be", "Was/Were", "Been"));
+        //saveSimpleWords(new SimpleWord(idGenerator.getId(), "Бути", "Be"));
     }
 
     public static IWordsRepository getInstance() {

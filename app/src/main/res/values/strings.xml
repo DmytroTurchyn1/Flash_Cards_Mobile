@@ -16,7 +16,7 @@
     <string name="add_word_btn">Додати слово</string>
     <string name="learn_my_words_btn">Вчити мої слова</string>
     <string name="new_words_title">Нові слова</string>
-    <string name="irregular_words_forms" translatable="false">форма1      форма2      форма3</string>
+    <string name="irregular_words_forms">форма1 | форма2 | форма3</string>
     <string name="add_word_native_word">Українське слово</string>
     <string name="add_word_english_word">Англійське слово</string>
     <string name="save_btn">Зберегти</string>

@@ -16,7 +16,7 @@ class IrregularVerbsActivity : AppCompatActivity(), IrregularVerbsView {
         presenter.onActivityCreated()
 
         btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
-        btnNativeWord.setOnClickListener { presenter.onShowForms() }
+        tvNativeWord.setOnClickListener { presenter.onShowForms() }
         btnNext.setOnClickListener { presenter.onNextButtonClicked() }
     }
 
@@ -34,6 +34,6 @@ class IrregularVerbsActivity : AppCompatActivity(), IrregularVerbsView {
     }
 
     override fun showNativeWord (nativeWord: String) {
-        btnNativeWord.text = nativeWord
+        tvNativeWord.text = nativeWord
     }
 }

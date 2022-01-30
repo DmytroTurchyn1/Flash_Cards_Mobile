@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <TextView
-        android:id="@+id/btnNativeWord"
+        android:id="@+id/tvNativeWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_word_native_word"
@@ -81,7 +81,7 @@
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/tvEnglishWord"
+        android:id="@+id/btnEnglishWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_word_english_word"

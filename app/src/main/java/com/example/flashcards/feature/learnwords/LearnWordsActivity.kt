@@ -20,7 +20,7 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
         presenter.onActivityCreated()
 
         ibMenu.setOnClickListener { presenter.onMenuBtnClicked() }
-        btnNativeWord.setOnClickListener { presenter.onShowEnglishWordClicked() }
+        tvNativeWord.setOnClickListener { presenter.onShowEnglishWordClicked() }
         btnNext.setOnClickListener { presenter.onNextButtonClicked() }
         btnDelete.setOnClickListener { presenter.onDeleteWordBtnClicked() }
     }
@@ -38,11 +38,11 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
 
     override fun showNativeWord(nativeWord: String) {
-        btnNativeWord.text = nativeWord
+        tvNativeWord.text = nativeWord
     }
 
     override fun showEnglishWord(englishWord: String) {
-        tvEnglishWord.text = englishWord
+        btnEnglishWord.text = englishWord
     }
 
     override fun deleteWord() {

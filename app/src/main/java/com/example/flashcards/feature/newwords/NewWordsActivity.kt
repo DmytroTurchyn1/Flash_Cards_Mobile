@@ -15,7 +15,7 @@ class NewWordsActivity : AppCompatActivity(), NewWordsView {
         presenter = NewWordsPresenter(this)
         presenter.onActivityCreated()
 
-        tvEnglishWord.setOnClickListener { presenter.showNativeWord() }
+        btnEnglishWord.setOnClickListener { presenter.showNativeWord() }
         btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
         btnNext.setOnClickListener { presenter.onNextButtonClicked() }
     }
@@ -28,10 +28,10 @@ class NewWordsActivity : AppCompatActivity(), NewWordsView {
     }
 
     override fun showEnglishWord(englishWord: String) {
-        tvEnglishWord.text = englishWord
+        btnEnglishWord.text = englishWord
     }
 
     override fun showNativeWord(nativeWord: String) {
-        btnNativeWord.text = nativeWord
+        tvNativeWord.text = nativeWord
     }
 }

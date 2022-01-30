@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvEnglishWordTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEnglishWordTitle" />
 
     <TextView
         android:id="@+id/tvSecondform"
@@ -27,7 +27,7 @@
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvEnglishWordTitle" />
 
@@ -39,7 +39,7 @@
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.729"
+        app:layout_constraintHorizontal_bias="0.81"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvEnglishWordTitle" />
 
@@ -75,10 +75,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.71" />
+        app:layout_constraintVertical_bias="0.852" />
 
     <ImageButton
         android:id="@+id/btnMenu"
@@ -118,7 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="69dp"
+        android:layout_marginEnd="64dp"
         android:text="@string/irregular_words_forms"
         android:textColor="#090909"
         android:textSize="24sp"
@@ -135,12 +135,12 @@
         android:layout_height="wrap_content"
         android:text="@string/irregular_words_text"
         android:textColor="#000000"
-        android:textSize="34sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintHorizontal_bias="0.718"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.022" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

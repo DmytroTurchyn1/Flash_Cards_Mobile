@@ -34,7 +34,7 @@ class NewWordsPresenter(view: NewWordsView) {
 
     fun showEnglishWord() = view?.showEnglishWord(words[id].englishWord)
 
-    private fun clearEnglishWord() = view?.showEnglishWord(EMPTY_STRING)
+    private fun clearEnglishWord() = view?.showNativeWord(EMPTY_STRING)
 
     private fun updateWordId() {
         id = getRandomId()

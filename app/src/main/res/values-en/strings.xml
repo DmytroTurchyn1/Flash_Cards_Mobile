@@ -27,4 +27,5 @@
     <string name="no">No</string>
     <string name="yes">Yes</string>
     <string name="word_deleted">Word Deleted!</string>
+    <string name="irregular_words_text">Irregular Verbs</string>
 </resources>

@@ -83,7 +83,7 @@
         app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.651" />
+        app:layout_constraintVertical_bias="0.669" />
 
     <ImageButton
         android:id="@+id/btnGmail"

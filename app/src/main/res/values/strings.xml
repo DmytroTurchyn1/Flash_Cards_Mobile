@@ -1,13 +1,12 @@
 <resources>
     <string name="app_name" translatable="false">Flash Cards</string>
-    <string name="menu_description_text">Ця програма створена для того, щоб вам допомогти вивчити англійську мову</string>
+    <string name="menu_description_text">Ця програма створена для того, щоб вам               допомогти вивчити англійську мову</string>
     <string name="main_page">Головна сторінка</string>
     <string name="menu_screen_title">Меню</string>
     <string name="new_words_text">Нові слова</string>
     <string name="settings_text">Налаштування</string>
-    <string name="about_program_text">Про Програму</string>
+    <string name="about_program_text">Про програму</string>
     <string name="my_words_text">Мої слова</string>
-    <string name="irregular_words_text" translatable="false">Irregular Verbs</string>
     <string name="next">Далі</string>
     <string name="learn_words_title">Вчити слова</string>
     <string name="learn_words_native_word">Українське слово:</string>
@@ -16,7 +15,7 @@
     <string name="program_developer_text">Розробник програми: Dima Labs</string>
     <string name="add_word_btn">Додати слово</string>
     <string name="learn_my_words_btn">Вчити мої слова</string>
-    <string name="new_words_title">Нові Слова</string>
+    <string name="new_words_title">Нові слова</string>
     <string name="irregular_words_forms" translatable="false">форма1      форма2      форма3</string>
     <string name="add_word_native_word">Українське слово</string>
     <string name="add_word_english_word">Англійське слово</string>
@@ -29,4 +28,5 @@
     <string name="yes">Так</string>
     <string name="no">Ні</string>
     <string name="word_deleted">Слово видалено!</string>
+    <string name="irregular_words_text">Неправильні дієслова</string>
 </resources>

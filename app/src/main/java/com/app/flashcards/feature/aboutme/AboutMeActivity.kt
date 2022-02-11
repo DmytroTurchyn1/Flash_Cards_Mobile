@@ -7,6 +7,8 @@ import android.os.Bundle
 
 import com.app.flashcards.util.Launcher
 import com.example.flashcards.R
+
+
 import kotlinx.android.synthetic.main.activity_about_me_ukr.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.btnMenu

@@ -8,7 +8,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.realm_db"
+        applicationId "com.app.realm_db"
         minSdk 24
         targetSdk 31
         versionCode 1

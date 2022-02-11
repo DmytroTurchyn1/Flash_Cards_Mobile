@@ -36,7 +36,7 @@
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443"
+        app:layout_constraintVertical_bias="0.412"
         tools:ignore="TextContrastCheck,TextContrastCheck" />
 
     <Button
@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.352"
+        app:layout_constraintVertical_bias="0.338"
         tools:ignore="TextContrastCheck,TextContrastCheck" />
 
     <Button
@@ -65,10 +65,10 @@
         android:text="@string/my_words_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.555"
+        app:layout_constraintVertical_bias="0.507"
         tools:ignore="TextContrastCheck,TextContrastCheck" />
 
     <Button
@@ -79,10 +79,9 @@
         android:text="@string/about_program_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.646"
+        app:layout_constraintVertical_bias="0.588"
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
 
     <Button

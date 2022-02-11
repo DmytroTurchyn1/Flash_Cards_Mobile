@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.flashcards">
 
     <application
-        android:name="com.example.flashcards.App"
+        android:name="com.example.flashcards.com.app.flashcards.App"
         android:allowBackup="true"
         android:icon="@mipmap/logo_of_program"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/logo_of_program_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FlashCards"
-        android:screenOrientation="portrait">
+        android:screenOrientation="portrait"
+        tools:ignore="MissingClass">
 
         <activity
             android:name=".feature.menu.MenuActivity"

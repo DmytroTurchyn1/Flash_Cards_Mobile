@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.flashcards.R
+import com.app.flashcards.R
 import com.app.flashcards.util.Launcher
 import kotlinx.android.synthetic.main.activity_learn_words.*
 

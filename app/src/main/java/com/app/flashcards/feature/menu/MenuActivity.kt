@@ -2,7 +2,7 @@ package com.app.flashcards.feature.menu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.flashcards.*
+import com.app.flashcards.*
 import com.app.flashcards.util.Launcher
 import kotlinx.android.synthetic.main.activity_menu.*
 

@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 import com.app.flashcards.util.Launcher
-import com.example.flashcards.R
+import com.app.flashcards.R
 
 
 import kotlinx.android.synthetic.main.activity_about_me_ukr.*

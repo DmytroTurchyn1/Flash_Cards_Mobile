@@ -2,7 +2,7 @@ package com.app.flashcards.feature.newwords
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.flashcards.R
+import com.app.flashcards.R
 import com.app.flashcards.util.Launcher
 import kotlinx.android.synthetic.main.activity_new_words.*
 

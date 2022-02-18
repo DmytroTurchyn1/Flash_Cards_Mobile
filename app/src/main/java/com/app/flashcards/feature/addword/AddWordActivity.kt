@@ -3,8 +3,9 @@ package com.app.flashcards.feature.addword
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.flashcards.R
+
 import com.app.flashcards.util.Launcher
+import com.app.flashcards.R
 import kotlinx.android.synthetic.main.activity_add_word.*
 import kotlinx.android.synthetic.main.activity_main.btnMenu
 

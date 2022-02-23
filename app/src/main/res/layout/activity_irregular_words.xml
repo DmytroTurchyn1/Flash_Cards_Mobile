@@ -82,8 +82,8 @@
 
     <ImageButton
         android:id="@+id/btnMenu"
-        android:layout_width="95dp"
-        android:layout_height="95dp"
+        android:layout_width="78dp"
+        android:layout_height="77dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

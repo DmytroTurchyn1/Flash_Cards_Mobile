@@ -12,8 +12,8 @@
 
     <ImageButton
         android:id="@+id/btnMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="78dp"
+        android:layout_height="77dp"
         android:background="#00FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,6 +25,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
+        android:elevation="8dp"
         android:layout_height="300dp"
         android:layout_marginTop="50dp"
         android:background="#02CDC9C9"

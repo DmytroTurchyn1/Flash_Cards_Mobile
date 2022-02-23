@@ -21,9 +21,9 @@
 
     <TextView
         android:id="@+id/tvNativeWordTitle2"
-        android:layout_width="258dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="97dp"
+        android:layout_width="247dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
         android:layout_marginTop="119dp"
         android:layout_marginEnd="112dp"
         android:gravity="center_horizontal|center_vertical"
@@ -32,28 +32,27 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.195" />
+        app:layout_constraintVertical_bias="0.19" />
 
     <Button
         android:id="@+id/btnEnglishWord"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="244dp"
-        android:layout_height="56dp"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
         android:layout_marginStart="112dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="211dp"
+        android:layout_marginEnd="112dp"
         android:textColor="#000000"
         android:textSize="24sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.392"
+        app:layout_constraintVertical_bias="0.395"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
@@ -75,8 +74,8 @@
 
     <ImageButton
         android:id="@+id/btnMenu"
-        android:layout_width="98dp"
-        android:layout_height="92dp"
+        android:layout_width="59dp"
+        android:layout_height="52dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,21 +90,20 @@
 
     <TextView
         android:id="@+id/tvNativeWordTitle"
-        android:layout_width="236dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="100dp"
+        android:layout_width="247dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
         android:layout_marginTop="119dp"
-        android:layout_marginEnd="108dp"
+        android:layout_marginEnd="112dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/learn_words_native_word"
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.393"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.428" />
+        app:layout_constraintVertical_bias="0.425" />
 
     <TextView
         android:id="@+id/tvTitle"
@@ -116,9 +114,9 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.658"
+        app:layout_constraintHorizontal_bias="0.654"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

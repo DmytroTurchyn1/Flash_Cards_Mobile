@@ -10,8 +10,8 @@
 
     <ImageButton
         android:id="@+id/btnMenu"
-        android:layout_width="90dp"
-        android:layout_height="88dp"
+        android:layout_width="78dp"
+        android:layout_height="77dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +40,7 @@
     <TextView
         android:id="@+id/tvNativeWord"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:text="@string/add_word_native_word"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -84,7 +84,7 @@
     <TextView
         android:id="@+id/btnEnglishWord"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:text="@string/add_word_english_word"
         android:textColor="#000000"
         android:textSize="24sp"

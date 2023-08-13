@@ -5,12 +5,15 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'realm-android'
 
 android {
-    compileSdk 31
+    compileSdkVersion = 33
 
+    buildFeatures {
+        viewBinding true
+    }
     defaultConfig {
         applicationId "com.app.realm_db"
         minSdk 24
-        targetSdk 31
+        targetSdk 33
         versionCode 6
         versionName "1"
 
@@ -38,6 +41,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    namespace 'com.app.flashcards'
 }
 
 realm {

@@ -3,21 +3,24 @@ package com.app.flashcards.feature.newwords
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.flashcards.R
+import com.app.flashcards.databinding.ActivityMyWordsEnBinding
+import com.app.flashcards.databinding.ActivityNewWordsBinding
 import com.app.flashcards.util.Launcher
-import kotlinx.android.synthetic.main.activity_new_words.*
+
 
 class NewWordsActivity : AppCompatActivity(), NewWordsView {
     private lateinit var presenter: NewWordsPresenter
+    private lateinit var binding:ActivityNewWordsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_words)
+        binding = ActivityNewWordsBinding.inflate(layoutInflater)
 
         presenter = NewWordsPresenter(this)
         presenter.onActivityCreated()
-
-        btnEnglishWord.setOnClickListener { presenter.showNativeWord() }
-        btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
-        btnNext.setOnClickListener { presenter.onNextButtonClicked() }
+        setContentView(binding.root)
+        binding.btnEnglishWord.setOnClickListener { presenter.showNativeWord() }
+        binding.btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
+        binding.btnNext.setOnClickListener { presenter.onNextButtonClicked() }
     }
 
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
@@ -28,10 +31,10 @@ class NewWordsActivity : AppCompatActivity(), NewWordsView {
     }
 
     override fun showEnglishWord(englishWord: String) {
-        btnEnglishWord.text = englishWord
+        binding.btnEnglishWord.text = englishWord
     }
 
     override fun showNativeWord(nativeWord: String) {
-        tvNativeWord.text = nativeWord
+        binding.tvNativeWord.text = nativeWord
     }
 }

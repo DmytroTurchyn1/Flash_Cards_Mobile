@@ -6,19 +6,21 @@ import android.widget.Toast
 
 import com.app.flashcards.util.Launcher
 import com.app.flashcards.R
-import kotlinx.android.synthetic.main.activity_add_word.*
-import kotlinx.android.synthetic.main.activity_main.btnMenu
+import com.app.flashcards.databinding.ActivityAddWordBinding
+
 
 class AddWordActivity : AppCompatActivity(), AddWordView {
     private lateinit var presenter: AddWordPresenter
+    private lateinit var binding:ActivityAddWordBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_word)
+        binding = ActivityAddWordBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         presenter = AddWordPresenter(this)
 
-        btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
-        btnSave.setOnClickListener {
-            presenter.onSaveBtnClicked(ptNativeWord.text.toString(), tvFirstForm.text.toString())
+        binding.btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
+        binding.btnSave.setOnClickListener {
+            presenter.onSaveBtnClicked(binding.ptNativeWord.text.toString(), binding.tvFirstForm.text.toString())
         }
     }
 

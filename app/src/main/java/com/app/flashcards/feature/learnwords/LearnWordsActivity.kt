@@ -5,24 +5,25 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.app.flashcards.R
+import com.app.flashcards.databinding.ActivityLearnWordsBinding
 import com.app.flashcards.util.Launcher
-import kotlinx.android.synthetic.main.activity_learn_words.*
+
 
 class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
 
     private var dialog: AlertDialog? = null
     private val presenter = LearnWordsPresenter(this)
-
+    private lateinit var binding:ActivityLearnWordsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_learn_words)
-
+        binding = ActivityLearnWordsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         presenter.onActivityCreated()
 
-        btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
-        tvNativeWord.setOnClickListener { presenter.onShowEnglishWordClicked() }
-        btnNext.setOnClickListener { presenter.onNextButtonClicked() }
-        btnDelete.setOnClickListener { presenter.onDeleteWordBtnClicked() }
+        binding.btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
+        binding.tvNativeWord.setOnClickListener { presenter.onShowEnglishWordClicked() }
+        binding.btnNext.setOnClickListener { presenter.onNextButtonClicked() }
+        binding.btnDelete.setOnClickListener { presenter.onDeleteWordBtnClicked() }
     }
 
     override fun onStart() {
@@ -38,11 +39,11 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
 
     override fun showNativeWord(nativeWord: String) {
-        tvNativeWord.text = nativeWord
+        binding.tvNativeWord.text = nativeWord
     }
 
     override fun showEnglishWord(englishWord: String) {
-        btnEnglishWord.text = englishWord
+        binding.btnEnglishWord.text = englishWord
     }
 
     override fun deleteWord() {

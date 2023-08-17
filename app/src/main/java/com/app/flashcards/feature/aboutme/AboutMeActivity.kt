@@ -7,23 +7,23 @@ import android.os.Bundle
 
 import com.app.flashcards.util.Launcher
 import com.app.flashcards.R
+import com.app.flashcards.databinding.ActivityAboutMeUkrBinding
+import com.app.flashcards.databinding.ActivityMainBinding
 
-
-import kotlinx.android.synthetic.main.activity_about_me_ukr.*
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.btnMenu
 
 class AboutMeActivity : AppCompatActivity(), AboutMeView {
     private lateinit var presenter: AboutMePresenter
+    private lateinit var binding: ActivityAboutMeUkrBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_about_me_ukr)
+        binding = ActivityAboutMeUkrBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         presenter = AboutMePresenter(this)
 
-        btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
-        btnGmail.setOnClickListener { presenter.onGmailBtnClicked() }
-        btnYoutube.setOnClickListener { presenter.onYoutubeBtnClicked() }
-        btnTelegram.setOnClickListener { presenter.onTelegramBtnClicked() }
+        binding.btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
+        binding.btnGmail.setOnClickListener { presenter.onGmailBtnClicked() }
+        binding.btnYoutube.setOnClickListener { presenter.onYoutubeBtnClicked() }
+        binding.btnTelegram.setOnClickListener { presenter.onTelegramBtnClicked() }
     }
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
 

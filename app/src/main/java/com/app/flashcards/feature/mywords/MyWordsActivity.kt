@@ -3,22 +3,25 @@ package com.app.flashcards.feature.mywords
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.flashcards.R
+import com.app.flashcards.databinding.ActivityMyWordsEnBinding
 import com.app.flashcards.util.Launcher
-import kotlinx.android.synthetic.main.activity_my_words_en.*
+
 
 class MyWordsActivity : AppCompatActivity(), MyWordsView {
     private lateinit var presenter: MyWordsPresenter
+    private lateinit var binding:ActivityMyWordsEnBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_words_en)
+        binding = ActivityMyWordsEnBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         presenter = MyWordsPresenter(this)
 
-        btnMenu.setOnClickListener { presenter.onMainPageButtonClicked() }
+        binding.btnMenu.setOnClickListener { presenter.onMainPageButtonClicked() }
 
-        btnAddWord.setOnClickListener { presenter.onAddWordsButtonClicked() }
+        binding.btnAddWord.setOnClickListener { presenter.onAddWordsButtonClicked() }
 
-        btnLearnWords.setOnClickListener { presenter.onLearnWordsButtonClicked() }
+        binding.btnLearnWords.setOnClickListener { presenter.onLearnWordsButtonClicked() }
     }
     override fun navigateToMainActivity() = Launcher.startMenuActivity(this)
 

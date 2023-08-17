@@ -54,7 +54,7 @@ object Launcher {
     }
 
     fun startTelegram(activity: Activity) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/dima8093556548"))
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/Dima_labs_Cahnnel"))
         activity.startActivity(intent)
     }
 

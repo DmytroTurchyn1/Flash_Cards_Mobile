@@ -3,27 +3,34 @@ package com.app.flashcards.feature.menu
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.flashcards.*
+import com.app.flashcards.databinding.ActivityMainBinding
+import com.app.flashcards.databinding.ActivityMenuBinding
 import com.app.flashcards.util.Launcher
-import kotlinx.android.synthetic.main.activity_menu.*
+
 
 
 class MenuActivity : AppCompatActivity(), MenuView {
     private lateinit var presenter: MenuPresenter
+    private lateinit var binding: ActivityMenuBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu)
+
+        // Inflate the binding layout first
+        binding = ActivityMenuBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         presenter = MenuPresenter(this)
 
-        btnMainPage.setOnClickListener { presenter.onMainPageButtonClicked() }
+        binding.btnMainPage.setOnClickListener { presenter.onMainPageButtonClicked() }
 
-        btnNewWords.setOnClickListener { presenter.onNewWordsPageButtonClicked() }
+        binding.btnNewWords.setOnClickListener { presenter.onNewWordsPageButtonClicked() }
 
-        btnIrregularWords.setOnClickListener { presenter.onIrregularWordsPageButtonClicked() }
+        binding.btnIrregularWords.setOnClickListener { presenter.onIrregularWordsPageButtonClicked() }
 
-        btnMyWords.setOnClickListener { presenter.onMyWordsPageButtonClicked() }
+        binding.btnMyWords.setOnClickListener { presenter.onMyWordsPageButtonClicked() }
 
-        btnAboutProgram.setOnClickListener { presenter.onAboutProgramPageButtonClicked() }
+        binding.btnAboutProgram.setOnClickListener { presenter.onAboutProgramPageButtonClicked() }
     }
 
     override fun navigateToMainActivity() = Launcher.startMainActivity(this)

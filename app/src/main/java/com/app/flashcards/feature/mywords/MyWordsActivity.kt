@@ -3,16 +3,17 @@ package com.app.flashcards.feature.mywords
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.flashcards.R
-import com.app.flashcards.databinding.ActivityMyWordsEnBinding
+import com.app.flashcards.databinding.ActivityMyWordsBinding
+
 import com.app.flashcards.util.Launcher
 
 
 class MyWordsActivity : AppCompatActivity(), MyWordsView {
     private lateinit var presenter: MyWordsPresenter
-    private lateinit var binding:ActivityMyWordsEnBinding
+    private lateinit var binding: ActivityMyWordsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMyWordsEnBinding.inflate(layoutInflater)
+        binding = ActivityMyWordsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         presenter = MyWordsPresenter(this)

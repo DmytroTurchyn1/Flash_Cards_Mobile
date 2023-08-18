@@ -30,4 +30,5 @@
     <string name="irregular_words_text">Irregular Verbs</string>
     <string name="irregular_words_forms">form1 | form2 | form3</string>
     <string name="web">My website:</string>
+    <string name="input_words">Please enter the words!</string>
 </resources>

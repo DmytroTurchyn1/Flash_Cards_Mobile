@@ -67,16 +67,15 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="295dp"
-        android:layout_height="577dp"
+        android:layout_width="379dp"
+        android:layout_height="695dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="0.56"
+        app:layout_constraintVertical_bias="0.408"
         app:srcCompat="@drawable/ic_block" />
 
     <TextView

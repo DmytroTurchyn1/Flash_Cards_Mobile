@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:290217863633:android:eea36f2e164a69ee0218f0",
+        "mobilesdk_app_id": "1:290217863633:android:f3add6c79d767d190218f0",
         "android_client_info": {
-          "package_name": "com.app.flashcards"
+          "package_name": "com.app.realm_db"
         }
       },
       "oauth_client": [

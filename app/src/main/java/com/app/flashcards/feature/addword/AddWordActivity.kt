@@ -20,16 +20,15 @@ class AddWordActivity : AppCompatActivity(), AddWordView {
 
         binding.btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
         binding.btnSave.setOnClickListener {
-            presenter.onSaveBtnClicked(binding.ptNativeWord.text.toString(), binding.tvFirstForm.text.toString())
+            if (binding.ptNativeWord.text.toString() != "" && binding.tvFirstForm.text.toString() != ""){
+            presenter.onSaveBtnClicked(binding.ptNativeWord.text.toString(),binding.tvFirstForm.text.toString())}
+            else Toast.makeText(this, getString(R.string.input_words), Toast.LENGTH_SHORT).show()
         }
     }
 
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
 
-    override fun wordAdded() {
-        Toast.makeText(this, getString(R.string.word_added), Toast.LENGTH_SHORT).show()
-
-    }
+    override fun wordAdded() = Toast.makeText(this, getString(R.string.word_added), Toast.LENGTH_SHORT).show()
 
     override fun close() = finish()
 }

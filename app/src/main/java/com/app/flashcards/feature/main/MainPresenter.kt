@@ -9,4 +9,5 @@ class MainPresenter(view: MainView) {
 
     fun onMenuBtnClicked() = view?.navigateToMenuActivity()
 
+
 }

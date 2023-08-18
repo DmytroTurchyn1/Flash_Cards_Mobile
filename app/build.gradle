@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'org.jetbrains.kotlin.kapt'
-
+    id 'com.google.firebase.firebase-perf'
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
 }
@@ -15,11 +15,11 @@ android {
         enabled = true
     }
     defaultConfig {
-        applicationId "com.app.flashcards"
+        applicationId "com.app.realm_db"
         minSdk 24
         targetSdk 33
-        versionCode 6
-        versionName "1"
+        versionCode 11
+        versionName "2.15.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -49,6 +49,7 @@ android {
         jvmTarget = '1.8'
     }
     namespace 'com.app.flashcards'
+    buildToolsVersion '33.0.1'
 }
 
 realm {
@@ -60,11 +61,13 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.gms:play-services-ads-lite:22.2.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation platform('com.google.firebase:firebase-bom:32.2.2')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation("com.google.firebase:firebase-crashlytics-ktx")
+    implementation("com.google.firebase:firebase-perf-ktx")
 
 }

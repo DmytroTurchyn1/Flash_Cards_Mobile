@@ -26,7 +26,7 @@ class AboutMeActivity : AppCompatActivity(), AboutMeView {
         binding.btnGmail.setOnClickListener { presenter.onGmailBtnClicked() }
         binding.btnYoutube.setOnClickListener { presenter.onYoutubeBtnClicked() }
         binding.btnTelegram.setOnClickListener { presenter.onTelegramBtnClicked() }
-        binding.tcVersion.text = "Version: " + BuildConfig.VERSION_NAME
+        binding.tvVersion.text = "Version: " + BuildConfig.VERSION_NAME
     }
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
 

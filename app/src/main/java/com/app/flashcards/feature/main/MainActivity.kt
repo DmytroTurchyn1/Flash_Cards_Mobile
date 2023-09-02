@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity(), MainView {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        binding.ivLogo.setImageResource(R.drawable.logoflash_cards)
+        binding.ivLogo.setImageResource(R.drawable.app_logo)
         presenter = MainPresenter(this)
         binding.btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
         initAdmob()

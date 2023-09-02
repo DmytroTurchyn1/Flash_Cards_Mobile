@@ -52,7 +52,7 @@
             android:id="@+id/btnMenu"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="16dp"
             android:background="@drawable/ic_menu"
@@ -63,7 +63,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/ivFrame"
         android:layout_width="376dp"
         android:layout_height="694dp"
         android:layout_marginTop="5dp"
@@ -84,9 +84,9 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
+        app:layout_constraintStart_toStartOf="@+id/ivFrame"
+        app:layout_constraintTop_toBottomOf="@+id/ivTextFrame"
         app:layout_constraintVertical_bias="0.106" />
 
     <TextView
@@ -97,10 +97,10 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/ivFrame"
+        app:layout_constraintTop_toTopOf="@+id/ivFrame"
         app:layout_constraintVertical_bias="0.159" />
 
     <ImageButton
@@ -108,16 +108,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFrame"
+        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/ivFrame"
         app:layout_constraintTop_toBottomOf="@+id/tvFirstForm"
         app:layout_constraintVertical_bias="0.459"
         app:srcCompat="@drawable/ic_btn" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvAddWord"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
@@ -131,13 +131,13 @@
         app:layout_constraintTop_toTopOf="@+id/btnSave" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/ivTextFrame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
         app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ivFrame"
         app:layout_constraintTop_toBottomOf="@+id/btnEnglishWord"
         app:srcCompat="@drawable/ic_frame2" />
 
@@ -150,21 +150,21 @@
         android:maxLength="17"
         android:minHeight="48dp"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTextFrame"
+        app:layout_constraintEnd_toEndOf="@+id/ivTextFrame"
         app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:layout_constraintStart_toStartOf="@+id/ivTextFrame"
+        app:layout_constraintTop_toTopOf="@+id/ivTextFrame"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/ivTextFrame2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
+        app:layout_constraintStart_toStartOf="@+id/ivFrame"
         app:layout_constraintTop_toBottomOf="@+id/tvNativeWord"
         app:srcCompat="@drawable/ic_frame2" />
 
@@ -177,11 +177,11 @@
         android:maxLength="17"
         android:minHeight="48dp"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTextFrame2"
+        app:layout_constraintEnd_toEndOf="@+id/ivTextFrame2"
         app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="@+id/ivTextFrame2"
+        app:layout_constraintTop_toTopOf="@+id/ivTextFrame2"
         app:layout_constraintVertical_bias="0.612"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 

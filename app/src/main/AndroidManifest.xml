@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlashCards"
         android:screenOrientation="portrait"
-        tools:ignore="MissingClass">
+        tools:ignore="MissingClass"
+        android:largeHeap="true"
+        android:hardwareAccelerated="false">
 
         <activity
             android:name=".feature.menu.MenuActivity"

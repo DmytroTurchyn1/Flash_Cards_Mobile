@@ -52,7 +52,7 @@
             android:id="@+id/btnMenu"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="24dp"
             android:background="@drawable/ic_menu"
@@ -73,7 +73,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:layout_constraintVertical_bias="0.531"
-        app:srcCompat="@drawable/ic_block" />
+        app:srcCompat="@drawable/ic_block"
+        android:contentDescription="@string/image" />
 
     <TextView
         android:id="@+id/tvDeveloper"
@@ -100,7 +101,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/btnGmail"
         app:srcCompat="@mipmap/youtube_icon_foreground"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+        android:contentDescription="@string/btn_youtube" />
 
     <ImageButton
         android:id="@+id/btnGmail"
@@ -114,7 +116,8 @@
         app:layout_constraintTop_toBottomOf="@+id/tvDeveloper"
         app:layout_constraintVertical_bias="0.03"
         app:srcCompat="@mipmap/mail_icon_foreground"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck" />
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck"
+        android:contentDescription="@string/btn_gmail" />
 
     <ImageButton
         android:id="@+id/btnTelegram"
@@ -126,7 +129,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/ivFrame"
         app:layout_constraintEnd_toEndOf="@+id/ivFrame"
         app:srcCompat="@mipmap/telegram_icon_foreground"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+        android:contentDescription="@string/btn_telegram" />
 
     <ImageView
         android:id="@+id/ivDevLogo"
@@ -137,7 +141,8 @@
         app:layout_constraintStart_toStartOf="@+id/ivFrame"
         app:layout_constraintTop_toTopOf="@+id/ivFrame"
         app:layout_constraintVertical_bias="0.162"
-        app:srcCompat="@drawable/dima_logo" />
+        app:srcCompat="@drawable/dima_logo"
+        android:contentDescription="@string/iv_developerlogo" />
 
     <ImageView
         android:id="@+id/ivLogo"
@@ -148,14 +153,15 @@
         app:layout_constraintEnd_toStartOf="@+id/tvVersion"
         app:layout_constraintHorizontal_bias="0.988"
         app:layout_constraintStart_toStartOf="@+id/btnGmail"
-        app:srcCompat="@mipmap/logo_of_program_foreground" />
+        app:srcCompat="@mipmap/logo_of_program_foreground"
+        android:contentDescription="@string/iv_applogo" />
 
     <TextView
         android:id="@+id/tvVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="44dp"
-        android:text="v"
+        android:text="@string/program_version_text"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/ivFrame"
         app:layout_constraintEnd_toEndOf="@+id/ivFrame"

@@ -31,4 +31,10 @@
     <string name="irregular_words_text">Неправильні дієслова</string>
     <string name="web">Мій сайт:</string>
     <string name="input_words">Будь ласка введіть слова!</string>
+    <string name="btn_main_page" translatable="false" >btn_main_page</string>
+    <string name="btn_new_words" translatable="false" >btn_new_words</string>
+    <string name="btn_irregular_verbs" translatable="false" >btn_irregular_verbs</string>
+    <string name="btn_my_words" translatable="false" >btn_my_words</string>
+    <string name="btn_about_program" translatable="false" >btn_about_program</string>
+
 </resources>

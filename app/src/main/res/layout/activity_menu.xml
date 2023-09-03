@@ -19,7 +19,7 @@
 
 
         <TextView
-            android:id="@+id/tvName"
+            android:id="@+id/tvMenuName"
             android:layout_width="wrap_content"
             android:layout_height="43dp"
             android:elevation="80dp"
@@ -51,13 +51,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="380dp"
-        android:layout_height="788dp"
+        android:id="@+id/ivMenuRectangle"
+        android:layout_width="377dp"
+        android:layout_height="780dp"
         android:layout_marginStart="7dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="7dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="5dp"
+        android:contentDescription="image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,10 +72,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
         android:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4"
-        app:srcCompat="@drawable/ic_frame" />
+        app:layout_constraintEnd_toEndOf="@+id/ivMenuRectangle"
+        app:layout_constraintStart_toStartOf="@+id/ivMenuRectangle"
+        app:layout_constraintTop_toTopOf="@+id/ivMenuRectangle"
+        app:srcCompat="@drawable/ic_frame"
+        android:contentDescription="@string/btn_main_page"/>
 
     <ImageButton
         android:id="@+id/btnNewWords"
@@ -82,10 +84,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="@+id/ivMenuRectangle"
+        app:layout_constraintStart_toStartOf="@+id/ivMenuRectangle"
         app:layout_constraintTop_toBottomOf="@+id/btnMainPage"
-        app:srcCompat="@drawable/ic_frame" />
+        app:srcCompat="@drawable/ic_frame"
+        android:contentDescription="@string/btn_new_words"/>
 
     <ImageButton
         android:id="@+id/btnIrregularWords"
@@ -93,10 +96,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="@+id/ivMenuRectangle"
+        app:layout_constraintStart_toStartOf="@+id/ivMenuRectangle"
         app:layout_constraintTop_toBottomOf="@+id/btnNewWords"
-        app:srcCompat="@drawable/ic_frame" />
+        app:srcCompat="@drawable/ic_frame"
+        android:contentDescription="@string/btn_irregular_verbs"/>
 
     <ImageButton
         android:id="@+id/btnMyWords"
@@ -104,10 +108,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="@+id/ivMenuRectangle"
+        app:layout_constraintStart_toStartOf="@+id/ivMenuRectangle"
         app:layout_constraintTop_toBottomOf="@+id/btnIrregularWords"
-        app:srcCompat="@drawable/ic_frame" />
+        app:srcCompat="@drawable/ic_frame"
+        android:contentDescription="@string/btn_my_words"/>
 
     <ImageButton
         android:id="@+id/btnAboutProgram"
@@ -115,13 +120,14 @@
         android:layout_height="68dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMenuRectangle"
+        app:layout_constraintEnd_toEndOf="@+id/ivMenuRectangle"
         app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/ivMenuRectangle"
         app:layout_constraintTop_toBottomOf="@+id/btnMyWords"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_frame" />
+        app:srcCompat="@drawable/ic_frame"
+        android:contentDescription="@string/btn_about_program" />
 
     <TextView
         android:id="@+id/textView"
@@ -154,7 +160,7 @@
         android:layout_height="wrap_content"
         android:text="@string/irregular_words_text"
         android:textColor="#000000"
-        android:textSize="22sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/btnIrregularWords"
         app:layout_constraintEnd_toEndOf="@+id/btnIrregularWords"
         app:layout_constraintStart_toStartOf="@+id/btnIrregularWords"

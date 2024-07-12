@@ -4,5 +4,6 @@ interface  AddWordView {
     fun navigateToMenuActivity()
     fun wordAdded()
     fun close()
+    fun reviewRequest()
 }
 

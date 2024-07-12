@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
 import com.app.flashcards.R
 import com.app.flashcards.databinding.ActivityMainBinding
@@ -38,16 +39,17 @@ class MainActivity : AppCompatActivity(), MainView {
     private  val updateType = AppUpdateType.FLEXIBLE
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val startSplashScreen = installSplashScreen()
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        startSplashScreen.setKeepOnScreenCondition(){true}
         binding.ivLogo.setImageResource(R.drawable.app_logo)
         presenter = MainPresenter(this)
         binding.btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
         get_token()
         initAdmob()
         askNotificationPermission()
-
         appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
         if (updateType == AppUpdateType.FLEXIBLE){
             appUpdateManager.registerListener(installStateUpdatedListener)

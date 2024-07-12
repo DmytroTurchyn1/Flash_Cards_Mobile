@@ -9,7 +9,7 @@ plugins {
 }
 apply plugin: "realm-android"
 android {
-    compileSdkVersion = 33
+    compileSdkVersion = 34
 
     viewBinding {
         enabled = true
@@ -17,7 +17,7 @@ android {
     defaultConfig {
         applicationId "com.app.realm_db"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 15
         versionName "2.15.6"
 
@@ -73,6 +73,9 @@ dependencies {
     implementation 'com.google.android.play:app-update:2.1.0'
     implementation 'com.google.android.play:app-update-ktx:2.1.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
+    implementation 'com.google.android.play:review:2.0.1'
+    implementation 'com.google.android.play:review-ktx:2.0.1'
+    implementation 'androidx.core:core-splashscreen:1.0.1'
 
 
 }

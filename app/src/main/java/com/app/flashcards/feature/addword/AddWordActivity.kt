@@ -1,12 +1,12 @@
 package com.app.flashcards.feature.addword
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-
-import com.app.flashcards.util.Launcher
+import androidx.appcompat.app.AppCompatActivity
 import com.app.flashcards.R
 import com.app.flashcards.databinding.ActivityAddWordBinding
+import com.app.flashcards.util.Launcher
+import com.google.android.play.core.review.ReviewManagerFactory
 
 
 class AddWordActivity : AppCompatActivity(), AddWordView {
@@ -28,7 +28,19 @@ class AddWordActivity : AppCompatActivity(), AddWordView {
 
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
 
-    override fun wordAdded() = Toast.makeText(this, getString(R.string.word_added), Toast.LENGTH_SHORT).show()
+    override fun wordAdded() {
+        Toast.makeText(this, getString(R.string.word_added), Toast.LENGTH_SHORT).show()
+        reviewRequest()
+    }
 
     override fun close() = finish()
+
+    override fun reviewRequest() {
+        val reviewManager  = ReviewManagerFactory.create(applicationContext)
+        reviewManager.requestReviewFlow().addOnCompleteListener(){
+            if (it.isSuccessful){
+                reviewManager.launchReviewFlow(this,it.result)
+            }
+        }
+    }
 }

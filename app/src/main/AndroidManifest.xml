@@ -52,7 +52,9 @@
         <activity
             android:name=".feature.main.MainActivity"
             android:exported="true"
+            android:theme="@style/Theme.App.Starting"
             android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

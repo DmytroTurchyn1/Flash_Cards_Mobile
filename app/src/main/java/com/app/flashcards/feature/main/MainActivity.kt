@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), MainView {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        startSplashScreen.setKeepOnScreenCondition(){true}
+        startSplashScreen.setKeepOnScreenCondition(){false}
         binding.ivLogo.setImageResource(R.drawable.app_logo)
         presenter = MainPresenter(this)
         binding.btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }

@@ -1,3 +1,47 @@
 <resources>
-    <string name="app_name">Flash Cards</string>
+    <string name="app_name" translatable="false">Flash Cards</string>
+    <string name="btn_main_page" translatable="false" >btn_main_page</string>
+    <string name="btn_new_words" translatable="false" >btn_new_words</string>
+    <string name="btn_irregular_verbs" translatable="false" >btn_irregular_verbs</string>
+    <string name="btn_my_words" translatable="false" >btn_my_words</string>
+    <string name="btn_about_program" translatable="false" >btn_about_program</string>
+    <string name="image" translatable="false">image</string>
+    <string name="btn_youtube" translatable="false">btn_youtube</string>
+    <string name="btn_gmail" translatable="false">btn_gmail</string>
+    <string name="btn_telegram" translatable="false">btn_telegram</string>
+    <string name="iv_developerlogo" translatable="false">iv_developerlogo</string>
+    <string name="iv_applogo" translatable="false">iv_applogo</string>
+    <string name="menu_description_text">This application is made to help you to study Ukrainian</string>
+    <string name="main_page">Main Page</string>
+    <string name="menu_screen_title">Menu</string>
+    <string name="new_words_text">New words</string>
+    <string name="settings_text">Settings</string>
+    <string name="about_program_text">About the Program</string>
+    <string name="my_words_text">My words</string>
+    <string name="next">Next</string>
+    <string name="learn_words_title">Learn words</string>
+    <string name="learn_words_native_word">Ukrainian word:</string>
+    <string name="learn_words_english_word">English word:</string>
+    <string name="program_version_text">Program version:</string>
+    <string name="program_developer_text">Developer: Dima Labs</string>
+    <string name="add_word_btn">Add a word</string>
+    <string name="learn_my_words_btn">Learn my words</string>
+    <string name="new_words_title">New words</string>
+    <string name="add_word_native_word">Ukrainian word</string>
+    <string name="add_word_english_word">English word</string>
+    <string name="save_btn">Save</string>
+    <string name="add_word_title">Add word</string>
+    <string name="no_user_word_error">You haven\'t added any words yet</string>
+    <string name="delete_btn">Delete</string>
+    <string name="word_added">Word added!</string>
+    <string name="word_delete_question">Delete this word?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="word_deleted">Word Deleted!</string>
+    <string name="irregular_words_text">Irregular Verbs</string>
+    <string name="irregular_words_forms">form 1 | form 2 | form 3</string>
+    <string name="web">My website:</string>
+    <string name="input_words">Please enter the words!</string>
+
+
 </resources>

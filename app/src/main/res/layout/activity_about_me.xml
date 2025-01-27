@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".feature.aboutme.AboutMeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/constraintLayout"
+        android:layout_width="413dp"
+        android:layout_height="67dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/tvMenuName"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:elevation="80dp"
+            android:gravity="center|start"
+            android:text="@string/about_program_text"
+
+            android:textColor="#000000"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.351"
+            app:layout_constraintStart_toEndOf="@+id/btnMenu"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.444" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+
+            android:id="@+id/btnMenu"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/ic_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.47" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/ivFrame"
+        android:layout_width="405dp"
+        android:layout_height="719dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.531"
+        app:srcCompat="@drawable/ic_block"
+        android:contentDescription="@string/image" />
+
+    <TextView
+        android:id="@+id/tvDeveloper"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@string/program_developer_text"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnYoutube"
+        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="@+id/ivFrame"
+        app:layout_constraintTop_toBottomOf="@+id/ivDevLogo"
+        app:layout_constraintVertical_bias="0.289" />
+
+    <ImageButton
+        android:id="@+id/btnYoutube"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="188dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFrame"
+        app:layout_constraintEnd_toStartOf="@+id/btnTelegram"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnGmail"
+        app:srcCompat="@mipmap/youtube_icon_foreground"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+        android:contentDescription="@string/btn_youtube" />
+
+    <ImageButton
+        android:id="@+id/btnGmail"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="76dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFrame"
+        app:layout_constraintStart_toStartOf="@+id/ivFrame"
+        app:layout_constraintTop_toBottomOf="@+id/tvDeveloper"
+        app:layout_constraintVertical_bias="0.03"
+        app:srcCompat="@mipmap/mail_icon_foreground"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck"
+        android:contentDescription="@string/btn_gmail" />
+
+    <ImageButton
+        android:id="@+id/btnTelegram"
+        android:layout_width="99dp"
+        android:layout_height="99dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="188dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFrame"
+        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
+        app:srcCompat="@mipmap/telegram_icon_foreground"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+        android:contentDescription="@string/btn_telegram" />
+
+    <ImageView
+        android:id="@+id/ivDevLogo"
+        android:layout_width="207dp"
+        android:layout_height="184dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
+        app:layout_constraintStart_toStartOf="@+id/ivFrame"
+        app:layout_constraintTop_toTopOf="@+id/ivFrame"
+        app:layout_constraintVertical_bias="0.162"
+        app:srcCompat="@drawable/dima_logo"
+        android:contentDescription="@string/iv_developerlogo" />
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="42dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFrame"
+        app:layout_constraintEnd_toStartOf="@+id/tvVersion"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintStart_toStartOf="@+id/btnGmail"
+        app:srcCompat="@mipmap/logo_of_program_foreground"
+        android:contentDescription="@string/iv_applogo" />
+
+    <TextView
+        android:id="@+id/tvVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:text="@string/program_version_text"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFrame"
+        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
+        app:layout_constraintTop_toBottomOf="@+id/btnYoutube"
+        app:layout_constraintVertical_bias="0.9" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

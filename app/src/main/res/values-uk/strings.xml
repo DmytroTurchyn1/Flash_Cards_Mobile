@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_description_text">Ця програма створена для того, щоб вам допомогти вивчити англійську мову</string>
+    <string name="main_page">Головна сторінка</string>
+    <string name="menu_screen_title">Меню</string>
+    <string name="new_words_text">Нові слова</string>
+    <string name="settings_text">Налаштування</string>
+    <string name="about_program_text">Про програму</string>
+    <string name="my_words_text">Мої слова</string>
+    <string name="next">Далі</string>
+    <string name="learn_words_title">Вчити слова</string>
+    <string name="learn_words_native_word">Українське слово:</string>
+    <string name="learn_words_english_word">Англійське слово:</string>
+    <string name="program_version_text">Версія програми:</string>
+    <string name="program_developer_text">Розробник програми: Dima Labs</string>
+    <string name="add_word_btn">Додати слово</string>
+    <string name="learn_my_words_btn">Вчити мої слова</string>
+    <string name="new_words_title">Нові слова</string>
+    <string name="irregular_words_forms">ф.1    |   ф.2   |     ф.3</string>
+    <string name="add_word_native_word">Українське слово</string>
+    <string name="add_word_english_word">Англійське слово</string>
+    <string name="save_btn">Зберегти</string>
+    <string name="add_word_title">Додати слово</string>
+    <string name="no_user_word_error">У вас поки що  немає доданих слів</string>
+    <string name="delete_btn">Видалити</string>
+    <string name="word_added">Слово додано!</string>
+    <string name="word_delete_question">Ви справді хочете видалити слово?</string>
+    <string name="yes">Так</string>
+    <string name="no">Ні</string>
+    <string name="word_deleted">Слово видалено!</string>
+    <string name="irregular_words_text">Неправильні дієслова</string>
+    <string name="web">Мій сайт:</string>
+    <string name="input_words">Будь ласка введіть слова!</string>
+</resources>

@@ -2,57 +2,152 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btnMainPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7B90CB"
+    android:background="@color/white"
     android:duplicateParentState="true"
-    tools:context=".MainActivity">
+    android:elevation="20dp"
+    tools:context=".feature.main.MainActivity">
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="90dp"
-        android:layout_height="88dp"
-        android:background="#00FFFFFF"
-        android:onClick="menu_btn"
-        app:srcCompat="@mipmap/menu_btn_foreground"
-        app:tint="#0B0B0B"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:srcCompat="@mipmap/menu_btn_foreground" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="254dp"
-        android:layout_height="305dp"
-        android:layout_marginBottom="288dp"
-        android:background="#02CDC9C9"
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/constraintLayout"
+        android:layout_width="417dp"
+        android:layout_height="71dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/tvMenuName"
+            android:layout_width="198dp"
+            android:layout_height="42dp"
+            android:elevation="80dp"
+            android:gravity="center"
+            android:text="@string/app_name"
+
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.575"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.259" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+
+            android:id="@+id/btnMenu"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/ic_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.476" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!--> <ImageView
+            android:id="@+id/ivMenuRectangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_main_block" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="252dp"
+            android:layout_height="220dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivMenuRectangle"
+            app:layout_constraintEnd_toEndOf="@+id/ivMenuRectangle"
+            app:layout_constraintHorizontal_bias="0.61"
+            app:layout_constraintStart_toStartOf="@+id/ivMenuRectangle"
+            app:layout_constraintTop_toTopOf="@+id/ivMenuRectangle"
+            app:layout_constraintVertical_bias="0.104"
+            app:srcCompat="@mipmap/logo_of_program_foreground" /><!-->
+
+    <View
+        android:id="@+id/rectangle_2"
+        android:layout_width="338dp"
+        android:layout_height="329dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/rectangle_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/logo_of_program_foreground" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.436" />
+
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="224dp"
+        android:layout_height="206dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.393"
+        app:srcCompat="@drawable/app_logo" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="334dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="18dp"
-        android:text="Ця програма створена для  того, щоб вам"
-        android:textSize="16sp"
+        android:id="@+id/tvDescription"
+        android:layout_width="277dp"
+        android:layout_height="71dp"
+        android:gravity="center"
+        android:text="@string/menu_description_text"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/ivLogo"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="413dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="12dp"
-        android:text=" допомогти вивчити англійську мову "
-        android:textSize="16sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-6900765352117563/3161174017"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_2"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

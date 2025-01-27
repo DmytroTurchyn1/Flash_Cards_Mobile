@@ -1,0 +1,652 @@
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/build.gradle	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -9,7 +9,7 @@
+ 
+     defaultConfig {
+         applicationId "com.example.realm_db"
+-        minSdk 21
++        minSdk 24
+         targetSdk 31
+         versionCode 1
+         versionName "1.0"
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/src/main/AndroidManifest.xml	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -3,6 +3,7 @@
+     package="com.example.flashcards">
+ 
+     <application
++        android:name="com.example.flashcards.App"
+         android:allowBackup="true"
+         android:icon="@mipmap/ic_launcher"
+         android:label="@string/app_name"
+@@ -11,11 +12,8 @@
+         android:theme="@style/Theme.FlashCards">
+         <activity
+             android:name=".feature.menu.MenuActivity"
+-            android:screenOrientation="fullSensor"
+-            android:exported="false" />
+-        <activity
+-            android:name=".Menu_en"
+-            android:exported="false" />
++            android:exported="false"
++            android:screenOrientation="fullSensor" />
+         <activity
+             android:name=".notreworked.Learn_Words_ukr"
+             android:exported="false" />
+Index: app/src/main/java/com/example/flashcards/App.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/App.java b/app/src/main/java/com/example/flashcards/App.java
+new file mode 100644
+--- /dev/null	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
++++ b/app/src/main/java/com/example/flashcards/App.java	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -0,0 +1,28 @@
++package com.example.flashcards;
++
++import android.app.Application;
++
++import io.realm.Realm;
++import io.realm.RealmConfiguration;
++
++public class App extends Application {
++    @Override
++    public void onCreate() {
++        super.onCreate();
++        initRealmDb();
++    }
++
++    private void initRealmDb() {
++        Realm.init(this);
++
++        RealmConfiguration.Builder realmBuilder = new RealmConfiguration.Builder();
++
++        realmBuilder.name("words.realm")
++                .allowWritesOnUiThread(true)
++                .allowQueriesOnUiThread(true);
++
++        RealmConfiguration config = realmBuilder.build();
++
++        Realm.setDefaultConfiguration(config);
++    }
++}
+Index: app/src/main/java/com/example/flashcards/feature/addword/AddWordActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/feature/addword/AddWordActivity.kt b/app/src/main/java/com/example/flashcards/feature/addword/AddWordActivity.kt
+--- a/app/src/main/java/com/example/flashcards/feature/addword/AddWordActivity.kt	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/src/main/java/com/example/flashcards/feature/addword/AddWordActivity.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -7,24 +7,13 @@
+ import android.widget.Toast
+ import com.example.flashcards.R
+ import com.example.flashcards.feature.menu.MenuActivity
+-import com.example.flashcards.notreworked.Word
+ import io.realm.Realm
+ import io.realm.RealmConfiguration
+ 
+ class AddWordActivity : AppCompatActivity() {
+-    // TODO move realm to repository
+-    val realm by lazy{ Realm.getDefaultInstance()}
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContentView(R.layout.activity_add_word)
+-        Realm.init(this)
+-        val config = RealmConfiguration.Builder()
+-            .allowWritesOnUiThread(true)
+-            .name("words.realm").build()
+-
+-
+-        Realm.setDefaultConfiguration(config)
+-
+     }
+ 
+ 
+@@ -49,14 +38,14 @@
+                 var ukr_word = findViewById<EditText>(R.id.en_word)
+                 var en_word = findViewById<EditText>(R.id.en_word)
+ 
+-                realm.executeTransaction {
+-
+-                    val word: Word = realm.createObject(Word::class.java, primarykey1.primarykey)
+-                    word.ukr_word = ukr_word.text.toString()
+-                    word.en_word =
+-
+-                        en_word.text.toString()
+-                }
++//                realm.executeTransaction {
++//
++//                    val word: Word = realm.createObject(Word::class.java, primarykey1.primarykey)
++//                    word.nativeWord = ukr_word.text.toString()
++//                    word.englishWord =
++//
++//                        en_word.text.toString()
++//                }
+ 
+                 val success = Toast.makeText(applicationContext, "Слово додано!", Toast.LENGTH_SHORT)
+                 success.show()
+Index: app/src/main/java/com/example/flashcards/feature/addword/AddWordPresenter.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/feature/addword/AddWordPresenter.kt b/app/src/main/java/com/example/flashcards/feature/addword/AddWordPresenter.kt
+--- a/app/src/main/java/com/example/flashcards/feature/addword/AddWordPresenter.kt	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/src/main/java/com/example/flashcards/feature/addword/AddWordPresenter.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -1,11 +1,12 @@
+ package com.example.flashcards.feature.addword
+ 
++import com.example.flashcards.model.local.Word
+ import com.example.flashcards.repository.WordsRepository
+ 
+ class AddWordPresenter {
+     private val repository = WordsRepository.getInstance()
+ 
+-    fun something() {
+-        repository.getWords()
++    fun onSaveBtmClicked(nativeWord: String, englishWord: String) {
++        repository.saveWord(Word(nativeWord, englishWord))
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/flashcards/feature/addword/AddWordView.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/feature/addword/AddWordView.kt b/app/src/main/java/com/example/flashcards/feature/addword/AddWordView.kt
+new file mode 100644
+--- /dev/null	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
++++ b/app/src/main/java/com/example/flashcards/feature/addword/AddWordView.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -0,0 +1,5 @@
++package com.example.flashcards.feature.addword
++
++interface AddWordView {
++    // TODO Add methods for activity
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/flashcards/model/data/WordMapper.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/model/data/WordMapper.kt b/app/src/main/java/com/example/flashcards/model/data/WordMapper.kt
+new file mode 100644
+--- /dev/null	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
++++ b/app/src/main/java/com/example/flashcards/model/data/WordMapper.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -0,0 +1,9 @@
++package com.example.flashcards.model.data
++
++import com.example.flashcards.model.local.Word
++import io.realm.RealmResults
++
++class WordMapper {
++    fun mapRealm(words: RealmResults<WordRealm>) =
++        words.map { Word(nativeWord = it.nativeWord, englishWord = it.englishWord) }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/flashcards/notreworked/Word.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/notreworked/Word.kt b/app/src/main/java/com/example/flashcards/model/data/WordRealm.kt
+rename from app/src/main/java/com/example/flashcards/notreworked/Word.kt
+rename to app/src/main/java/com/example/flashcards/model/data/WordRealm.kt
+--- a/app/src/main/java/com/example/flashcards/notreworked/Word.kt	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/src/main/java/com/example/flashcards/model/data/WordRealm.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -1,16 +1,13 @@
+-package com.example.flashcards.notreworked
++package com.example.flashcards.model.data
+ 
+ import io.realm.RealmObject
+ import io.realm.annotations.PrimaryKey
+ import io.realm.annotations.RealmClass
+ 
+ @RealmClass
+-open class Word: RealmObject() {
++open class WordRealm : RealmObject() {
+     @PrimaryKey
+     var id = 0
+-    var ukr_word =""
+-    var en_word =""
+-
+-
+-
++    var nativeWord = ""
++    var englishWord = ""
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/flashcards/model/local/Word.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/model/local/Word.kt b/app/src/main/java/com/example/flashcards/model/local/Word.kt
+new file mode 100644
+--- /dev/null	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
++++ b/app/src/main/java/com/example/flashcards/model/local/Word.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -0,0 +1,8 @@
++package com.example.flashcards.model.local
++
++data class Word(
++    @JvmField
++    val nativeWord: String,
++    @JvmField
++    val englishWord: String
++)
+Index: app/src/main/java/com/example/flashcards/notreworked/About_me_en.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/notreworked/About_me_en.kt b/app/src/main/java/com/example/flashcards/notreworked/About_me_en.kt
+--- a/app/src/main/java/com/example/flashcards/notreworked/About_me_en.kt	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/src/main/java/com/example/flashcards/notreworked/About_me_en.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -12,8 +12,8 @@
+         setContentView(R.layout.activity_about_me_en)
+     }
+     fun menu(view: android.view.View) {
+-        val menu = Intent(this, imageButton3::class.java)
+-        startActivity(menu);
++//        val menu = Intent(this, imageButton3::class.java)
++//        startActivity(menu);
+     }
+     fun telegram(view: android.view.View) {
+         val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/dima8093556548"))
+Index: app/src/main/java/com/example/flashcards/notreworked/Add_word_en.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/notreworked/Add_word_en.kt b/app/src/main/java/com/example/flashcards/notreworked/Add_word_en.kt
+--- a/app/src/main/java/com/example/flashcards/notreworked/Add_word_en.kt	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/src/main/java/com/example/flashcards/notreworked/Add_word_en.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -13,7 +13,7 @@
+ import java.lang.Exception
+ 
+ class Add_word_en : AppCompatActivity() {
+-    val realm by lazy{ Realm.getDefaultInstance()}
++
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContentView(R.layout.activity_add_word_en)
+@@ -26,8 +26,8 @@
+         Realm.setDefaultConfiguration(config)
+     }
+     fun menu(view: android.view.View) {
+-        val menu = Intent(this, Menu_en::class.java)
+-        startActivity(menu);
++//        val menu = Intent(this, Menu_en::class.java)
++//        startActivity(menu);
+     }
+ 
+     fun add(view: android.view.View) {
+@@ -40,15 +40,15 @@
+             var ukr_word = findViewById<EditText>(R.id.en_word)
+             var en_word = findViewById<EditText>(R.id.en_word)
+ 
+-            realm.executeTransaction {
+-
+-                val word: Word = realm.createObject(
+-                    Word::class.java,
+-                    AddWordActivity.primarykey1.primarykey
+-                )
+-                word.ukr_word = ukr_word.text.toString()
+-                word.en_word = en_word.text.toString()
+-            }
++//            realm.executeTransaction {
++//
++//                val word: Word = realm.createObject(
++//                    Word::class.java,
++//                    AddWordActivity.primarykey1.primarykey
++//                )
++//                word.nativeWord = ukr_word.text.toString()
++//                word.englishWord = en_word.text.toString()
++//            }
+ 
+             val success = Toast.makeText(applicationContext, "Word added!", Toast.LENGTH_SHORT)
+             success.show()
+Index: app/src/main/java/com/example/flashcards/notreworked/Home_en.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/notreworked/Home_en.kt b/app/src/main/java/com/example/flashcards/notreworked/Home_en.kt
+--- a/app/src/main/java/com/example/flashcards/notreworked/Home_en.kt	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/src/main/java/com/example/flashcards/notreworked/Home_en.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -11,7 +11,7 @@
+         setContentView(R.layout.activity_home_en)
+     }
+     fun menu_btn(view: android.view.View) {
+-        val menu = Intent(this, Menu_en::class.java)
+-        startActivity(menu);
++//        val menu = Intent(this, Menu_en::class.java)
++//        startActivity(menu);
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/flashcards/notreworked/Learn_Words_en.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/notreworked/Learn_Words_en.kt b/app/src/main/java/com/example/flashcards/notreworked/Learn_Words_en.kt
+--- a/app/src/main/java/com/example/flashcards/notreworked/Learn_Words_en.kt	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/src/main/java/com/example/flashcards/notreworked/Learn_Words_en.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -27,41 +27,41 @@
+     }
+ 
+     fun menu(view: android.view.View) {
+-        val menu = Intent(this, Menu_en::class.java)
+-        startActivity(menu);
++//        val menu = Intent(this, Menu_en::class.java)
++//        startActivity(menu);
+     }
+ 
+     open var id: Int = +1
+     fun next(view: android.view.View) {
+-        try {
+-            var ukr_word = findViewById<TextView>(R.id.ukrWord)
+-            ukr_word.setVisibility(View.VISIBLE)
+-            id = +1
+-            val words = realm.where(Word::class.java).equalTo("id", id).findAll()
+-            words.forEach { word ->
+-                ukr_word.text = word.ukr_word
+-
+-            }
+-        } catch (e: Exception) {
+-            val error =
+-                Toast.makeText(applicationContext, "There is an error!", Toast.LENGTH_SHORT)
+-            error.show()
+-        }
++//        try {
++//            var ukr_word = findViewById<TextView>(R.id.ukrWord)
++//            ukr_word.setVisibility(View.VISIBLE)
++//            id = +1
++//            val words = realm.where(Word::class.java).equalTo("id", id).findAll()
++//            words.forEach { word ->
++//                ukr_word.text = word.nativeWord
++//
++//            }
++//        } catch (e: Exception) {
++//            val error =
++//                Toast.makeText(applicationContext, "There is an error!", Toast.LENGTH_SHORT)
++//            error.show()
++//        }
+     }
+         fun see_en_form(view: android.view.View) {
+-            try {
+-
+-                var en_word = findViewById<TextView>(R.id.enWord)
+-                val words = realm.where(Word::class.java).equalTo("id", id).findAll()
+-                words.forEach { word ->
+-                    en_word.text = word.en_word
+-
+-                }
+-            } catch (e: Exception) {
+-                val error =
+-                    Toast.makeText(applicationContext, "There is an error!", Toast.LENGTH_SHORT)
+-                error.show()
+-            }
++//            try {
++//
++//                var en_word = findViewById<TextView>(R.id.enWord)
++//                val words = realm.where(Word::class.java).equalTo("id", id).findAll()
++//                words.forEach { word ->
++//                    en_word.text = word.englishWord
++//
++//                }
++//            } catch (e: Exception) {
++//                val error =
++//                    Toast.makeText(applicationContext, "There is an error!", Toast.LENGTH_SHORT)
++//                error.show()
++//            }
+         }
+ 
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/flashcards/notreworked/Learn_Words_ukr.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/notreworked/Learn_Words_ukr.kt b/app/src/main/java/com/example/flashcards/notreworked/Learn_Words_ukr.kt
+--- a/app/src/main/java/com/example/flashcards/notreworked/Learn_Words_ukr.kt	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/src/main/java/com/example/flashcards/notreworked/Learn_Words_ukr.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -31,32 +31,32 @@
+     }
+     open var id:Int =0;
+     fun next(view: android.view.View) {
+-        try {
+-        id =+1;
+-        var en_word = findViewById<TextView>(R.id.enWord)
+-        en_word.setVisibility(View.VISIBLE)
+-
+-    val words = realm.where(Word::class.java).greaterThanOrEqualTo("id",1).findAll()
+-        words.forEach{word ->
+-            en_word.text = word.en_word
+-
+-        }
+-        } catch (e: Exception) {
+-            val error = Toast.makeText(applicationContext, "Виникла якась помилка!", Toast.LENGTH_SHORT)
+-            error.show()
+-        }
++//        try {
++//        id =+1;
++//        var en_word = findViewById<TextView>(R.id.enWord)
++//        en_word.setVisibility(View.VISIBLE)
++//
++//    val words = realm.where(Word::class.java).greaterThanOrEqualTo("id",1).findAll()
++//        words.forEach{word ->
++//            en_word.text = word.englishWord
++//
++//        }
++//        } catch (e: Exception) {
++//            val error = Toast.makeText(applicationContext, "Виникла якась помилка!", Toast.LENGTH_SHORT)
++//            error.show()
++//        }
+     }
+     fun ShowUkrWord(view: android.view.View) {
+-        try {
+-        var ukr_word = findViewById<TextView>(R.id.ukrWord)
+-        val words = realm.where(Word::class.java).findAll()
+-        words.forEach{word ->
+-            ukr_word.text = word.ukr_word
+-
+-        }
+-    } catch (e: Exception) {
+-        val error = Toast.makeText(applicationContext, "Виникла якась помилка!", Toast.LENGTH_SHORT)
+-        error.show()
+-    }
++//        try {
++//        var ukr_word = findViewById<TextView>(R.id.ukrWord)
++//        val words = realm.where(Word::class.java).findAll()
++//        words.forEach{word ->
++//            ukr_word.text = word.nativeWord
++//
++//        }
++//    } catch (e: Exception) {
++//        val error = Toast.makeText(applicationContext, "Виникла якась помилка!", Toast.LENGTH_SHORT)
++//        error.show()
++//    }
+     }
+     }
+Index: app/src/main/java/com/example/flashcards/notreworked/My_words_en.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/notreworked/My_words_en.kt b/app/src/main/java/com/example/flashcards/notreworked/My_words_en.kt
+--- a/app/src/main/java/com/example/flashcards/notreworked/My_words_en.kt	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/src/main/java/com/example/flashcards/notreworked/My_words_en.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -11,8 +11,8 @@
+         setContentView(R.layout.activity_my_words_en)
+     }
+     fun menu_btn(view: android.view.View) {
+-        val menu = Intent(this, Menu_en::class.java)
+-        startActivity(menu);
++//        val menu = Intent(this, Menu_en::class.java)
++//        startActivity(menu);
+     }
+     fun learnWords(view: android.view.View) {
+         val menu = Intent(this, Learn_Words_en::class.java)
+Index: app/src/main/java/com/example/flashcards/notreworked/Settings_en.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/notreworked/Settings_en.kt b/app/src/main/java/com/example/flashcards/notreworked/Settings_en.kt
+--- a/app/src/main/java/com/example/flashcards/notreworked/Settings_en.kt	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/src/main/java/com/example/flashcards/notreworked/Settings_en.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -17,7 +17,7 @@
+         startActivity(English_vercion);
+     }
+     fun menu_btn(view: android.view.View) {
+-        val menu = Intent(this, Menu_en::class.java)
+-        startActivity(menu);
++//        val menu = Intent(this, Menu_en::class.java)
++//        startActivity(menu);
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/flashcards/notreworked/new_words_en.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/notreworked/new_words_en.kt b/app/src/main/java/com/example/flashcards/notreworked/new_words_en.kt
+--- a/app/src/main/java/com/example/flashcards/notreworked/new_words_en.kt	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/src/main/java/com/example/flashcards/notreworked/new_words_en.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -13,8 +13,8 @@
+         setContentView(R.layout.activity_new_words_en)
+     }
+     fun menu(view: android.view.View) {
+-        val menu = Intent(this, Menu_en::class.java)
+-        startActivity(menu);
++//        val menu = Intent(this, Menu_en::class.java)
++//        startActivity(menu);
+     }
+     var next = 0
+     fun ShowUkrWord(view: android.view.View) {
+Index: app/src/main/java/com/example/flashcards/repository/IWordsRepository.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/repository/IWordsRepository.kt b/app/src/main/java/com/example/flashcards/repository/IWordsRepository.kt
+--- a/app/src/main/java/com/example/flashcards/repository/IWordsRepository.kt	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/src/main/java/com/example/flashcards/repository/IWordsRepository.kt	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -1,6 +1,8 @@
+ package com.example.flashcards.repository
+ 
++import com.example.flashcards.model.local.Word
++
+ interface IWordsRepository {
+-    fun saveWord(nativeWord: String, englishWord: String)
+-    fun getWords(): Map<String, String>
++    fun saveWord(word: Word)
++    fun getWords(): List<Word>
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/example/flashcards/repository/WordsRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/flashcards/repository/WordsRepository.java b/app/src/main/java/com/example/flashcards/repository/WordsRepository.java
+--- a/app/src/main/java/com/example/flashcards/repository/WordsRepository.java	(revision e453e4fa777debdb40c9fa7f3be33b03c6f2e86c)
++++ b/app/src/main/java/com/example/flashcards/repository/WordsRepository.java	(revision 49cd69811f022a18456e1186b8bfad078e2e4d7f)
+@@ -1,33 +1,23 @@
+ package com.example.flashcards.repository;
+ 
+ import androidx.annotation.NonNull;
+-
+-import com.example.flashcards.feature.addword.AddWordActivity;
+-import com.example.flashcards.notreworked.Word;
+-
+-import java.util.Map;
+-
++import com.example.flashcards.model.data.WordMapper;
++import com.example.flashcards.model.data.WordRealm;
++import com.example.flashcards.model.local.Word;
++import java.util.List;
+ import io.realm.Realm;
+-import io.realm.RealmCollection;
+-import io.realm.RealmConfiguration;
++import io.realm.RealmResults;
+ 
+ public class WordsRepository implements IWordsRepository {
+     private static IWordsRepository repository;
+     private static Realm realm;
++    private int primaryKey = 14;
++
+     private WordsRepository() {
+         realm = Realm.getDefaultInstance();
+-
+-        Realm.init(this);
+-            RealmConfiguration config = new RealmConfiguration.Builder();
+-                .allowWritesOnUiThread(true)
+-                .name("words.realm").build();
+-
+-
+-        Realm.setDefaultConfiguration(config);
+     }
+ 
+     public static IWordsRepository getInstance() {
+-
+         if (repository == null) {
+             repository = new WordsRepository();
+         }
+@@ -35,25 +25,21 @@
+     }
+ 
+     @Override
+-    public void saveWord(@NonNull String nativeWord, @NonNull String englishWord) {
+-        realm.executeTransaction {
+-
+-            Word word  = realm.createObject(Word::class.java, AddWordActivity.primarykey1.primarykey)
+-            word.ukr_word = nativeWord;
+-            word.en_word = englishWord;
+-
+-
+-
+-        }
++    public void saveWord(@NonNull Word word) {
++        realm.executeTransaction(
++                o -> {
++                    WordRealm wordRealm = realm.createObject(WordRealm.class, primaryKey++);
++                    wordRealm.setNativeWord(word.nativeWord);
++                    wordRealm.setEnglishWord(word.englishWord);
++                }
++        );
+     }
+ 
+     @NonNull
+     @Override
+-    public Map<String, String> getWords()
+-    {
+-        Realm words = realm.where(Word::class.java).findAll();
+-
+-
+-
++    public List<Word> getWords() {
++        RealmResults<WordRealm> words = realm.where(WordRealm.class).findAll();
++        WordMapper wordMapper = new WordMapper();
++        return wordMapper.mapRealm(words);
+     }
+ }

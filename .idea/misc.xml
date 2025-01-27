@@ -22,14 +22,62 @@
         <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/layout/activity_settings_ukr.xml" value="0.259375" />
         <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/mipmap-anydpi-v26/Gmail_icon.xml" value="0.3885416666666667" />
         <entry key="..\:/Users/Dim4yk/AndroidStudioProjects/FlashCards2/app/src/main/res/mipmap-anydpi-v26/Logo_Dima_Labs.xml" value="0.22552083333333334" />
-        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_main.xml" value="0.25" />
+
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_about_me_en.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_add_word_en.xml" value="0.3625" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_add_word_ukr.xml" value="0.25" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_home_en.xml" value="0.3625" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_irregular_words_ukr.xml" value="0.3625" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_learn_words.xml" value="0.264" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_learn_words_en.xml" value="0.3625" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_learn_words_ukr.xml" value="0.25" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_menu.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_menu_en.xml" value="0.3625" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_menu_ukr.xml" value="0.3625" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_my_words_en.xml" value="0.3625" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_my_words_ukr.xml" value="0.3625" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_new_words_en.xml" value="0.4" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_new_words_ukr.xml" value="0.3625" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_settings_en.xml" value="0.3625" />
+        <entry key="..\:/Users/dim4u/StudioProjects/Flash_Cards_Mobile/app/src/main/res/layout/activity_settings_ukr.xml" value="0.3625" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2255" />
+        <entry key="app/src/main/res/drawable/_305615_address_globe_internet_network_site_icon_1.xml" value="0.2465" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2255" />
+        <entry key="app/src/main/res/drawable/ic_logoflash_cards2_1_3.xml" value="0.2465" />
+        <entry key="app/src/main/res/drawable/ic_menu.xml" value="0.403" />
+        <entry key="app/src/main/res/drawable/ic_rectangle_1.xml" value="0.2465" />
+        <entry key="app/src/main/res/layout/activity_about_me_ukr.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_add_word.xml" value="0.3619791666666667" />
+        <entry key="app/src/main/res/layout/activity_add_word_en.xml" value="0.3170289855072464" />
+        <entry key="app/src/main/res/layout/activity_irregular_words.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/activity_irregular_words_ukr.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/layout/activity_learn_words.xml" value="0.3432971014492754" />
+        <entry key="app/src/main/res/layout/activity_learn_words_ukr.xml" value="0.3432971014492754" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_menu.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_my_words_en.xml" value="0.3383152173913043" />
+        <entry key="app/src/main/res/layout/activity_my_words_ukr.xml" value="0.3383152173913043" />
+        <entry key="app/src/main/res/layout/activity_new_words.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/activity_new_words_en.xml" value="0.3383152173913043" />
+        <entry key="app/src/main/res/layout/activity_new_words_ukr.xml" value="0.322463768115942" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/program_logo_2.xml" value="0.313" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/program_logo_8.xml" value="0.2465" />
+
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.75" />
+      </ProjectState>
+    </option>
   </component>
 </project>

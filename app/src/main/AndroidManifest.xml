@@ -1,71 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flashcards">
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
 
     <application
+        android:name="com.app.flashcards.App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/program_logo_2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/logo_of_program_round"
+        android:roundIcon="@mipmap/program_logo_2_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FlashCards">
+        android:theme="@style/Theme.FlashCards"
+        android:screenOrientation="portrait"
+        tools:ignore="MissingClass"
+        android:largeHeap="true"
+        android:hardwareAccelerated="false">
+
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+
         <activity
-            android:name=".Menu_ukr"
+            android:name=".feature.menu.MenuActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".Menu_en"
-            android:exported="false" />
+            android:name=".feature.learnwords.LearnWordsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
         <activity
-            android:name=".Learn_Words_ukr"
-            android:exported="false" />
+            android:name=".feature.addword.AddWordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".Learn_Words_en"
-            android:exported="false" />
+            android:name=".feature.aboutme.AboutMeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".Add_word_ukr"
-            android:exported="false" />
+            android:name=".feature.mywords.MyWordsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".Add_word_en"
-            android:exported="false" />
+            android:name=".feature.irregularverbs.IrregularVerbsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".About_me_ukr"
-            android:exported="false" />
+            android:name=".feature.newwords.NewWordsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".About_me_en"
-            android:exported="false" />
-        <activity
-            android:name=".Settings_ukr"
-            android:exported="false" />
-        <activity
-            android:name=".Settings_en"
-            android:exported="false" />
-        <activity
-            android:name=".My_words_en"
-            android:exported="false" />
-        <activity
-            android:name=".My_words_ukr"
-            android:exported="false" />
-        <activity
-            android:name=".Home_en"
-            android:exported="false" />
-        <activity
-            android:name=".Irregular_words_ukr"
-            android:exported="false" />
-        <activity
-            android:name=".new_words_en"
-            android:exported="false" />
-        <activity
-            android:name=".new_words_ukr"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".feature.main.MainActivity"
+            android:exported="true"
+
+            android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6900765352117563~4146365892"/>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_logoflash_cards2_1_2" />
+
     </application>
 
 </manifest>

@@ -11,7 +11,7 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
     }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
-        println("Received message: $remoteMessage")
+//        println("Received message: $remoteMessage")
     }
 
 }

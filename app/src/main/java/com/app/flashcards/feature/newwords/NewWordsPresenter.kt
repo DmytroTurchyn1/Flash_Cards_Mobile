@@ -1,7 +1,6 @@
 package com.app.flashcards.feature.newwords
 
 import com.app.flashcards.model.local.SimpleWord
-import com.app.flashcards.repository.WordsRepository
 import java.lang.ref.WeakReference
 import kotlin.random.Random
 

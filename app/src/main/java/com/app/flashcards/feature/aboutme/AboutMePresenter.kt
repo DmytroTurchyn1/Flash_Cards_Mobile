@@ -1,6 +1,5 @@
 package com.app.flashcards.feature.aboutme
 
-import com.app.flashcards.feature.learnwords.LearnWordsView
 import java.lang.ref.WeakReference
 
 class AboutMePresenter(view: AboutMeView) {

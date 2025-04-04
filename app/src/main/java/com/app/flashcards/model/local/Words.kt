@@ -1,7 +1,5 @@
 package com.app.flashcards.model.local
 
-import android.view.Gravity
-
 sealed class Words
 
 data class NewWords(

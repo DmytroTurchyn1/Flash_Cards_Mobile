@@ -1,8 +1,8 @@
 package com.app.flashcards.model.data
 
 import com.app.flashcards.model.local.IrregularVerb
-import com.app.flashcards.model.local.UserWord
 import com.app.flashcards.model.local.SimpleWord
+import com.app.flashcards.model.local.UserWord
 import io.realm.RealmResults
 
 class WordMapper {

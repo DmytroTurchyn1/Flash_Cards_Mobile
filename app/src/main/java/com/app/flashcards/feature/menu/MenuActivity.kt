@@ -1,12 +1,9 @@
 package com.app.flashcards.feature.menu
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.app.flashcards.*
-import com.app.flashcards.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
 import com.app.flashcards.databinding.ActivityMenuBinding
 import com.app.flashcards.util.Launcher
-
 
 
 class MenuActivity : AppCompatActivity(), MenuView {

@@ -3,14 +3,14 @@ package com.app.flashcards.util
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import com.app.flashcards.feature.main.MainActivity
-import com.app.flashcards.feature.menu.MenuActivity
 import com.app.flashcards.feature.aboutme.AboutMeActivity
 import com.app.flashcards.feature.addword.AddWordActivity
-import com.app.flashcards.feature.learnwords.LearnWordsActivity
-import com.app.flashcards.feature.newwords.NewWordsActivity
 import com.app.flashcards.feature.irregularverbs.IrregularVerbsActivity
+import com.app.flashcards.feature.learnwords.LearnWordsActivity
+import com.app.flashcards.feature.main.MainActivity
+import com.app.flashcards.feature.menu.MenuActivity
 import com.app.flashcards.feature.mywords.MyWordsActivity
+import com.app.flashcards.feature.newwords.NewWordsActivity
 
 object Launcher {
     fun startMainActivity(activity: Activity) {

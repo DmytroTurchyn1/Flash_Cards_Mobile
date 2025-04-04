@@ -1,7 +1,6 @@
 package com.app.flashcards.feature.addword
 
 import com.app.flashcards.model.local.UserWord
-import com.app.flashcards.repository.WordsRepository
 import java.lang.ref.WeakReference
 
 class AddWordPresenter (view: AddWordView){

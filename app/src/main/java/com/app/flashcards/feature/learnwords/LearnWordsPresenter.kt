@@ -1,7 +1,6 @@
 package com.app.flashcards.feature.learnwords
 
 import com.app.flashcards.model.local.UserWord
-import com.app.flashcards.repository.WordsRepository
 import java.lang.ref.WeakReference
 import kotlin.random.Random
 

@@ -1,8 +1,7 @@
 package com.app.flashcards.feature.irregularverbs
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.app.flashcards.R
+import androidx.appcompat.app.AppCompatActivity
 import com.app.flashcards.databinding.ActivityIrregularWordsBinding
 import com.app.flashcards.util.Launcher
 

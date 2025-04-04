@@ -1,6 +1,6 @@
 package com.app.flashcards.model.local
 
-import java.util.*
+import java.util.UUID
 
 
 sealed class Word

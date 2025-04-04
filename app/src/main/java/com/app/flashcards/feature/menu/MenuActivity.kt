@@ -1,7 +1,5 @@
 package com.app.flashcards.feature.menu
 
-
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.app.flashcards.databinding.ActivityMenuBinding
@@ -14,7 +12,7 @@ class MenuActivity : AppCompatActivity(), MenuView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
         // Inflate the binding layout first
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)

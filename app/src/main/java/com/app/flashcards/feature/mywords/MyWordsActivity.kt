@@ -1,7 +1,5 @@
 package com.app.flashcards.feature.mywords
 
-
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.app.flashcards.databinding.ActivityMyWordsBinding
@@ -13,7 +11,6 @@ class MyWordsActivity : AppCompatActivity(), MyWordsView {
     private lateinit var binding: ActivityMyWordsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         binding = ActivityMyWordsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

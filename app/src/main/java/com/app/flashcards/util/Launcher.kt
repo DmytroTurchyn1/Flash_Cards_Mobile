@@ -11,8 +11,6 @@ import com.app.flashcards.feature.main.MainActivity
 import com.app.flashcards.feature.menu.MenuActivity
 import com.app.flashcards.feature.mywords.MyWordsActivity
 import com.app.flashcards.feature.newwords.NewWordsActivity
-import androidx.core.net.toUri
-
 
 object Launcher {
     fun startMainActivity(activity: Activity) {
@@ -56,18 +54,17 @@ object Launcher {
     }
 
     fun startTelegram(activity: Activity) {
-        val intent = Intent(Intent.ACTION_VIEW, "https://t.me/Dima_labs_Cahnnel".toUri())
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/Dima_labs_Cahnnel"))
         activity.startActivity(intent)
     }
 
     fun startGmail(activity: Activity) {
-        val intent = Intent(Intent.ACTION_VIEW, "mailto:dim4ukt@gmail.com".toUri())
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:dim4ukt@gmail.com"))
         activity.startActivity(intent)
     }
 
     fun startYoutube(activity: Activity) {
-        val intent = Intent(Intent.ACTION_VIEW,
-            "https://www.youtube.com/channel/UC-nn4RFP16LjaWk8SRs15Pg".toUri())
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UC-nn4RFP16LjaWk8SRs15Pg"))
         activity.startActivity(intent)
     }
 }

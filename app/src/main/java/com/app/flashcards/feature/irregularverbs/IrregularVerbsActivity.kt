@@ -1,7 +1,5 @@
 package com.app.flashcards.feature.irregularverbs
 
-
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.app.flashcards.databinding.ActivityIrregularWordsBinding
@@ -13,7 +11,6 @@ class IrregularVerbsActivity : AppCompatActivity(), IrregularVerbsView {
     private lateinit var binding:ActivityIrregularWordsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         binding = ActivityIrregularWordsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

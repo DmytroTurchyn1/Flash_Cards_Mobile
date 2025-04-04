@@ -1,7 +1,5 @@
 package com.app.flashcards.feature.learnwords
 
-
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -18,7 +16,6 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
     private lateinit var binding:ActivityLearnWordsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         binding = ActivityLearnWordsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         presenter.onActivityCreated()

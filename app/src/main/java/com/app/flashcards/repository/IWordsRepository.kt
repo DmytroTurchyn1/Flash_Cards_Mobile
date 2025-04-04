@@ -1,6 +1,9 @@
 package com.app.flashcards.repository
 
-import com.app.flashcards.model.local.*
+import com.app.flashcards.model.local.IrregularVerb
+import com.app.flashcards.model.local.SimpleWord
+import com.app.flashcards.model.local.UserWord
+import com.app.flashcards.model.local.Word
 
 interface IWordsRepository {
     fun saveWord(word: Word)

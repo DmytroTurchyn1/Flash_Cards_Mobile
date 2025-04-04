@@ -1,8 +1,5 @@
 package com.app.flashcards;
 
-import static com.app.flashcards.AppConstants.REALM_DB_NAME;
-import static com.app.flashcards.AppConstants.REALM_DB_VERSION;
-
 import android.app.Application;
 
 import io.realm.Realm;

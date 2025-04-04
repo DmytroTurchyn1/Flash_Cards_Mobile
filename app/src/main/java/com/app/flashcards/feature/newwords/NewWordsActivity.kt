@@ -1,9 +1,7 @@
 package com.app.flashcards.feature.newwords
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.app.flashcards.R
-
+import androidx.appcompat.app.AppCompatActivity
 import com.app.flashcards.databinding.ActivityNewWordsBinding
 import com.app.flashcards.util.Launcher
 

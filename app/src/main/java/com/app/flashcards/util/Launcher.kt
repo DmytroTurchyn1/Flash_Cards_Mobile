@@ -13,6 +13,7 @@ import com.app.flashcards.feature.mywords.MyWordsActivity
 import com.app.flashcards.feature.newwords.NewWordsActivity
 import androidx.core.net.toUri
 
+
 object Launcher {
     fun startMainActivity(activity: Activity) {
         val intent = Intent(activity, MainActivity::class.java)

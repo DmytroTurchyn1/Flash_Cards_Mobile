@@ -1,5 +1,6 @@
 package com.app.flashcards.feature.learnwords
 
+
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.Toast

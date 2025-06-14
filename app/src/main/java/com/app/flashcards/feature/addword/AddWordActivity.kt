@@ -1,5 +1,6 @@
 package com.app.flashcards.feature.addword
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +15,7 @@ class AddWordActivity : AppCompatActivity(), AddWordView {
     private lateinit var binding:ActivityAddWordBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         binding = ActivityAddWordBinding.inflate(layoutInflater)
         setContentView(binding.root)
         presenter = AddWordPresenter(this)
@@ -37,7 +39,7 @@ class AddWordActivity : AppCompatActivity(), AddWordView {
 
     override fun reviewRequest() {
         val reviewManager  = ReviewManagerFactory.create(applicationContext)
-        reviewManager.requestReviewFlow().addOnCompleteListener(){
+        reviewManager.requestReviewFlow().addOnCompleteListener {
             if (it.isSuccessful){
                 reviewManager.launchReviewFlow(this,it.result)
             }

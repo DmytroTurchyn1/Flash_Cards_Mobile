@@ -8,126 +8,72 @@
     tools:context=".feature.menu.MenuActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:id="@+id/constraintLayout"
-        android:layout_width="417dp"
-        android:layout_height="71dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ExtraText">
 
-
         <TextView
             android:id="@+id/tvMenuName"
             android:layout_width="wrap_content"
-            android:layout_height="43dp"
+            android:layout_height="wrap_content"
             android:elevation="80dp"
             android:gravity="center"
             android:text="@string/menu_screen_title"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="34sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/divider"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.428" />
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp" />
 
         <View
             android:id="@+id/divider"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginBottom="4dp"
-            android:layout_weight="1"
-
             android:background="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/ivMenuRectangle"
-        android:layout_width="377dp"
-        android:layout_height="780dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="5dp"
-        android:contentDescription="image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="25dp"
+        android:contentDescription="@string/image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/rectangle_menu" />
+        app:srcCompat="@drawable/rectangle_menu"
+        android:scaleType="fitXY" />
 
     <ImageButton
         android:id="@+id/btnMainPage"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
         android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/btn_main_page"
         app:layout_constraintEnd_toEndOf="@+id/ivMenuRectangle"
         app:layout_constraintStart_toStartOf="@+id/ivMenuRectangle"
         app:layout_constraintTop_toTopOf="@+id/ivMenuRectangle"
+        app:layout_constraintBottom_toTopOf="@+id/btnNewWords"
+        app:layout_constraintWidth_percent="0.7"
         app:srcCompat="@drawable/ic_frame"
-        android:contentDescription="@string/btn_main_page"/>
-
-    <ImageButton
-        android:id="@+id/btnNewWords"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/ivMenuRectangle"
-        app:layout_constraintStart_toStartOf="@+id/ivMenuRectangle"
-        app:layout_constraintTop_toBottomOf="@+id/btnMainPage"
-        app:srcCompat="@drawable/ic_frame"
-        android:contentDescription="@string/btn_new_words"/>
-
-    <ImageButton
-        android:id="@+id/btnIrregularWords"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/ivMenuRectangle"
-        app:layout_constraintStart_toStartOf="@+id/ivMenuRectangle"
-        app:layout_constraintTop_toBottomOf="@+id/btnNewWords"
-        app:srcCompat="@drawable/ic_frame"
-        android:contentDescription="@string/btn_irregular_verbs"/>
-
-    <ImageButton
-        android:id="@+id/btnMyWords"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#00FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/ivMenuRectangle"
-        app:layout_constraintStart_toStartOf="@+id/ivMenuRectangle"
-        app:layout_constraintTop_toBottomOf="@+id/btnIrregularWords"
-        app:srcCompat="@drawable/ic_frame"
-        android:contentDescription="@string/btn_my_words"/>
-
-    <ImageButton
-        android:id="@+id/btnAboutProgram"
-        android:layout_width="276dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/ivMenuRectangle"
-        app:layout_constraintEnd_toEndOf="@+id/ivMenuRectangle"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="@+id/ivMenuRectangle"
-        app:layout_constraintTop_toBottomOf="@+id/btnMyWords"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_frame"
-        android:contentDescription="@string/btn_about_program" />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/textView"
@@ -139,8 +85,20 @@
         app:layout_constraintBottom_toBottomOf="@+id/btnMainPage"
         app:layout_constraintEnd_toEndOf="@+id/btnMainPage"
         app:layout_constraintStart_toStartOf="@+id/btnMainPage"
-        app:layout_constraintTop_toTopOf="@+id/btnMainPage"
-        app:layout_constraintVertical_bias="0.54" />
+        app:layout_constraintTop_toTopOf="@+id/btnMainPage" />
+
+    <ImageButton
+        android:id="@+id/btnNewWords"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/btnMainPage"
+        app:layout_constraintStart_toStartOf="@+id/btnMainPage"
+        app:layout_constraintTop_toBottomOf="@+id/btnMainPage"
+        app:layout_constraintBottom_toTopOf="@+id/btnIrregularWords"
+        app:srcCompat="@drawable/ic_frame"
+        android:contentDescription="@string/btn_new_words" />
 
     <TextView
         android:id="@+id/textView3"
@@ -154,6 +112,19 @@
         app:layout_constraintStart_toStartOf="@+id/btnNewWords"
         app:layout_constraintTop_toTopOf="@+id/btnNewWords" />
 
+    <ImageButton
+        android:id="@+id/btnIrregularWords"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/btnNewWords"
+        app:layout_constraintStart_toStartOf="@+id/btnNewWords"
+        app:layout_constraintTop_toBottomOf="@+id/btnNewWords"
+        app:layout_constraintBottom_toTopOf="@+id/btnMyWords"
+        app:srcCompat="@drawable/ic_frame"
+        android:contentDescription="@string/btn_irregular_verbs" />
+
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
@@ -166,6 +137,19 @@
         app:layout_constraintStart_toStartOf="@+id/btnIrregularWords"
         app:layout_constraintTop_toTopOf="@+id/btnIrregularWords" />
 
+    <ImageButton
+        android:id="@+id/btnMyWords"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/btnIrregularWords"
+        app:layout_constraintStart_toStartOf="@+id/btnIrregularWords"
+        app:layout_constraintTop_toBottomOf="@+id/btnIrregularWords"
+        app:layout_constraintBottom_toTopOf="@+id/btnAboutProgram"
+        app:srcCompat="@drawable/ic_frame"
+        android:contentDescription="@string/btn_my_words" />
+
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
@@ -177,6 +161,19 @@
         app:layout_constraintEnd_toEndOf="@+id/btnMyWords"
         app:layout_constraintStart_toStartOf="@+id/btnMyWords"
         app:layout_constraintTop_toTopOf="@+id/btnMyWords" />
+
+    <ImageButton
+        android:id="@+id/btnAboutProgram"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/btnMyWords"
+        app:layout_constraintStart_toStartOf="@+id/btnMyWords"
+        app:layout_constraintTop_toBottomOf="@+id/btnMyWords"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMenuRectangle"
+        app:srcCompat="@drawable/ic_frame"
+        android:contentDescription="@string/btn_about_program" />
 
     <TextView
         android:id="@+id/textView13"

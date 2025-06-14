@@ -9,46 +9,40 @@
     tools:context=".feature.addword.AddWordActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:id="@+id/constraintLayout"
-        android:layout_width="417dp"
-        android:layout_height="71dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <TextView
             android:id="@+id/tvMenuName"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:elevation="80dp"
-            android:gravity="start"
+            android:gravity="center"
             android:text="@string/add_word_title"
-
             android:textColor="#000000"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.448" />
+            app:layout_constraintStart_toEndOf="@+id/btnMenu"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/divider"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginBottom="4dp"
-            android:layout_weight="1"
-
             android:background="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <View
-
             android:id="@+id/btnMenu"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -56,87 +50,52 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="16dp"
             android:background="@drawable/ic_menu"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/divider"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.476" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/ivFrame"
-        android:layout_width="376dp"
-        android:layout_height="694dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="0.474"
-        app:srcCompat="@drawable/ic_block" />
-
-    <TextView
-        android:id="@+id/tvNativeWord"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:text="@string/add_word_native_word"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
-        app:layout_constraintStart_toStartOf="@+id/ivFrame"
-        app:layout_constraintTop_toBottomOf="@+id/ivTextFrame"
-        app:layout_constraintVertical_bias="0.106" />
+        app:srcCompat="@drawable/ic_block"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/image_frame_description" />
 
     <TextView
         android:id="@+id/btnEnglishWord"
         android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:text="@string/add_word_english_word"
+        android:layout_height="wrap_content"
+        android:text="@string/add_word_native_word"
         android:textColor="@color/white"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ivTextFrame"
         app:layout_constraintEnd_toEndOf="@+id/ivFrame"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/ivFrame"
         app:layout_constraintTop_toTopOf="@+id/ivFrame"
-        app:layout_constraintVertical_bias="0.159" />
-
-    <ImageButton
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/ivFrame"
-        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/ivFrame"
-        app:layout_constraintTop_toBottomOf="@+id/tvFirstForm"
-        app:layout_constraintVertical_bias="0.459"
-        app:srcCompat="@drawable/ic_btn" />
-
-    <TextView
-        android:id="@+id/tvAddWord"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:text="@string/add_word_btn"
-        android:textColor="#000000"
-        android:textSize="23sp"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnSave"
-        app:layout_constraintEnd_toEndOf="@+id/btnSave"
-        app:layout_constraintStart_toStartOf="@+id/btnSave"
-        app:layout_constraintTop_toTopOf="@+id/btnSave" />
+        app:layout_constraintVertical_bias="0.29000002"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <ImageView
         android:id="@+id/ivTextFrame"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/text_input_frame"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/tvNativeWord"
         app:layout_constraintEnd_toEndOf="@+id/ivFrame"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="@+id/ivFrame"
         app:layout_constraintTop_toBottomOf="@+id/btnEnglishWord"
         app:srcCompat="@drawable/ic_frame2" />
@@ -145,24 +104,45 @@
         android:id="@+id/ptNativeWord"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:autofillHints="name"
+        android:background="@null"
         android:ems="10"
+        android:hint="@string/add_word_native_word"
         android:inputType="textPersonName"
         android:maxLength="17"
         android:minHeight="48dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/ivTextFrame"
         app:layout_constraintEnd_toEndOf="@+id/ivTextFrame"
-        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="@+id/ivTextFrame"
         app:layout_constraintTop_toTopOf="@+id/ivTextFrame"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tvNativeWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/add_word_english_word"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/ivTextFrame2"
+        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
+        app:layout_constraintStart_toStartOf="@+id/ivFrame"
+        app:layout_constraintTop_toBottomOf="@+id/ivTextFrame" />
 
     <ImageView
         android:id="@+id/ivTextFrame2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="@string/text_input_frame"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
         app:layout_constraintEnd_toEndOf="@+id/ivFrame"
         app:layout_constraintStart_toStartOf="@+id/ivFrame"
         app:layout_constraintTop_toBottomOf="@+id/tvNativeWord"
@@ -177,12 +157,42 @@
         android:maxLength="17"
         android:minHeight="48dp"
         android:textColor="@color/black"
+        android:background="@null"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:hint="@string/add_word_english_word"
+        android:autofillHints="name"
         app:layout_constraintBottom_toBottomOf="@+id/ivTextFrame2"
         app:layout_constraintEnd_toEndOf="@+id/ivTextFrame2"
-        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="@+id/ivTextFrame2"
         app:layout_constraintTop_toTopOf="@+id/ivTextFrame2"
-        app:layout_constraintVertical_bias="0.612"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="@string/add_word_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/ivFrame"
+        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
+        app:layout_constraintStart_toStartOf="@+id/ivFrame"
+        app:layout_constraintTop_toBottomOf="@+id/ivTextFrame2"
+        app:srcCompat="@drawable/ic_btn" />
+
+    <TextView
+        android:id="@+id/tvAddWord"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/add_word_btn"
+        android:textColor="#000000"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="@+id/btnSave"
+        app:layout_constraintStart_toStartOf="@+id/btnSave"
+        app:layout_constraintTop_toTopOf="@+id/btnSave"
+        android:layout_marginBottom="5dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

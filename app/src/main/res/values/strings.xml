@@ -42,6 +42,14 @@
     <string name="irregular_words_forms">form 1 | form 2 | form 3</string>
     <string name="web">My website:</string>
     <string name="input_words">Please enter the words!</string>
+    <string name="notification_message_placeholder">message</string>
+    <string name="background_image_description" translatable="false">background_image</string>
+    <string name="next_button_description">Next</string>
+    <string name="add_word_button_description" translatable="false">add_word_button</string>
+    <string name="app_logo" translatable="false">app_logo</string>
+    <string name="image_frame_description" translatable="false">image_frame</string>
+    <string name="text_input_frame" translatable="false">text_input_frame</string>
+    <string name="learn_words_button_description" translatable="false">learn_words_button</string>
 
 
 </resources>

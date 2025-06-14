@@ -31,4 +31,6 @@
     <string name="irregular_words_text">Неправильні дієслова</string>
     <string name="web">Мій сайт:</string>
     <string name="input_words">Будь ласка введіть слова!</string>
+    <string name="notification_message_placeholder">Повідомлення</string>
+    <string name="next_button_description">Далі</string>
 </resources>

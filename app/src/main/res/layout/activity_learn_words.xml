@@ -61,7 +61,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,14 +74,15 @@
         android:id="@+id/tvNativeWordTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/learn_words_native_word"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView8"
         app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView8" />
+        app:layout_constraintTop_toTopOf="@+id/imageView8"
+        app:layout_constraintBottom_toTopOf="@+id/btnEnglishWord"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/btnEnglishWord"
@@ -94,7 +95,8 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/imageView8"
         app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/tvNativeWordTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNativeWordTitle"
+        app:layout_constraintBottom_toTopOf="@+id/tvEnglishWordTitle" />
 
     <TextView
         android:id="@+id/tvEnglishWordTitle"
@@ -107,7 +109,8 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView8"
         app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/btnEnglishWord" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEnglishWord"
+        app:layout_constraintBottom_toTopOf="@+id/tvNativeWord" />
 
     <TextView
         android:id="@+id/tvNativeWord"
@@ -118,22 +121,22 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView8"
         app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toBottomOf="@+id/tvEnglishWordTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEnglishWordTitle"
+        app:layout_constraintBottom_toTopOf="@+id/btnNext" />
 
     <ImageButton
         android:id="@+id/btnNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:background="#00FFFFFF"
-        app:srcCompat="@drawable/ic_btn"
         android:contentDescription="@string/next_button_description"
-        tools:ignore="SpeakableTextPresentCheck"
         app:layout_constraintBottom_toTopOf="@+id/btnDelete"
         app:layout_constraintEnd_toEndOf="@+id/imageView8"
         app:layout_constraintStart_toStartOf="@+id/imageView8"
         app:layout_constraintTop_toBottomOf="@+id/tvNativeWord"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintVertical_bias="0.8" />
+        app:srcCompat="@drawable/ic_btn"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView9"
@@ -156,7 +159,7 @@
         android:layout_marginTop="16dp"
         android:background="#00FFFFFF"
         app:srcCompat="@drawable/ic_btn"
-        android:contentDescription="@string/delete_button_description"
+        android:contentDescription="@string/delete_btn"
         tools:ignore="SpeakableTextPresentCheck"
         app:layout_constraintBottom_toBottomOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="@+id/imageView8"

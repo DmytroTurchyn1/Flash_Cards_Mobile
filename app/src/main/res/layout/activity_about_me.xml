@@ -62,7 +62,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,14 +75,16 @@
         android:id="@+id/ivDevLogo"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:contentDescription="@string/iv_developerlogo"
+        app:layout_constraintBottom_toTopOf="@+id/tvDeveloper"
         app:layout_constraintDimensionRatio="H,1:1"
-        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
-        app:layout_constraintStart_toStartOf="@+id/ivFrame"
-        app:layout_constraintTop_toTopOf="@+id/ivFrame"
+        app:layout_constraintEnd_toEndOf="@id/ivFrame"
         app:layout_constraintHeight_percent="0.25"
-        app:srcCompat="@drawable/dima_logo"
-        android:contentDescription="@string/iv_developerlogo" />
+        app:layout_constraintStart_toStartOf="@id/ivFrame"
+        app:layout_constraintTop_toTopOf="@id/ivFrame"
+        app:layout_constraintVertical_bias="0.22000003"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/dima_logo" />
 
     <TextView
         android:id="@+id/tvDeveloper"
@@ -92,9 +94,10 @@
         android:text="@string/program_developer_text"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
-        app:layout_constraintStart_toStartOf="@+id/ivFrame"
-        app:layout_constraintTop_toBottomOf="@+id/ivDevLogo" />
+        app:layout_constraintEnd_toEndOf="@id/ivFrame"
+        app:layout_constraintStart_toStartOf="@id/ivFrame"
+        app:layout_constraintTop_toBottomOf="@id/ivDevLogo"
+        app:layout_constraintBottom_toTopOf="@+id/flowSocialButtons" />
 
     <ImageButton
         android:id="@+id/btnGmail"
@@ -104,7 +107,7 @@
         android:contentDescription="@string/btn_gmail"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintHeight_percent="0.12"
-        app:srcCompat="@android:mipmap/sym_def_app_icon"
+        app:srcCompat="@drawable/gmail"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
     <ImageButton
@@ -115,7 +118,7 @@
         android:contentDescription="@string/btn_youtube"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintHeight_percent="0.12"
-        app:srcCompat="@android:mipmap/sym_def_app_icon"
+        app:srcCompat="@drawable/youtube"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -126,23 +129,24 @@
         android:contentDescription="@string/btn_telegram"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintHeight_percent="0.12"
-        app:srcCompat="@android:mipmap/sym_def_app_icon"
+        app:srcCompat="@drawable/telegram"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/flowSocialButtons"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
         app:constraint_referenced_ids="btnGmail,btnYoutube,btnTelegram"
-        app:flow_wrapMode="chain"
         app:flow_horizontalStyle="spread_inside"
         app:flow_maxElementsWrap="3"
-        app:layout_constraintTop_toBottomOf="@+id/tvDeveloper"
-        app:layout_constraintStart_toStartOf="@+id/ivFrame"
-        app:layout_constraintEnd_toEndOf="@+id/ivFrame"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp" />
+        app:flow_wrapMode="chain"
+        app:layout_constraintBottom_toTopOf="@+id/ivLogo"
+        app:layout_constraintEnd_toEndOf="@id/ivFrame"
+        app:layout_constraintStart_toStartOf="@id/ivFrame"
+        app:layout_constraintTop_toBottomOf="@id/tvDeveloper" />
 
     <ImageView
         android:id="@+id/ivLogo"
@@ -151,8 +155,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:contentDescription="@string/iv_applogo"
-        app:layout_constraintBottom_toBottomOf="@+id/ivFrame"
-        app:layout_constraintEnd_toStartOf="@+id/tvVersion"
+        app:layout_constraintBottom_toBottomOf="@id/ivFrame"
+        app:layout_constraintEnd_toStartOf="@id/tvVersion"
         app:srcCompat="@mipmap/program_logo_foreground" />
 
     <TextView

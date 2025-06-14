@@ -3,6 +3,7 @@ package com.app.flashcards.feature.main
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity(), MainView {
     private  val updateType = AppUpdateType.FLEXIBLE
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         val startSplashScreen = installSplashScreen()
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)

@@ -69,7 +69,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:layout_constraintHeight_min="300dp"
-        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintVertical_bias="0.5"
         app:layout_constraintDimensionRatio="H,1:1" />
 
 
@@ -113,6 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-6900765352117563/3161174017"
         app:layout_constraintBottom_toBottomOf="parent"

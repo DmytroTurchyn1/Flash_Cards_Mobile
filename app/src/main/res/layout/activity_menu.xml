@@ -52,7 +52,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="25dp"
         android:contentDescription="@string/image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,14 +65,15 @@
         android:id="@+id/btnMainPage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/btn_main_page"
         app:layout_constraintEnd_toEndOf="@+id/ivMenuRectangle"
         app:layout_constraintStart_toStartOf="@+id/ivMenuRectangle"
         app:layout_constraintTop_toTopOf="@+id/ivMenuRectangle"
+        app:layout_constraintBottom_toTopOf="@+id/btnNewWords"
+        app:layout_constraintWidth_percent="0.7"
         app:srcCompat="@drawable/ic_frame"
-        android:contentDescription="@string/btn_main_page"
-        app:layout_constraintWidth_percent="0.7" />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/textView"
@@ -95,6 +96,7 @@
         app:layout_constraintEnd_toEndOf="@+id/btnMainPage"
         app:layout_constraintStart_toStartOf="@+id/btnMainPage"
         app:layout_constraintTop_toBottomOf="@+id/btnMainPage"
+        app:layout_constraintBottom_toTopOf="@+id/btnIrregularWords"
         app:srcCompat="@drawable/ic_frame"
         android:contentDescription="@string/btn_new_words" />
 
@@ -119,6 +121,7 @@
         app:layout_constraintEnd_toEndOf="@+id/btnNewWords"
         app:layout_constraintStart_toStartOf="@+id/btnNewWords"
         app:layout_constraintTop_toBottomOf="@+id/btnNewWords"
+        app:layout_constraintBottom_toTopOf="@+id/btnMyWords"
         app:srcCompat="@drawable/ic_frame"
         android:contentDescription="@string/btn_irregular_verbs" />
 
@@ -143,6 +146,7 @@
         app:layout_constraintEnd_toEndOf="@+id/btnIrregularWords"
         app:layout_constraintStart_toStartOf="@+id/btnIrregularWords"
         app:layout_constraintTop_toBottomOf="@+id/btnIrregularWords"
+        app:layout_constraintBottom_toTopOf="@+id/btnAboutProgram"
         app:srcCompat="@drawable/ic_frame"
         android:contentDescription="@string/btn_my_words" />
 
@@ -167,6 +171,7 @@
         app:layout_constraintEnd_toEndOf="@+id/btnMyWords"
         app:layout_constraintStart_toStartOf="@+id/btnMyWords"
         app:layout_constraintTop_toBottomOf="@+id/btnMyWords"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMenuRectangle"
         app:srcCompat="@drawable/ic_frame"
         android:contentDescription="@string/btn_about_program" />
 

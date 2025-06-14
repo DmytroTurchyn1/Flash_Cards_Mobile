@@ -2,6 +2,7 @@ package com.app.flashcards.feature.aboutme
 
 
 import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.app.flashcards.BuildConfig
@@ -16,6 +17,7 @@ class AboutMeActivity : AppCompatActivity(), AboutMeView {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         binding = ActivityAboutMeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         presenter = AboutMePresenter(this)

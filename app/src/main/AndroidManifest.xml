@@ -14,14 +14,17 @@
         android:theme="@style/Theme.FlashCards"
         tools:ignore="MissingClass"
         android:largeHeap="true"
-        android:hardwareAccelerated="false">
+        android:hardwareAccelerated="false"
+
+        >
 
         <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
              notification message. See README(https://goo.gl/6BKBk7) for more. -->
 
         <activity
             android:name=".feature.menu.MenuActivity"
-            android:exported="false" />
+            android:exported="false"
+            />
         <activity
             android:name=".feature.learnwords.LearnWordsActivity"
             android:exported="false"

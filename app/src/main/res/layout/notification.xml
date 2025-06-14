@@ -38,6 +38,7 @@
             android:textSize="14sp"
             android:textColor="@color/black"
             style="@style/TextAppearance.Compat.Notification.Line2" />
+
     </LinearLayout>
 
 </RelativeLayout>

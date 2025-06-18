@@ -14,10 +14,10 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
 
     private var dialog: AlertDialog? = null
     private val presenter = LearnWordsPresenter(this)
-    private lateinit var binding:ActivityLearnWordsBinding
+    private lateinit var binding: ActivityLearnWordsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         binding = ActivityLearnWordsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         presenter.onActivityCreated()
@@ -65,10 +65,12 @@ class LearnWordsActivity : AppCompatActivity(), LearnWordsView {
                 it.show()
             }
     }
-    fun showinfo(){
+
+    fun showinfo() {
         Toast.makeText(this, getString(R.string.word_deleted), Toast.LENGTH_SHORT).show()
         presenter.onMenuBtnClicked()
     }
+
     override fun showNoWordsError() =
         Toast.makeText(this, getString(R.string.no_user_word_error), Toast.LENGTH_SHORT).show()
 

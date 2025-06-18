@@ -20,7 +20,7 @@ class Ex {
     private val ex: Example = ExampleNone
 
     fun smth() {
-        when(ex) {
+        when (ex) {
             is ExampleCosmos -> TODO()
             is ExampleMath -> TODO()
             is ExampleNone -> TODO()

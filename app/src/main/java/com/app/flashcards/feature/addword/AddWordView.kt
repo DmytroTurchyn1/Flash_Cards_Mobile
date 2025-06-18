@@ -1,6 +1,6 @@
 package com.app.flashcards.feature.addword
 
-interface  AddWordView {
+interface AddWordView {
     fun navigateToMenuActivity()
     fun wordAdded()
     fun close()

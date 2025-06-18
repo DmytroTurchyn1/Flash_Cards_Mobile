@@ -2,33 +2,33 @@ package com.app.flashcards.feature.menu
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import com.app.flashcards.databinding.ActivityMenuBinding
 import com.app.flashcards.util.Launcher
 
 
 class MenuActivity : AppCompatActivity(), MenuView {
     private lateinit var presenter: MenuPresenter
-    private lateinit var binding: ActivityMenuBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
-        // Inflate the binding layout first
-        binding = ActivityMenuBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
         presenter = MenuPresenter(this)
+        setContent {
+            MenuScreen(
+                onAction = {
+                    when (it) {
+                        MenuAction.MAIN_PAGE -> presenter.onMainPageButtonClicked()
+                        MenuAction.NEW_WORDS -> presenter.onNewWordsPageButtonClicked()
+                        MenuAction.IRREGULAR_WORDS -> presenter.onIrregularWordsPageButtonClicked()
+                        MenuAction.MY_WORDS -> presenter.onMyWordsPageButtonClicked()
+                        MenuAction.ABOUT_PROGRAM -> presenter.onAboutProgramPageButtonClicked()
+                    }
 
-        binding.btnMainPage.setOnClickListener { presenter.onMainPageButtonClicked() }
-
-        binding.btnNewWords.setOnClickListener { presenter.onNewWordsPageButtonClicked() }
-
-        binding.btnIrregularWords.setOnClickListener { presenter.onIrregularWordsPageButtonClicked() }
-
-        binding.btnMyWords.setOnClickListener { presenter.onMyWordsPageButtonClicked() }
-
-        binding.btnAboutProgram.setOnClickListener { presenter.onAboutProgramPageButtonClicked() }
+                }
+            )
+        }
     }
 
     override fun navigateToMainActivity() = Launcher.startMainActivity(this)

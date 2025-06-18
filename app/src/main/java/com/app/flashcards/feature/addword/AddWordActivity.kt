@@ -12,19 +12,22 @@ import com.google.android.play.core.review.ReviewManagerFactory
 
 class AddWordActivity : AppCompatActivity(), AddWordView {
     private lateinit var presenter: AddWordPresenter
-    private lateinit var binding:ActivityAddWordBinding
+    private lateinit var binding: ActivityAddWordBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         binding = ActivityAddWordBinding.inflate(layoutInflater)
         setContentView(binding.root)
         presenter = AddWordPresenter(this)
 
         binding.btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
         binding.btnSave.setOnClickListener {
-            if (binding.ptNativeWord.text.toString() != "" && binding.tvFirstForm.text.toString() != ""){
-            presenter.onSaveBtnClicked(binding.ptNativeWord.text.toString(),binding.tvFirstForm.text.toString())}
-            else Toast.makeText(this, getString(R.string.input_words), Toast.LENGTH_SHORT).show()
+            if (binding.ptNativeWord.text.toString() != "" && binding.tvFirstForm.text.toString() != "") {
+                presenter.onSaveBtnClicked(
+                    binding.ptNativeWord.text.toString(),
+                    binding.tvFirstForm.text.toString()
+                )
+            } else Toast.makeText(this, getString(R.string.input_words), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -38,10 +41,10 @@ class AddWordActivity : AppCompatActivity(), AddWordView {
     override fun close() = finish()
 
     override fun reviewRequest() {
-        val reviewManager  = ReviewManagerFactory.create(applicationContext)
+        val reviewManager = ReviewManagerFactory.create(applicationContext)
         reviewManager.requestReviewFlow().addOnCompleteListener {
-            if (it.isSuccessful){
-                reviewManager.launchReviewFlow(this,it.result)
+            if (it.isSuccessful) {
+                reviewManager.launchReviewFlow(this, it.result)
             }
         }
     }

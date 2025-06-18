@@ -7,7 +7,7 @@ import io.realm.annotations.Required
 import org.bson.types.ObjectId
 
 @RealmClass
-open class IrregularVerbRealm (
+open class IrregularVerbRealm(
     @PrimaryKey
     var id: String = ObjectId().toHexString(),
     @Required

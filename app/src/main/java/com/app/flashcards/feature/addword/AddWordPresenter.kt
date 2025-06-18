@@ -3,7 +3,7 @@ package com.app.flashcards.feature.addword
 import com.app.flashcards.model.local.UserWord
 import java.lang.ref.WeakReference
 
-class AddWordPresenter (view: AddWordView){
+class AddWordPresenter(view: AddWordView) {
     private val repository = com.app.flashcards.repository.WordsRepository.getInstance()
     private val viewReference = WeakReference(view)
     private val view
@@ -14,10 +14,10 @@ class AddWordPresenter (view: AddWordView){
         WordAdded()
     }
 
-     fun WordAdded(){
-         view?.close()
-         view?.wordAdded()
-     }
+    fun WordAdded() {
+        view?.close()
+        view?.wordAdded()
+    }
 
     fun onMenuBtnClicked() = view?.navigateToMenuActivity()
 }

@@ -9,10 +9,10 @@ import com.app.flashcards.util.Launcher
 
 class IrregularVerbsActivity : AppCompatActivity(), IrregularVerbsView {
     private lateinit var presenter: IrregularVerbsPresenter
-    private lateinit var binding:ActivityIrregularWordsBinding
+    private lateinit var binding: ActivityIrregularWordsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         binding = ActivityIrregularWordsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -37,7 +37,7 @@ class IrregularVerbsActivity : AppCompatActivity(), IrregularVerbsView {
         binding.tvThirdform.text = thirdForm
     }
 
-    override fun showNativeWord (nativeWord: String) {
+    override fun showNativeWord(nativeWord: String) {
         binding.tvNativeWord.text = nativeWord
     }
 }

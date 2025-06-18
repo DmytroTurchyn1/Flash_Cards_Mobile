@@ -10,7 +10,7 @@ data class NewWords(
 data class IrregularWords(
     val native: String,
     val firstForm: String,
-    val secondForm : String,
+    val secondForm: String,
     val thirdForm: String
 ) : Words()
 

@@ -29,7 +29,8 @@ class IrregularVerbsPresenter(view: IrregularVerbsView) {
 
     private fun showNativeWord() = view?.showNativeWord(words[id].nativeWord)
 
-    fun onShowForms() = view?.showVerbForms(words[id].firstForm, words[id].secondForm, words[id].thirdForm)
+    fun onShowForms() =
+        view?.showVerbForms(words[id].firstForm, words[id].secondForm, words[id].thirdForm)
 
     private fun clearEnglishWord() = view?.showVerbForms(EMPTY_STRING, EMPTY_STRING, EMPTY_STRING)
 

@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="program_color">#FF7B90CB</color>
+    <color name="rectangular_color">#7a9fc9</color>
 </resources>

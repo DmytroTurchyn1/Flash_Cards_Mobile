@@ -3,6 +3,5 @@
     android:height="50dp"
     android:viewportWidth="50"
     android:viewportHeight="50">
-  <path
-      android:pathData="M0,0h50v50h-50z"/>
+    <path android:pathData="M0,0h50v50h-50z" />
 </vector>

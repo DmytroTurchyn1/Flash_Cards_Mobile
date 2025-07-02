@@ -16,7 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlashCards"
         tools:ignore="MissingClass"
-
         >
 
         <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming

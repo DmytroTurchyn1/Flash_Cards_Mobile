@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -11,12 +13,12 @@ plugins {
 
 
 android {
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.app.realm_db"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 18
         versionName = "2.16"
         namespace = "com.example.flashcards"
@@ -53,21 +55,23 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
+    kotlin{
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_17
+        }
     }
 
     namespace = "com.app.flashcards"
 }
 
 dependencies {
-    implementation("androidx.compose.material:material:1.8.2")
+    implementation("androidx.compose.material:material:1.8.3")
     implementation("androidx.compose.compiler:compiler:1.5.15")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.8.2")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.8.3")
     implementation("androidx.activity:activity-compose:1.10.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.1")
     implementation("androidx.compose.material3:material3-android:1.3.2")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.8.2")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.8.3")
 
 
 
@@ -79,7 +83,7 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-    implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
+    implementation(platform("com.google.firebase:firebase-bom:33.16.0"))
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-crashlytics-ktx")
     implementation("com.google.firebase:firebase-perf-ktx")

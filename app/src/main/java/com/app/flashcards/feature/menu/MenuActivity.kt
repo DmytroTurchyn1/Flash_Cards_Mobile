@@ -12,7 +12,7 @@ class MenuActivity : AppCompatActivity(), MenuView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         presenter = MenuPresenter(this)
         setContent {

@@ -22,7 +22,7 @@ data class IrregularVerb(
     @JvmField
     val firstForm: String,
     @JvmField
-    val secondForm : String,
+    val secondForm: String,
     @JvmField
     val thirdForm: String
 ) : Word()

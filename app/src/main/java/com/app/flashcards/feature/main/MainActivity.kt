@@ -1,7 +1,6 @@
 package com.app.flashcards.feature.main
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
@@ -11,7 +10,6 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
 import com.app.flashcards.R
 import com.app.flashcards.databinding.ActivityMainBinding
@@ -27,7 +25,6 @@ import com.google.android.play.core.install.model.InstallStatus
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.android.play.core.ktx.isFlexibleUpdateAllowed
 import com.google.android.play.core.ktx.isImmediateUpdateAllowed
-import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.seconds
@@ -37,31 +34,30 @@ class MainActivity : AppCompatActivity(), MainView {
     private lateinit var binding: ActivityMainBinding
     private lateinit var mAdView: AdView
     private lateinit var appUpdateManager: AppUpdateManager
-    private  val updateType = AppUpdateType.FLEXIBLE
+    private val updateType = AppUpdateType.FLEXIBLE
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
-        val startSplashScreen = installSplashScreen()
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        startSplashScreen.setKeepOnScreenCondition(){false}
-        binding.ivLogo.setImageResource(R.drawable.app_logo)
         presenter = MainPresenter(this)
         binding.btnMenu.setOnClickListener { presenter.onMenuBtnClicked() }
-        get_token()
         initAdmob()
         askNotificationPermission()
+        binding.ivLogo.setImageResource(R.drawable.app_logo)
         appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
-        if (updateType == AppUpdateType.FLEXIBLE){
-            appUpdateManager.registerListener(installStateUpdatedListener)
-        }
+        if (updateType == AppUpdateType.FLEXIBLE) appUpdateManager.registerListener(
+            installStateUpdatedListener
+        )
         checkForUpdates()
 
     }
-    private  val installStateUpdatedListener = InstallStateUpdatedListener{ state->
-        if (state.installStatus() == InstallStatus.DOWNLOADED){
-            Toast.makeText(this,"Downloaded, Restarting in 5 seconds...", Toast.LENGTH_SHORT).show()
+
+    private val installStateUpdatedListener = InstallStateUpdatedListener { state ->
+        if (state.installStatus() == InstallStatus.DOWNLOADED) {
+            Toast.makeText(this, "Downloaded, Restarting in 5 seconds...", Toast.LENGTH_SHORT)
+                .show()
             lifecycleScope.launch {
                 delay(5.seconds)
                 appUpdateManager.completeUpdate()
@@ -69,16 +65,17 @@ class MainActivity : AppCompatActivity(), MainView {
         }
 
     }
+
     private fun checkForUpdates() {
-        appUpdateManager.appUpdateInfo.addOnSuccessListener {info ->
+        appUpdateManager.appUpdateInfo.addOnSuccessListener { info ->
             val isUpdateAvailable = info.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-            val isUpdateAllowed  = when(updateType){
+            val isUpdateAllowed = when (updateType) {
                 AppUpdateType.FLEXIBLE -> info.isFlexibleUpdateAllowed
                 AppUpdateType.IMMEDIATE -> info.isImmediateUpdateAllowed
                 else -> false
             }
-            if(isUpdateAvailable && isUpdateAllowed) {
-                appUpdateManager.startUpdateFlowForResult(info,updateType,this,123)
+            if (isUpdateAvailable && isUpdateAllowed) {
+                appUpdateManager.startUpdateFlowForResult(info, updateType, this, 123)
             }
 
         }
@@ -86,37 +83,42 @@ class MainActivity : AppCompatActivity(), MainView {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == 123){
-            if (resultCode != RESULT_OK) Toast.makeText(this, "Something went wrong...", Toast.LENGTH_SHORT).show()
+        if (requestCode == 123) {
+            if (resultCode != RESULT_OK) Toast.makeText(
+                this,
+                "Something went wrong...",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
+
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
-    ) { isGranted: Boolean ->
-        if (isGranted) {
-            // Permission granted, handle accordingly
-            // FCM SDK (and your app) can post notifications.
-        } else {
+    ) { isGranted ->
+        if (!isGranted) {
             // Permission denied, handle accordingly
-            Toast.makeText(this,"Notifications were disabled.", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Notifications were disabled.", Toast.LENGTH_LONG).show()
         }
     }
-    @SuppressLint("SuspiciousIndentation")
+
+
     override fun onResume() {
         super.onResume()
         binding.adView.resume()
-        if (updateType == AppUpdateType.IMMEDIATE){
-        appUpdateManager.appUpdateInfo.addOnSuccessListener(){ info ->
-            if (info.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS)
-            appUpdateManager.startUpdateFlowForResult(info,updateType,this,123)
-        }
+        if (updateType == AppUpdateType.IMMEDIATE) {
+            appUpdateManager.appUpdateInfo.addOnSuccessListener() { info ->
+                if (info.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS)
+                    appUpdateManager.startUpdateFlowForResult(info, updateType, this, 123)
+            }
         }
     }
 
     override fun onDestroy() {
         super.onDestroy()
         binding.adView.destroy()
-        if (updateType == AppUpdateType.FLEXIBLE) appUpdateManager.unregisterListener(installStateUpdatedListener)
+        if (updateType == AppUpdateType.FLEXIBLE) appUpdateManager.unregisterListener(
+            installStateUpdatedListener
+        )
     }
 
     override fun onPause() {
@@ -133,29 +135,12 @@ class MainActivity : AppCompatActivity(), MainView {
         mAdView.loadAd(adRequest)
     }
 
-    override fun get_token() {
-        FirebaseMessaging.getInstance().token.addOnCompleteListener() { task ->
-            if(!task.isSuccessful){
-                return@addOnCompleteListener
-            }
-            val token = task.result
-            println("token ${token}")
-        }
-    }
+
     override fun askNotificationPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) ==
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) !=
                 PackageManager.PERMISSION_GRANTED
-            ) {
-            } else if (shouldShowRequestPermissionRationale(Manifest.permission.POST_NOTIFICATIONS)) {
-                // TODO: display an educational UI explaining to the user the features that will be enabled
-                //       by them granting the POST_NOTIFICATION permission. This UI should provide the user
-                //       "OK" and "No thanks" buttons. If the user selects "OK," directly request the permission.
-                //       If the user selects "No thanks," allow the user to continue without notifications.
-            } else {
-                // Directly ask for the permission
-                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
-            }
+            ) requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
         }
     }
 }

@@ -2,6 +2,8 @@ package com.app.flashcards;
 
 import android.app.Application;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
@@ -10,6 +12,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         initRealmDb();
+        getToken();
     }
 
     private void initRealmDb() {
@@ -27,5 +30,16 @@ public class App extends Application {
         RealmConfiguration config = realmBuilder.build();
 
         Realm.setDefaultConfiguration(config);
+    }
+
+    private void getToken() {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        return;
+                    }
+                    String token = task.getResult();
+                    System.out.println("token " + token);
+                });
     }
 }

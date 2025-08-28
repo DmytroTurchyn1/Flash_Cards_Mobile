@@ -14,10 +14,11 @@ import com.app.flashcards.util.Launcher
 class AboutMeActivity : AppCompatActivity(), AboutMeView {
     private lateinit var presenter: AboutMePresenter
     private lateinit var binding: ActivityAboutMeBinding
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setRequestedOrientation( ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         binding = ActivityAboutMeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         presenter = AboutMePresenter(this)
@@ -25,9 +26,11 @@ class AboutMeActivity : AppCompatActivity(), AboutMeView {
         binding.btnGmail.setOnClickListener { presenter.onGmailBtnClicked() }
         binding.btnYoutube.setOnClickListener { presenter.onYoutubeBtnClicked() }
         binding.btnTelegram.setOnClickListener { presenter.onTelegramBtnClicked() }
-        binding.tvVersion.text = "${getString(R.string.program_version_text)}  ${BuildConfig.VERSION_NAME}"
+        binding.tvVersion.text =
+            "${getString(R.string.program_version_text)}  ${BuildConfig.VERSION_NAME}"
 
     }
+
     override fun navigateToMenuActivity() = Launcher.startMenuActivity(this)
 
     override fun navigateToTelegram() = Launcher.startTelegram(this)

@@ -19,8 +19,8 @@ android {
         applicationId = "com.app.realm_db"
         minSdk = 24
         targetSdk = 36
-        versionCode = 19
-        versionName = "2.17"
+        versionCode = 20
+        versionName = "2.17.1"
         namespace = "com.example.flashcards"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true

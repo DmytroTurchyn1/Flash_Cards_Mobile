@@ -1,7 +1,6 @@
 package com.app.flashcards.feature.main
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
@@ -102,7 +101,7 @@ class MainActivity : AppCompatActivity(), MainView {
         }
     }
 
-    @SuppressLint("SuspiciousIndentation")
+
     override fun onResume() {
         super.onResume()
         binding.adView.resume()
